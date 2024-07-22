@@ -1,5 +1,5 @@
 // Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2009-2022 The Bitcoin Core developers
+// Copyright (c) 2009-2021 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -21,13 +21,29 @@
 #include <util/strencodings.h>
 #include <util/translation.h>
 
-void AddInputs(CMutableTransaction& rawTx, const UniValue& inputs_in, std::optional<bool> rbf)
+CMutableTransaction ConstructTransaction(const UniValue& inputs_in, const UniValue& outputs_in, const UniValue& locktime, std::optional<bool> rbf, IRawContract* rawContract)
 {
+    if (outputs_in.isNull()) {
+        throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid parameter, output argument must be non-null");
+    }
+
     UniValue inputs;
     if (inputs_in.isNull()) {
         inputs = UniValue::VARR;
     } else {
         inputs = inputs_in.get_array();
+    }
+
+    const bool outputs_is_obj = outputs_in.isObject();
+    UniValue outputs = outputs_is_obj ? outputs_in.get_obj() : outputs_in.get_array();
+
+    CMutableTransaction rawTx;
+
+    if (!locktime.isNull()) {
+        int64_t nLockTime = locktime.getInt<int64_t>();
+        if (nLockTime < 0 || nLockTime > LOCKTIME_MAX)
+            throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid parameter, locktime out of range");
+        rawTx.nLockTime = nLockTime;
     }
 
     for (unsigned int idx = 0; idx < inputs.size(); idx++) {
@@ -68,16 +84,6 @@ void AddInputs(CMutableTransaction& rawTx, const UniValue& inputs_in, std::optio
 
         rawTx.vin.push_back(in);
     }
-}
-
-void AddOutputs(CMutableTransaction& rawTx, const UniValue& outputs_in, IRawContract* rawContract)
-{
-    if (outputs_in.isNull()) {
-        throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid parameter, output argument must be non-null");
-    }
-
-    const bool outputs_is_obj = outputs_in.isObject();
-    UniValue outputs = outputs_is_obj ? outputs_in.get_obj() : outputs_in.get_array();
 
     if (!outputs_is_obj) {
         // Translate array of key-value pairs into dict
@@ -110,7 +116,7 @@ void AddOutputs(CMutableTransaction& rawTx, const UniValue& outputs_in, IRawCont
 
             CTxOut out(0, CScript() << OP_RETURN << data);
             rawTx.vout.push_back(out);
-        } else if (rawContract && name_ == "contract") {
+       } else if (rawContract && name_ == "contract") {
             // Get the contract object
             UniValue contract = outputs[i];
             rawContract->addContract(rawTx, contract);
@@ -132,21 +138,6 @@ void AddOutputs(CMutableTransaction& rawTx, const UniValue& outputs_in, IRawCont
         }
         ++i;
     }
-}
-
-CMutableTransaction ConstructTransaction(const UniValue& inputs_in, const UniValue& outputs_in, const UniValue& locktime, std::optional<bool> rbf, IRawContract* rawContract)
-{
-    CMutableTransaction rawTx;
-
-    if (!locktime.isNull()) {
-        int64_t nLockTime = locktime.getInt<int64_t>();
-        if (nLockTime < 0 || nLockTime > LOCKTIME_MAX)
-            throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid parameter, locktime out of range");
-        rawTx.nLockTime = nLockTime;
-    }
-
-    AddInputs(rawTx, inputs_in, rbf);
-    AddOutputs(rawTx, outputs_in, rawContract);
 
     if (rbf.has_value() && rbf.value() && rawTx.vin.size() > 0 && !SignalsOptInRBF(CTransaction(rawTx))) {
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid parameter combination: Sequence number(s) contradict replaceable option");

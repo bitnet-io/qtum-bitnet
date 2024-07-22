@@ -3,23 +3,23 @@
     <name>AddressBookPage</name>
     <message>
         <source>Right-click to edit address or label</source>
-        <translation type="unfinished">Fadlan garaaci Midig ku dhufo si aad u saxdo ciwaanka ama sumadda.</translation>
+        <translation type="unfinished">Xaq-click si aad cinwaanka edit ama qoraalka</translation>
     </message>
     <message>
         <source>Create a new address</source>
-        <translation type="unfinished">Fadhlan samee cinwaan cusub.</translation>
+        <translation type="unfinished">Abuur cinwaan cusub</translation>
     </message>
     <message>
         <source>&amp;New</source>
-        <translation type="unfinished">Maqal</translation>
+        <translation type="unfinished">&amp;Hormarin</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
-        <translation type="unfinished">Ka akhriso cinwaan aad xaqiijinaysay si aad u ku koobid natiijada isticmaalka ee nidaamka</translation>
+        <translation type="unfinished">Nuqul ka dhig cinwaanka hadda la soo xulay ee clipboard system</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
-        <translation type="unfinished">&amp;Fidi </translation>
+        <translation type="unfinished">&amp;Nuqul</translation>
     </message>
     <message>
         <source>C&amp;lose</source>
@@ -84,9 +84,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Export Address List</source>
-        <translation type="unfinished">Liiska Cinwaanka Dhoofinta
-
-</translation>
+        <translation type="unfinished">Liiska Cinwaanka Dhoofinta</translation>
     </message>
     <message>
         <source>Comma separated file</source>
@@ -150,7 +148,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished">Digniin: Haddii aad qarisid jeebkaaga oo aad lumiso ereyga Passphrase, waxaad 1LOSE DOONAA DHAMMAAN QTUMS1!</translation>
+        <translation type="unfinished">Digniin: Haddii aad jeebka jeebkaaga qarisid, Oo aad lumiso ereygii,Adigaa sameyn doontaa&lt;b&gt;Lumin oo dhan QTUMS AAD&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -216,10 +214,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
 <context>
     <name>BanTableModel</name>
     <message>
-        <source>IP/Netmask</source>
-        <translation type="unfinished">IP / Netmask</translation>
-    </message>
-    <message>
         <source>Banned Until</source>
         <translation type="unfinished">Mamnuucay Ilaa</translation>
     </message>
@@ -228,7 +222,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <name>BitcoinApplication</name>
     <message>
         <source>Settings file %1 might be corrupt or invalid.</source>
-        <translation type="unfinished">Settings file,%1waxaa laga yaabaa in musuqmaasuq ama aan asal ahayn.</translation>
+        <translation type="unfinished">Settings file%1waxaa laga yaabaa in musuqmaasuq ama aan asal ahayn.</translation>
     </message>
     <message>
         <source>A fatal error occurred. %1 can no longer continue safely and will quit.</source>

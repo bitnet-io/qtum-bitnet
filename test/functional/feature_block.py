@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2015-2022 The Bitcoin Core developers
+# Copyright (c) 2015-2021 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test block processing."""
@@ -165,7 +165,7 @@ class FullBlockTest(BitcoinTestFramework):
 
             self.log.info(f"Reject block with invalid tx: {TxTemplate.__name__}")
             blockname = f"for_invalid.{TxTemplate.__name__}"
-            self.next_block(blockname)
+            badblock = self.next_block(blockname)
             badtx = template.get_tx()
             if TxTemplate != invalid_txs.InputMissing:
                 self.sign_tx(badtx, attempt_spend_tx)
@@ -382,7 +382,6 @@ class FullBlockTest(BitcoinTestFramework):
         # Extend the b28 chain to make sure bitcoind isn't accepting b28
         b29 = self.next_block(29, spend=out[7])
         self.send_blocks([b29], False)
-
         # b30 has a max-sized coinbase scriptSig.
         self.move_tip(23)
         b30 = self.next_block(30)
@@ -478,7 +477,7 @@ class FullBlockTest(BitcoinTestFramework):
         #
         self.log.info("Check P2SH SIGOPS are correctly counted")
         self.move_tip(35)
-        self.next_block(39)
+        b39 = self.next_block(39)
         b39_outputs = 0
         b39_sigops_per_output = 6
 
@@ -677,7 +676,7 @@ class FullBlockTest(BitcoinTestFramework):
 
         self.log.info("Reject a block with two coinbase transactions")
         self.move_tip(44)
-        self.next_block(51)
+        b51 = self.next_block(51)
         cb2 = create_coinbase(51, self.coinbase_pubkey)
         b51 = self.update_block(51, [cb2])
         self.send_blocks([b51], success=False, reject_reason='bad-cb-multiple', reconnect=True)
@@ -757,7 +756,7 @@ class FullBlockTest(BitcoinTestFramework):
 
         # b57 - a good block with 2 txs, don't submit until end
         self.move_tip(55)
-        self.next_block(57)
+        b57 = self.next_block(57)
         tx = self.create_and_sign_transaction(out[16], 1)
         tx1 = self.create_tx(tx, 0, 1)
         b57 = self.update_block(57, [tx, tx1])
@@ -774,7 +773,7 @@ class FullBlockTest(BitcoinTestFramework):
 
         # b57p2 - a good block with 6 tx'es, don't submit until end
         self.move_tip(55)
-        self.next_block("57p2")
+        b57p2 = self.next_block("57p2")
         tx = self.create_and_sign_transaction(out[16], 1)
         tx1 = self.create_tx(tx, 0, 1)
         tx2 = self.create_tx(tx1, 0, 1)
@@ -808,7 +807,7 @@ class FullBlockTest(BitcoinTestFramework):
         # tx with prevout.n out of range
         self.log.info("Reject a block with a transaction with prevout.n out of range")
         self.move_tip(57)
-        self.next_block(58, spend=out[17])
+        b58 = self.next_block(58, spend=out[17])
         tx = CTransaction()
         assert len(out[17].vout) < 42
         tx.vin.append(CTxIn(COutPoint(out[17].sha256, 42), CScript([OP_TRUE]), SEQUENCE_FINAL))
@@ -820,7 +819,7 @@ class FullBlockTest(BitcoinTestFramework):
         # tx with output value > input value
         self.log.info("Reject a block with a transaction with outputs > inputs")
         self.move_tip("57p2")
-        self.next_block(59)
+        b59 = self.next_block(59)
         tx = self.create_and_sign_transaction(out[17], int(INITIAL_BLOCK_REWARD+1) * COIN)
         b59 = self.update_block(59, [tx])
         self.send_blocks([b59], success=False, reject_reason='bad-txns-in-belowout', reconnect=True)
@@ -880,11 +879,11 @@ class FullBlockTest(BitcoinTestFramework):
         # Test tx.isFinal is properly rejected (not an exhaustive tx.isFinal test, that should be in data-driven transaction tests)
         #
         #   -> b39 (11) -> b42 (12) -> b43 (13) -> b53 (14) -> b55 (15) -> b57 (16) -> b60 (17)
-        #                                           \-> b62 (18)
+        #                                                                                     \-> b62 (18)
         #
         self.log.info("Reject a block with a transaction with a nonfinal locktime")
         self.move_tip(60)
-        self.next_block(62)
+        b62 = self.next_block(62)
         tx = CTransaction()
         tx.nLockTime = 0xffffffff  # this locktime is non-final
         tx.vin.append(CTxIn(COutPoint(out[18].sha256, 0)))  # don't set nSequence
@@ -965,7 +964,7 @@ class FullBlockTest(BitcoinTestFramework):
         #
         self.log.info("Accept a block with a transaction spending an output created in the same block")
         self.move_tip(64)
-        self.next_block(65)
+        b65 = self.next_block(65)
         tx1 = self.create_and_sign_transaction(out[19], out[19].vout[0].nValue)
         tx2 = self.create_and_sign_transaction(tx1, 0)
         b65 = self.update_block(65, [tx1, tx2])
@@ -978,7 +977,7 @@ class FullBlockTest(BitcoinTestFramework):
         #                        \-> b66 (20)
         self.log.info("Reject a block with a transaction spending an output created later in the same block")
         self.move_tip(65)
-        self.next_block(66)
+        b66 = self.next_block(66)
         tx1 = self.create_and_sign_transaction(out[20], out[20].vout[0].nValue)
         tx2 = self.create_and_sign_transaction(tx1, 1)
         b66 = self.update_block(66, [tx2, tx1])
@@ -992,7 +991,7 @@ class FullBlockTest(BitcoinTestFramework):
         #
         self.log.info("Reject a block with a transaction double spending a transaction created in the same block")
         self.move_tip(65)
-        self.next_block(67)
+        b67 = self.next_block(67)
         tx1 = self.create_and_sign_transaction(out[20], out[20].vout[0].nValue)
         tx2 = self.create_and_sign_transaction(tx1, 1)
         tx3 = self.create_and_sign_transaction(tx1, 2)
@@ -1013,7 +1012,7 @@ class FullBlockTest(BitcoinTestFramework):
         #
         self.log.info("Reject a block trying to claim too much subsidy in the coinbase transaction")
         self.move_tip(65)
-        self.next_block(68, additional_coinbase_value=10)
+        b68 = self.next_block(68, additional_coinbase_value=10)
         tx = self.create_and_sign_transaction(out[20], out[20].vout[0].nValue - 9)
         b68 = self.update_block(68, [tx])
         self.send_blocks([b68], success=False, reject_reason='block-reward-invalid', reconnect=True)
@@ -1033,7 +1032,7 @@ class FullBlockTest(BitcoinTestFramework):
         #
         self.log.info("Reject a block containing a transaction spending from a non-existent input")
         self.move_tip(69)
-        self.next_block(70, spend=out[21])
+        b70 = self.next_block(70, spend=out[21])
         bogus_tx = CTransaction()
         bogus_tx.sha256 = uint256_from_str(b"23c70ed7c0506e9178fc1a987f40a33946d4ad4c962b5ae3a52546da53af0c5c")
         tx = CTransaction()
@@ -1051,7 +1050,7 @@ class FullBlockTest(BitcoinTestFramework):
         # b71 is a copy of 72, but re-adds one of its transactions.  However, it has the same hash as b72.
         self.log.info("Reject a block containing a duplicate transaction but with the same Merkle root (Merkle tree malleability")
         self.move_tip(69)
-        self.next_block(72)
+        b72 = self.next_block(72)
         tx1 = self.create_and_sign_transaction(out[21], 2)
         tx2 = self.create_and_sign_transaction(tx1, 1)
         b72 = self.update_block(72, [tx1, tx2])  # now tip is 72
@@ -1089,7 +1088,7 @@ class FullBlockTest(BitcoinTestFramework):
         #       bytearray[20,526]       : OP_CHECKSIG (this puts us over the limit)
         self.log.info("Reject a block containing too many sigops after a large script element")
         self.move_tip(72)
-        self.next_block(73)
+        b73 = self.next_block(73)
         size = MAX_BLOCK_SIGOPS - 1 + MAX_SCRIPT_ELEMENT_SIZE + 1 + 5 + 1
         a = bytearray([OP_CHECKSIG] * size)
         a[MAX_BLOCK_SIGOPS - 1] = int("4e", 16)  # OP_PUSHDATA4
@@ -1117,7 +1116,7 @@ class FullBlockTest(BitcoinTestFramework):
         #       b75 succeeds because we put MAX_BLOCK_SIGOPS before the element
         self.log.info("Check sigops are counted correctly after an invalid script element")
         self.move_tip(72)
-        self.next_block(74)
+        b74 = self.next_block(74)
         size = MAX_BLOCK_SIGOPS - 1 + MAX_SCRIPT_ELEMENT_SIZE + 42  # total = 20,561
         a = bytearray([OP_CHECKSIG] * size)
         a[MAX_BLOCK_SIGOPS] = 0x4e
@@ -1130,7 +1129,7 @@ class FullBlockTest(BitcoinTestFramework):
         self.send_blocks([b74], success=False, reject_reason='bad-blk-sigops', reconnect=True)
 
         self.move_tip(72)
-        self.next_block(75)
+        b75 = self.next_block(75)
         size = MAX_BLOCK_SIGOPS - 1 + MAX_SCRIPT_ELEMENT_SIZE + 42
         a = bytearray([OP_CHECKSIG] * size)
         a[MAX_BLOCK_SIGOPS - 1] = 0x4e
@@ -1145,7 +1144,7 @@ class FullBlockTest(BitcoinTestFramework):
 
         # Check that if we push an element filled with CHECKSIGs, they are not counted
         self.move_tip(75)
-        self.next_block(76)
+        b76 = self.next_block(76)
         size = MAX_BLOCK_SIGOPS - 1 + MAX_SCRIPT_ELEMENT_SIZE + 1 + 5
         a = bytearray([OP_CHECKSIG] * size)
         a[MAX_BLOCK_SIGOPS - 1] = 0x4e  # PUSHDATA4, but leave the following bytes as just checksigs
@@ -1173,18 +1172,18 @@ class FullBlockTest(BitcoinTestFramework):
         #    updated.  (Perhaps to spend to a P2SH OP_TRUE script)
         self.log.info("Test transaction resurrection during a re-org")
         self.move_tip(76)
-        self.next_block(77)
+        b77 = self.next_block(77)
         tx77 = self.create_and_sign_transaction(out[24], 10 * COIN)
         b77 = self.update_block(77, [tx77])
         self.send_blocks([b77], True)
         self.save_spendable_output()
 
-        self.next_block(78)
+        b78 = self.next_block(78)
         tx78 = self.create_tx(tx77, 0, 9 * COIN)
         b78 = self.update_block(78, [tx78])
         self.send_blocks([b78], True)
 
-        self.next_block(79)
+        b79 = self.next_block(79)
         tx79 = self.create_tx(tx78, 0, 8 * COIN)
         b79 = self.update_block(79, [tx79])
         self.send_blocks([b79], True)
@@ -1216,7 +1215,7 @@ class FullBlockTest(BitcoinTestFramework):
         #  -> b81 (26) -> b82 (27) -> b83 (28)
         #
         self.log.info("Accept a block with invalid opcodes in dead execution paths")
-        self.next_block(83)
+        b83 = self.next_block(83)
         op_codes = [OP_IF, OP_INVALIDOPCODE, OP_ELSE, OP_TRUE, OP_ENDIF]
         script = CScript(op_codes)
         tx1 = self.create_and_sign_transaction(out[28], out[28].vout[0].nValue, script)
@@ -1235,7 +1234,7 @@ class FullBlockTest(BitcoinTestFramework):
         #                                    \-> b85 (29) -> b86 (30)            \-> b89a (32)
         #
         self.log.info("Test re-orging blocks with OP_RETURN in them")
-        self.next_block(84)
+        b84 = self.next_block(84)
         tx1 = self.create_tx(out[29], 0, 0, CScript([OP_RETURN]))
         tx1.vout.append(CTxOut(0, CScript([OP_TRUE])))
         tx1.vout.append(CTxOut(0, CScript([OP_TRUE])))
@@ -1273,13 +1272,12 @@ class FullBlockTest(BitcoinTestFramework):
         self.save_spendable_output()
 
         # trying to spend the OP_RETURN output is rejected
-        self.next_block("89a", spend=out[32])
+        b89a = self.next_block("89a", spend=out[32])
         tx = self.create_tx(tx1, 0, 0, CScript([OP_TRUE]))
         b89a = self.update_block("89a", [tx])
         self.send_blocks([b89a], success=False, reject_reason='bad-txns-inputs-missingorspent', reconnect=True)
 
         self.log.info("Test a re-org of one week's worth of blocks (1088 blocks)")
-
         self.move_tip(88)
         LARGE_REORG_SIZE = 200
         blocks = []

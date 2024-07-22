@@ -36,47 +36,58 @@
         <source>%1 didn't yet exit safely…</source>
         <translation type="unfinished">%1Ingakatholakali ngokuphepha okwamanje.</translation>
     </message>
+    <message>
+        <source>Internal</source>
+        <translation type="unfinished">Okwangaphakathi</translation>
+    </message>
     <message numerus="yes">
         <source>%n second(s)</source>
         <translation type="unfinished">
-            <numerusform>%n second(s)</numerusform>
-            <numerusform>%n second(s)</numerusform>
+            <numerusform />
+            <numerusform />
         </translation>
     </message>
     <message numerus="yes">
         <source>%n minute(s)</source>
         <translation type="unfinished">
-            <numerusform>%n minute(s)</numerusform>
-            <numerusform>%n minute(s)</numerusform>
+            <numerusform />
+            <numerusform />
         </translation>
     </message>
     <message numerus="yes">
         <source>%n hour(s)</source>
         <translation type="unfinished">
-            <numerusform>%n hour(s)</numerusform>
-            <numerusform>%n hour(s)</numerusform>
+            <numerusform />
+            <numerusform />
         </translation>
     </message>
     <message numerus="yes">
         <source>%n day(s)</source>
         <translation type="unfinished">
-            <numerusform>%n day(s)</numerusform>
-            <numerusform>%n day(s)</numerusform>
+            <numerusform />
+            <numerusform />
         </translation>
     </message>
     <message numerus="yes">
         <source>%n week(s)</source>
         <translation type="unfinished">
-            <numerusform>%n week(s)</numerusform>
-            <numerusform>%n week(s)</numerusform>
+            <numerusform />
+            <numerusform />
         </translation>
     </message>
     <message numerus="yes">
         <source>%n year(s)</source>
         <translation type="unfinished">
-            <numerusform>%n year(s)</numerusform>
-            <numerusform>%n year(s)</numerusform>
+            <numerusform />
+            <numerusform />
         </translation>
+    </message>
+    </context>
+<context>
+    <name>bitcoin-core</name>
+    <message>
+        <source>Error: Missing checksum</source>
+        <translation type="unfinished">Iphutha: iChecksum engekho</translation>
     </message>
     </context>
 <context>
@@ -112,8 +123,8 @@
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
         <translation type="unfinished">
-            <numerusform>Processed %n block(s) of transaction history.</numerusform>
-            <numerusform>Processed %n block(s) of transaction history.</numerusform>
+            <numerusform />
+            <numerusform />
         </translation>
     </message>
     <message numerus="yes">
@@ -154,8 +165,8 @@
     <message numerus="yes">
         <source>%n GB of space available</source>
         <translation type="unfinished">
-            <numerusform>%n GB of space available</numerusform>
-            <numerusform>%n GB of space available</numerusform>
+            <numerusform />
+            <numerusform />
         </translation>
     </message>
     <message numerus="yes">
@@ -176,8 +187,8 @@
         <source>(sufficient to restore backups %n day(s) old)</source>
         <extracomment>Explanatory text on the capability of the current prune target.</extracomment>
         <translation type="unfinished">
-            <numerusform>(sufficient to restore backups %n day(s) old)</numerusform>
-            <numerusform>(sufficient to restore backups %n day(s) old)</numerusform>
+            <numerusform />
+            <numerusform />
         </translation>
     </message>
     </context>
@@ -198,8 +209,8 @@
     <message numerus="yes">
         <source>Estimated to begin confirmation within %n block(s).</source>
         <translation type="unfinished">
-            <numerusform>Estimated to begin confirmation within %n block(s).</numerusform>
-            <numerusform>Estimated to begin confirmation within %n block(s).</numerusform>
+            <numerusform />
+            <numerusform />
         </translation>
     </message>
     </context>
@@ -208,8 +219,8 @@
     <message numerus="yes">
         <source>matures in %n more block(s)</source>
         <translation type="unfinished">
-            <numerusform>matures in %n more block(s)</numerusform>
-            <numerusform>matures in %n more block(s)</numerusform>
+            <numerusform />
+            <numerusform />
         </translation>
     </message>
     </context>
@@ -219,13 +230,6 @@
         <source>Comma separated file</source>
         <extracomment>Expanded name of the CSV file format. See: https://en.wikipedia.org/wiki/Comma-separated_values.</extracomment>
         <translation type="unfinished">Ifayela elehlukaniswe ngo khefana.</translation>
-    </message>
-    </context>
-<context>
-    <name>bitcoin-core</name>
-    <message>
-        <source>Error: Missing checksum</source>
-        <translation type="unfinished">Iphutha: iChecksum engekho</translation>
     </message>
     </context>
 </TS>

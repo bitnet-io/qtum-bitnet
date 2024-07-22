@@ -132,9 +132,12 @@ CreateWalletDialog::CreateWalletDialog(QWidget* parent) :
         ui->blank_wallet_checkbox->setChecked(checked);
 
 #ifdef USE_SQLITE
-        // Enable and check descriptor_checkbox when isHardwareWalletChecked is true,
+        // Disable and uncheck descriptor_checkbox when isHardwareWalletChecked is true,
+        // enable it if isHardwareWalletChecked is false
+        if(checked) {
+            ui->descriptor_checkbox->setChecked(false);
+        }
         ui->descriptor_checkbox->setEnabled(!checked);
-        ui->descriptor_checkbox->setChecked(checked);
 #endif
     });
 }

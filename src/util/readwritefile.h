@@ -5,7 +5,7 @@
 #ifndef BITCOIN_UTIL_READWRITEFILE_H
 #define BITCOIN_UTIL_READWRITEFILE_H
 
-#include <util/fs.h>
+#include <fs.h>
 
 #include <limits>
 #include <string>

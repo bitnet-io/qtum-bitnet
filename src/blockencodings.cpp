@@ -1,4 +1,4 @@
-// Copyright (c) 2016-2022 The Bitcoin Core developers
+// Copyright (c) 2016-2020 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -29,7 +29,7 @@ CBlockHeaderAndShortTxIDs::CBlockHeaderAndShortTxIDs(const CBlock& block) :
 }
 
 void CBlockHeaderAndShortTxIDs::FillShortTxIDSelector() const {
-    DataStream stream{};
+    CDataStream stream(SER_NETWORK, PROTOCOL_VERSION);
     stream << header << nonce;
     CSHA256 hasher;
     hasher.Write((unsigned char*)&(*stream.begin()), stream.end() - stream.begin());
@@ -52,8 +52,7 @@ ReadStatus PartiallyDownloadedBlock::InitData(const CBlockHeaderAndShortTxIDs& c
     if (cmpctblock.shorttxids.size() + cmpctblock.prefilledtxn.size() > dgpMaxBlockWeight / MIN_SERIALIZABLE_TRANSACTION_WEIGHT)
         return READ_STATUS_INVALID;
 
-    if (!header.IsNull() || !txn_available.empty()) return READ_STATUS_INVALID;
-
+    assert(header.IsNull() && txn_available.empty());
     header = cmpctblock.header;
     txn_available.resize(cmpctblock.BlockTxCount());
 
@@ -168,18 +167,14 @@ ReadStatus PartiallyDownloadedBlock::InitData(const CBlockHeaderAndShortTxIDs& c
     return READ_STATUS_OK;
 }
 
-bool PartiallyDownloadedBlock::IsTxAvailable(size_t index) const
-{
-    if (header.IsNull()) return false;
-
+bool PartiallyDownloadedBlock::IsTxAvailable(size_t index) const {
+    assert(!header.IsNull());
     assert(index < txn_available.size());
     return txn_available[index] != nullptr;
 }
 
-ReadStatus PartiallyDownloadedBlock::FillBlock(CBlock& block, const std::vector<CTransactionRef>& vtx_missing)
-{
-    if (header.IsNull()) return READ_STATUS_INVALID;
-
+ReadStatus PartiallyDownloadedBlock::FillBlock(CBlock& block, const std::vector<CTransactionRef>& vtx_missing) {
+    assert(!header.IsNull());
     uint256 hash = header.GetHash();
     block = header;
     block.vtx.resize(txn_available.size());
@@ -202,8 +197,7 @@ ReadStatus PartiallyDownloadedBlock::FillBlock(CBlock& block, const std::vector<
         return READ_STATUS_INVALID;
 
     BlockValidationState state;
-    CheckBlockFn check_block = m_check_block_mock ? m_check_block_mock : CheckBlock;
-    if (!check_block(block, state, Params().GetConsensus(), chainman->ActiveChainstate(), /*fCheckPoW=*/true, /*fCheckMerkleRoot=*/true, /*fCheckSig=*/true)) {
+    if (!CheckBlock(block, state, Params().GetConsensus(), chainman->ActiveChainstate())) {
         // TODO: We really want to just check merkle tree manually here,
         // but that is expensive, and CheckBlock caches a block's
         // "checked-status" (in the CBlock?). CBlock should be able to

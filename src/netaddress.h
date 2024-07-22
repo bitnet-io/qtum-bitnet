@@ -1,4 +1,4 @@
-// Copyright (c) 2009-2022 The Bitcoin Core developers
+// Copyright (c) 2009-2021 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -111,8 +111,6 @@ static constexpr size_t ADDR_INTERNAL_SIZE = 10;
 /// SAM 3.1 and earlier do not support specifying ports and force the port to 0.
 static constexpr uint16_t I2P_SAM31_PORT{0};
 
-std::string OnionToString(Span<const uint8_t> addr);
-
 /**
  * Network address.
  */
@@ -193,7 +191,8 @@ public:
     bool IsAddrV1Compatible() const;
 
     enum Network GetNetwork() const;
-    std::string ToStringAddr() const;
+    std::string ToString() const;
+    std::string ToStringIP() const;
     bool GetInAddr(struct in_addr* pipv4Addr) const;
     Network GetNetClass() const;
 
@@ -475,6 +474,8 @@ protected:
     /// Is this value valid? (only used to signal parse errors)
     bool valid;
 
+    bool SanityCheck() const;
+
 public:
     /**
      * Construct an invalid subnet (empty, `Match()` always returns false).
@@ -533,7 +534,9 @@ public:
     friend bool operator!=(const CService& a, const CService& b) { return !(a == b); }
     friend bool operator<(const CService& a, const CService& b);
     std::vector<unsigned char> GetKey() const;
-    std::string ToStringAddrPort() const;
+    std::string ToString() const;
+    std::string ToStringPort() const;
+    std::string ToStringIPPort() const;
 
     CService(const struct in6_addr& ipv6Addr, uint16_t port);
     explicit CService(const struct sockaddr_in6& addr);

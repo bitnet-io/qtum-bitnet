@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2022 The Bitcoin Core developers
+// Copyright (c) 2011-2021 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -24,7 +24,6 @@
 #include <qt/styleSheet.h>
 #include <chainparams.h>
 #include <chrono>
-#include <node/miner.h>
 
 #include <QDataWidgetMapper>
 #include <QDir>
@@ -34,9 +33,11 @@
 #include <QSystemTrayIcon>
 #include <QTimer>
 
-OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet)
-    : QDialog(parent, GUIUtil::dialog_flags),
-      ui(new Ui::OptionsDialog)
+OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
+    QDialog(parent, GUIUtil::dialog_flags),
+    ui(new Ui::OptionsDialog),
+    model(nullptr),
+    mapper(nullptr)
 {
     ui->setupUi(this);
     SetObjectStyleSheet(ui->resetButton, StyleSheetNames::ButtonLight);
@@ -120,15 +121,12 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet)
         ui->toolHWIPath->setVisible(fHasHardwareWalletSupport);
         ui->HWIToolLabel->setVisible(fHasHardwareWalletSupport);
         ui->signPSBTHWITool->setVisible(fHasHardwareWalletSupport);
-        bool fHasHardwareStakeSupport = fHasHardwareWalletSupport && node::ENABLE_HARDWARE_STAKE;
-        ui->txtStakeLedgerId->setVisible(fHasHardwareStakeSupport);
-        ui->toolStakeLedgerId->setVisible(fHasHardwareStakeSupport);
-        ui->stakeLedgerIdlabel->setVisible(fHasHardwareStakeSupport);
+        ui->txtStakeLedgerId->setVisible(fHasHardwareWalletSupport);
+        ui->toolStakeLedgerId->setVisible(fHasHardwareWalletSupport);
+        ui->stakeLedgerIdlabel->setVisible(fHasHardwareWalletSupport);
     }
 
-#ifdef ENABLE_EXTERNAL_SIGNER
-    ui->externalSignerPath->setToolTip(ui->externalSignerPath->toolTip().arg(PACKAGE_NAME));
-#else
+#ifndef ENABLE_EXTERNAL_SIGNER
     //: "External signing" means using devices such as hardware wallets.
     ui->externalSignerPath->setToolTip(tr("Compiled without external signing support (required for external signing)"));
     ui->externalSignerPath->setEnabled(false);
@@ -210,10 +208,12 @@ OptionsDialog::OptionsDialog(QWidget* parent, bool enableWallet)
     ui->systemFont_label_9->setFont(system_font);
     // Checking the embeddedFont_radioButton automatically unchecks the systemFont_radioButton.
     ui->systemFont_radioButton->setChecked(true);
+
     if(enableWallet)
     {
         connect(ui->superStaking, &QCheckBox::clicked, this, &OptionsDialog::updateLogEvents);
     }
+
     GUIUtil::handleCloseWindowShortcut(this);
 }
 
@@ -515,21 +515,24 @@ void OptionsDialog::updateProxyValidationState()
 
 void OptionsDialog::updateDefaultProxyNets()
 {
-    CNetAddr ui_proxy_netaddr;
-    LookupHost(ui->proxyIp->text().toStdString(), ui_proxy_netaddr, /*fAllowLookup=*/false);
-    const CService ui_proxy{ui_proxy_netaddr, ui->proxyPort->text().toUShort()};
-
     Proxy proxy;
-    bool has_proxy;
+    std::string strProxy;
+    QString strDefaultProxyGUI;
 
-    has_proxy = model->node().getProxy(NET_IPV4, proxy);
-    ui->proxyReachIPv4->setChecked(has_proxy && proxy.proxy == ui_proxy);
+    model->node().getProxy(NET_IPV4, proxy);
+    strProxy = proxy.proxy.ToStringIP() + ":" + proxy.proxy.ToStringPort();
+    strDefaultProxyGUI = ui->proxyIp->text() + ":" + ui->proxyPort->text();
+    (strProxy == strDefaultProxyGUI.toStdString()) ? ui->proxyReachIPv4->setChecked(true) : ui->proxyReachIPv4->setChecked(false);
 
-    has_proxy = model->node().getProxy(NET_IPV6, proxy);
-    ui->proxyReachIPv6->setChecked(has_proxy && proxy.proxy == ui_proxy);
+    model->node().getProxy(NET_IPV6, proxy);
+    strProxy = proxy.proxy.ToStringIP() + ":" + proxy.proxy.ToStringPort();
+    strDefaultProxyGUI = ui->proxyIp->text() + ":" + ui->proxyPort->text();
+    (strProxy == strDefaultProxyGUI.toStdString()) ? ui->proxyReachIPv6->setChecked(true) : ui->proxyReachIPv6->setChecked(false);
 
-    has_proxy = model->node().getProxy(NET_ONION, proxy);
-    ui->proxyReachTor->setChecked(has_proxy && proxy.proxy == ui_proxy);
+    model->node().getProxy(NET_ONION, proxy);
+    strProxy = proxy.proxy.ToStringIP() + ":" + proxy.proxy.ToStringPort();
+    strDefaultProxyGUI = ui->proxyIp->text() + ":" + ui->proxyPort->text();
+    (strProxy == strDefaultProxyGUI.toStdString()) ? ui->proxyReachTor->setChecked(true) : ui->proxyReachTor->setChecked(false);
 }
 
 ProxyAddressValidator::ProxyAddressValidator(QObject *parent) :
@@ -548,6 +551,7 @@ QValidator::State ProxyAddressValidator::validate(QString &input, int &pos) cons
 
     return QValidator::Invalid;
 }
+
 void OptionsDialog::updateLogEvents(bool)
 {
     bool checked = ui->superStaking->isChecked();

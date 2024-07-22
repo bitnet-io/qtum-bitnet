@@ -1,4 +1,4 @@
-// Copyright (c) 2016-2022 The Bitcoin Core developers
+// Copyright (c) 2016-2021 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -18,6 +18,7 @@
 // modified to measure performance of other types of scripts.
 static void VerifyScriptBench(benchmark::Bench& bench)
 {
+    const ECCVerifyHandle verify_handle;
     ECC_Start();
 
     const uint32_t flags{SCRIPT_VERIFY_WITNESS | SCRIPT_VERIFY_P2SH};
@@ -95,5 +96,5 @@ static void VerifyNestedIfScript(benchmark::Bench& bench)
     });
 }
 
-BENCHMARK(VerifyScriptBench, benchmark::PriorityLevel::HIGH);
-BENCHMARK(VerifyNestedIfScript, benchmark::PriorityLevel::HIGH);
+BENCHMARK(VerifyScriptBench);
+BENCHMARK(VerifyNestedIfScript);

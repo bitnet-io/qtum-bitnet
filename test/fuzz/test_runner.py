@@ -143,7 +143,7 @@ def main():
             timeout=20,
             check=True,
             stderr=subprocess.PIPE,
-            text=True,
+            universal_newlines=True,
         ).stderr
         if "libFuzzer" not in help_output:
             logging.error("Must be built with libFuzzer")
@@ -200,7 +200,7 @@ def generate_corpus(*, fuzz_pool, src_dir, build_dir, corpus_dir, targets):
                 env=get_fuzz_env(target=t, source_dir=src_dir),
                 check=True,
                 stderr=subprocess.PIPE,
-                text=True,
+                universal_newlines=True,
             ).stderr))
 
     futures = []
@@ -241,7 +241,7 @@ def merge_inputs(*, fuzz_pool, corpus, test_list, src_dir, build_dir, merge_dir)
                 env=get_fuzz_env(target=t, source_dir=src_dir),
                 check=True,
                 stderr=subprocess.PIPE,
-                text=True,
+                universal_newlines=True,
             ).stderr
             logging.debug(output)
 
@@ -270,7 +270,7 @@ def run_once(*, fuzz_pool, corpus, test_list, src_dir, build_dir, use_valgrind):
                 args,
                 env=get_fuzz_env(target=t, source_dir=src_dir),
                 stderr=subprocess.PIPE,
-                text=True,
+                universal_newlines=True,
             )
             output += result.stderr
             return output, result
@@ -299,7 +299,7 @@ def parse_test_list(*, fuzz_bin):
         },
         stdout=subprocess.PIPE,
         stderr=subprocess.DEVNULL,
-        text=True,
+        universal_newlines=True,
     ).stdout.splitlines()
     return test_list_all
 

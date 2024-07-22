@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2022 The Bitcoin Core developers
+// Copyright (c) 2011-2021 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -68,7 +68,10 @@ int getIndexForConfTarget(int target) {
 SendCoinsDialog::SendCoinsDialog(const PlatformStyle *_platformStyle, QWidget *parent) :
     QDialog(parent, GUIUtil::dialog_flags),
     ui(new Ui::SendCoinsDialog),
+    clientModel(nullptr),
+    model(nullptr),
     m_coin_control(new CCoinControl),
+    fNewRecipientAllowed(true),
     platformStyle(_platformStyle),
     targetSpacing(0)
 {
@@ -210,7 +213,7 @@ void SendCoinsDialog::setModel(WalletModel *_model)
         if (model->wallet().hasExternalSigner()) {
             //: "device" usually means a hardware wallet.
             ui->sendButton->setText(tr("Sign on device"));
-            if (model->getOptionsModel()->hasSigner()) {
+            if (gArgs.GetArg("-signer", "") != "") {
                 ui->sendButton->setEnabled(true);
                 ui->sendButton->setToolTip(tr("Connect your hardware wallet first."));
             } else {
@@ -291,9 +294,7 @@ bool SendCoinsDialog::PrepareSendText(QString& question_string, QString& informa
 
     updateCoinControlState();
 
-    CCoinControl coin_control = *m_coin_control;
-    coin_control.m_allow_other_inputs = !coin_control.HasSelected(); // future, could introduce a checkbox to customize this value.
-    prepareStatus = model->prepareTransaction(*m_current_transaction, coin_control);
+    prepareStatus = model->prepareTransaction(*m_current_transaction, *m_coin_control);
 
     // process prepareStatus and on error generate message shown to user
     processSendCoinsReturn(prepareStatus,
@@ -361,8 +362,7 @@ bool SendCoinsDialog::PrepareSendText(QString& question_string, QString& informa
         question_string.append("</b>");
 
         // append transaction size
-        //: When reviewing a newly created PSBT (via Send flow), the transaction fee is shown, with "virtual size" of the transaction displayed for context
-        question_string.append(" (" + tr("%1 kvB", "PSBT transaction creation").arg((double)m_current_transaction->getTransactionSize() / 1000, 0, 'g', 3) + "): ");
+        question_string.append(" (" + QString::number((double)m_current_transaction->getTransactionSize() / 1000) + " kB): ");
 
         // append transaction fee value
         question_string.append("<span style='color:#aa0000; font-weight:bold;'>");
@@ -409,10 +409,9 @@ void SendCoinsDialog::presentPSBT(PartiallySignedTransaction& psbtx)
     CDataStream ssTx(SER_NETWORK, PROTOCOL_VERSION);
     ssTx << psbtx;
     GUIUtil::setClipboard(EncodeBase64(ssTx.str()).c_str());
-    QMessageBox msgBox(this);
-    //: Caption of "PSBT has been copied" messagebox
-    msgBox.setText(tr("Unsigned Transaction", "PSBT copied"));
-    msgBox.setInformativeText(tr("The PSBT has been copied to the clipboard. You can also save it."));
+    QMessageBox msgBox;
+    msgBox.setText("Unsigned Transaction");
+    msgBox.setInformativeText("The PSBT has been copied to the clipboard. You can also save it.");
     msgBox.setStandardButtons(QMessageBox::Save | QMessageBox::Cancel);
     msgBox.setDefaultButton(QMessageBox::Cancel);
     switch (msgBox.exec()) {
@@ -440,8 +439,7 @@ void SendCoinsDialog::presentPSBT(PartiallySignedTransaction& psbtx)
         std::ofstream out{filename.toLocal8Bit().data(), std::ofstream::out | std::ofstream::binary};
         out << ssTx.str();
         out.close();
-        //: Popup message when a PSBT has been saved to a file
-        Q_EMIT message(tr("PSBT saved"), tr("PSBT saved to disk"), CClientUIInterface::MSG_INFORMATION);
+        Q_EMIT message(tr("PSBT saved"), "PSBT saved to disk", CClientUIInterface::MSG_INFORMATION);
         break;
     }
     case QMessageBox::Cancel:
@@ -461,14 +459,12 @@ bool SendCoinsDialog::signWithExternalSigner(PartiallySignedTransaction& psbtx, 
     }
     if (err == TransactionError::EXTERNAL_SIGNER_NOT_FOUND) {
         //: "External signer" means using devices such as hardware wallets.
-        const QString msg = tr("External signer not found");
-        QMessageBox::critical(nullptr, msg, msg);
+        QMessageBox::critical(nullptr, tr("External signer not found"), "External signer not found");
         return false;
     }
     if (err == TransactionError::EXTERNAL_SIGNER_FAILED) {
         //: "External signer" means using devices such as hardware wallets.
-        const QString msg = tr("External signer failure");
-        QMessageBox::critical(nullptr, msg, msg);
+        QMessageBox::critical(nullptr, tr("External signer failure"), "External signer failure");
         return false;
     }
     if (err != TransactionError::OK) {
@@ -650,15 +646,10 @@ SendCoinsEntry *SendCoinsDialog::addEntry()
     entry->clear();
     entry->setFocus();
     ui->scrollAreaWidgetContents->resize(ui->scrollAreaWidgetContents->sizeHint());
-
-    // Scroll to the newly added entry on a QueuedConnection because Qt doesn't
-    // adjust the scroll area and scrollbar immediately when the widget is added.
-    // Invoking on a DirectConnection will only scroll to the second-to-last entry.
-    QMetaObject::invokeMethod(ui->scrollArea, [this] {
-        if (ui->scrollArea->verticalScrollBar()) {
-            ui->scrollArea->verticalScrollBar()->setValue(ui->scrollArea->verticalScrollBar()->maximum());
-        }
-    }, Qt::QueuedConnection);
+    qApp->processEvents();
+    QScrollBar* bar = ui->scrollArea->verticalScrollBar();
+    if(bar)
+        bar->setSliderPosition(bar->maximum());
 
     updateTabsAndLabels();
     return entry;
@@ -758,7 +749,7 @@ void SendCoinsDialog::setBalance(const interfaces::WalletBalances& balances)
         CAmount balance = balances.balance;
         if (model->wallet().hasExternalSigner()) {
             ui->labelBalanceName->setText(tr("External balance:"));
-        } else if (model->wallet().isLegacy() && model->wallet().privateKeysDisabled()) {
+        } else if (model->wallet().privateKeysDisabled()) {
             balance = balances.watch_only_balance;
             if(bCreateUnsigned)
                 ui->labelBalanceName->setText(tr("Watch-only balance:"));
@@ -820,13 +811,8 @@ void SendCoinsDialog::useAvailableBalance(SendCoinsEntry* entry)
     // Include watch-only for wallets without private key
     m_coin_control->fAllowWatchOnly = model->wallet().privateKeysDisabled() && !model->wallet().hasExternalSigner();
 
-    // Same behavior as send: if we have selected coins, only obtain their available balance.
-    // Copy to avoid modifying the member's data.
-    CCoinControl coin_control = *m_coin_control;
-    coin_control.m_allow_other_inputs = !coin_control.HasSelected();
-
     // Calculate available amount to send.
-    CAmount amount = model->getAvailableBalance(&coin_control);
+    CAmount amount = model->getAvailableBalance(m_coin_control.get());
     for (int i = 0; i < ui->entries->count(); ++i) {
         SendCoinsEntry* e = qobject_cast<SendCoinsEntry*>(ui->entries->itemAt(i)->widget());
         if (e && !e->isHidden() && e != entry) {
@@ -886,7 +872,7 @@ void SendCoinsDialog::updateSmartFeeLabel()
     FeeReason reason;
     CFeeRate feeRate = CFeeRate(model->wallet().getMinimumFee(1000, *m_coin_control, &returned_target, &reason));
 
-    ui->labelSmartFee->setText(tr("%1/kvB").arg(BitcoinUnits::formatWithUnit(model->getOptionsModel()->getDisplayUnit(), feeRate.GetFeePerK())));
+    ui->labelSmartFee->setText(BitcoinUnits::formatWithUnit(model->getOptionsModel()->getDisplayUnit(), feeRate.GetFeePerK()) + "/kvB");
 
     if (reason == FeeReason::FALLBACK) {
         ui->labelSmartFee2->show(); // (Smart fee not initialized yet. This usually takes a few blocks...)
@@ -1098,7 +1084,6 @@ QString SendCoinsDialog::targetSelectorItemText(const int n)
 {
     return tr("%1 (%2 blocks)").arg(GUIUtil::formatNiceTimeOffset(n*targetSpacing)).arg(n);
 }
-
 SendConfirmationDialog::SendConfirmationDialog(const QString& title, const QString& text, const QString& informative_text, const QString& detailed_text, int _secDelay, bool enable_send, bool always_show_unsigned, QWidget* parent)
     : QMessageBox(parent), secDelay(_secDelay), m_enable_send(enable_send)
 {

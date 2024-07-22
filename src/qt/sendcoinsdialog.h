@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2022 The Bitcoin Core developers
+// Copyright (c) 2011-2021 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -49,9 +49,6 @@ public:
     void pasteEntry(const SendCoinsRecipient &rv);
     bool handlePaymentRequest(const SendCoinsRecipient &recipient);
 
-    // Only used for testing-purposes
-    wallet::CCoinControl* getCoinControl() { return m_coin_control.get(); }
-
 public Q_SLOTS:
     void clear();
     void reject() override;
@@ -65,11 +62,11 @@ Q_SIGNALS:
 
 private:
     Ui::SendCoinsDialog *ui;
-    ClientModel* clientModel{nullptr};
-    WalletModel* model{nullptr};
+    ClientModel *clientModel;
+    WalletModel *model;
     std::unique_ptr<wallet::CCoinControl> m_coin_control;
     std::unique_ptr<WalletModelTransaction> m_current_transaction;
-    bool fNewRecipientAllowed{true};
+    bool fNewRecipientAllowed;
     const PlatformStyle *platformStyle;
     int64_t targetSpacing;
     bool bCreateUnsigned = false;

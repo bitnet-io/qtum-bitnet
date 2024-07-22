@@ -32,7 +32,7 @@ public:
 
 private:
     QString filename;
-    const QAbstractItemModel* model{nullptr};
+    const QAbstractItemModel *model;
 
     struct Column
     {

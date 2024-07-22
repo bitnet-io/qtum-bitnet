@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2022 The Bitcoin Core developers
+// Copyright (c) 2011-2021 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -35,6 +35,8 @@ ClientModel::ClientModel(interfaces::Node& node, OptionsModel *_optionsModel, QO
     QObject(parent),
     m_node(node),
     optionsModel(_optionsModel),
+    peerTableModel(nullptr),
+    banTableModel(nullptr),
     m_thread(new QThread(this))
 {
     cachedBestHeaderHeight = -1;
@@ -60,6 +62,7 @@ ClientModel::ClientModel(interfaces::Node& node, OptionsModel *_optionsModel, QO
     // move timer to thread so that polling doesn't disturb main event loop
     timer->moveToThread(m_thread);
     m_thread->start();
+    fBatchProcessingMode = true;
     QTimer::singleShot(0, timer, []() {
         util::ThreadRename("qt-clientmodl");
     });
@@ -148,10 +151,15 @@ uint256 ClientModel::getBestBlockHash()
     return m_cached_tip_blocks;
 }
 
-BlockSource ClientModel::getBlockSource() const
+enum BlockSource ClientModel::getBlockSource() const
 {
-    if (m_node.isLoadingBlocks()) return BlockSource::DISK;
-    if (getNumConnections() > 0) return BlockSource::NETWORK;
+    if (m_node.getReindex())
+        return BlockSource::REINDEX;
+    else if (m_node.getImporting())
+        return BlockSource::DISK;
+    else if (getNumConnections() > 0)
+        return BlockSource::NETWORK;
+
     return BlockSource::NONE;
 }
 
@@ -226,6 +234,7 @@ void ClientModel::TipChanged(SynchronizationState sync_state, interfaces::BlockT
             }
         }
     }
+
     if (synctype == SyncType::HEADER_SYNC) {
         // cache best headers time and height to reduce future cs_main locks
         cachedBestHeaderHeight = tip.block_height;
@@ -301,7 +310,7 @@ bool ClientModel::getProxyInfo(std::string& ip_port) const
 {
     Proxy ipv4, ipv6;
     if (m_node.getProxy((Network) 1, ipv4) && m_node.getProxy((Network) 2, ipv6)) {
-      ip_port = ipv4.proxy.ToStringAddrPort();
+      ip_port = ipv4.proxy.ToStringIPPort();
       return true;
     }
     return false;

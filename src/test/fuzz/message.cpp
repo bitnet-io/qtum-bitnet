@@ -18,6 +18,7 @@
 
 void initialize_message()
 {
+    static const ECCVerifyHandle ecc_verify_handle;
     ECC_Start();
     SelectParams(CBaseChainParams::UNITTEST);
 }

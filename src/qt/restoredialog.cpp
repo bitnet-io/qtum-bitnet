@@ -6,7 +6,7 @@
 #include <QFile>
 #include <qt/styleSheet.h>
 #include <wallet/walletutil.h>
-#include <util/fs.h>
+#include <fs.h>
 
 RestoreDialog::RestoreDialog(QWidget *parent) :
     QDialog(parent),

@@ -6,9 +6,6 @@
 #ifndef BITCOIN_RPC_CLIENT_H
 #define BITCOIN_RPC_CLIENT_H
 
-#include <string>
-#include <string_view>
-
 #include <univalue.h>
 
 /** Convert positional arguments to command-specific RPC representation */
@@ -20,6 +17,6 @@ UniValue RPCConvertNamedValues(const std::string& strMethod, const std::vector<s
 /** Non-RFC4627 JSON parser, accepts internal values (such as numbers, true, false, null)
  * as well as objects and arrays.
  */
-UniValue ParseNonRFCJSONValue(std::string_view raw);
+UniValue ParseNonRFCJSONValue(const std::string& strVal);
 
 #endif // BITCOIN_RPC_CLIENT_H

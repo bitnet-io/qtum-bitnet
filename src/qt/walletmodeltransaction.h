@@ -41,7 +41,7 @@ public:
 private:
     QList<SendCoinsRecipient> recipients;
     CTransactionRef wtx;
-    CAmount fee{0};
+    CAmount fee;
 };
 
 #endif // BITCOIN_QT_WALLETMODELTRANSACTION_H

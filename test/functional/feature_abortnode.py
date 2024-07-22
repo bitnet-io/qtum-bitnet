@@ -19,6 +19,7 @@ class AbortNodeTest(BitcoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 2
+        self.rpc_timeout = 240
 
     def setup_network(self):
         self.setup_nodes()
@@ -40,7 +41,7 @@ class AbortNodeTest(BitcoinTestFramework):
 
             # Check that node0 aborted
             self.log.info("Waiting for crash")
-            self.nodes[0].wait_until_stopped(timeout=5)
+            self.nodes[0].wait_until_stopped(timeout=200)
         self.log.info("Node crashed - now verifying restart fails")
         self.nodes[0].assert_start_raises_init_error()
 

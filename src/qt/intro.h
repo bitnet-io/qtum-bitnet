@@ -64,9 +64,9 @@ private Q_SLOTS:
 
 private:
     Ui::Intro *ui;
-    QThread* thread{nullptr};
+    QThread *thread;
     QMutex mutex;
-    bool signalled{false};
+    bool signalled;
     QString pathToCheck;
     const int64_t m_blockchain_size_gb;
     const int64_t m_chain_state_size_gb;

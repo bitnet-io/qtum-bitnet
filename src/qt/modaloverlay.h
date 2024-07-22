@@ -1,4 +1,4 @@
-// Copyright (c) 2016-2022 The Bitcoin Core developers
+// Copyright (c) 2016-2020 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -22,13 +22,11 @@ class ModalOverlay : public QWidget
     Q_OBJECT
 
 public:
-
     enum OverlayType
     {
         Sync = 0,
         Backup = 1
     };
-
     explicit ModalOverlay(bool enable_wallet, QWidget *parent, OverlayType _type = OverlayType::Sync);
     ~ModalOverlay();
 
@@ -54,11 +52,11 @@ protected:
 
 private:
     Ui::ModalOverlay *ui;
-    int bestHeaderHeight{0}; // best known height (based on the headers)
+    int bestHeaderHeight; //best known height (based on the headers)
     QDateTime bestHeaderDate;
     QVector<QPair<qint64, double> > blockProcessTime;
-    bool layerIsVisible{false};
-    bool userClosed{false};
+    bool layerIsVisible;
+    bool userClosed;
     QPropertyAnimation m_animation;
     void UpdateHeaderSyncLabel();
     void UpdateHeaderPresyncLabel(int height, const QDateTime& blockDate);

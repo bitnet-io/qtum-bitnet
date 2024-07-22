@@ -1,4 +1,4 @@
-// Copyright (c) 2016-2022 The Bitcoin Core developers
+// Copyright (c) 2016-2021 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -45,7 +45,7 @@ static void BlockToJsonVerbose(benchmark::Bench& bench)
     });
 }
 
-BENCHMARK(BlockToJsonVerbose, benchmark::PriorityLevel::HIGH);
+BENCHMARK(BlockToJsonVerbose);
 
 static void BlockToJsonVerboseWrite(benchmark::Bench& bench)
 {
@@ -57,4 +57,4 @@ static void BlockToJsonVerboseWrite(benchmark::Bench& bench)
     });
 }
 
-BENCHMARK(BlockToJsonVerboseWrite, benchmark::PriorityLevel::HIGH);
+BENCHMARK(BlockToJsonVerboseWrite);

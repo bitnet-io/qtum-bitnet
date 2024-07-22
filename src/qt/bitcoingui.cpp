@@ -300,6 +300,7 @@ BitcoinGUI::~BitcoinGUI()
         trayIcon->hide();
 #ifdef Q_OS_MACOS
     delete m_app_nap_inhibitor;
+    delete appMenuBar;
     MacDockIconHandler::cleanup();
 #endif
 
@@ -527,7 +528,7 @@ void BitcoinGUI::createActions()
 
                 connect(action, &QAction::triggered, [this, path] {
                     auto activity = new OpenWalletActivity(m_wallet_controller, this);
-                    connect(activity, &OpenWalletActivity::opened, this, &BitcoinGUI::setCurrentWallet, Qt::QueuedConnection);
+                    connect(activity, &OpenWalletActivity::opened, this, &BitcoinGUI::setCurrentWallet);
                     activity->open(path);
                 });
             }
@@ -573,7 +574,6 @@ void BitcoinGUI::createActions()
             m_wallet_controller->closeAllWallets(this);
         });
         connect(m_mask_values_action, &QAction::toggled, this, &BitcoinGUI::setPrivacy);
-        connect(m_mask_values_action, &QAction::toggled, this, &BitcoinGUI::enableHistoryAction);
     }
 #endif // ENABLE_WALLET
 
@@ -583,7 +583,13 @@ void BitcoinGUI::createActions()
 
 void BitcoinGUI::createMenuBar()
 {
+#ifdef Q_OS_MACOS
+    // Create a decoupled menu bar on Mac which stays even if the window is closed
+    appMenuBar = new QMenuBar();
+#else
+    // Get the main window's menu bar on other platforms
     appMenuBar = menuBar();
+#endif
 
     // Configure the menus
     QMenu *file = appMenuBar->addMenu(tr("&File"));
@@ -793,7 +799,6 @@ void BitcoinGUI::setClientModel(ClientModel *_clientModel, interfaces::BlockAndH
             // initialize the disable state of the tray icon with the current value in the model.
             trayIcon->setVisible(optionsModel->getShowTrayIcon());
         }
-        m_mask_values_action->setChecked(_clientModel->getOptionsModel()->getOption(OptionsModel::OptionID::MaskValues).toBool());
 
 #ifdef ENABLE_WALLET
         if (optionsModel && appTitleBar) {
@@ -822,13 +827,6 @@ void BitcoinGUI::setClientModel(ClientModel *_clientModel, interfaces::BlockAndH
 }
 
 #ifdef ENABLE_WALLET
-
-void BitcoinGUI::enableHistoryAction(bool privacy)
-{
-    historyAction->setEnabled(!privacy);
-    if (historyAction->isChecked()) gotoOverviewPage();
-}
-
 void BitcoinGUI::setWalletController(WalletController* wallet_controller)
 {
     assert(!m_wallet_controller);
@@ -843,11 +841,6 @@ void BitcoinGUI::setWalletController(WalletController* wallet_controller)
 
     GUIUtil::ExceptionSafeConnect(wallet_controller, &WalletController::walletAdded, this, &BitcoinGUI::addWallet);
     connect(wallet_controller, &WalletController::walletRemoved, this, &BitcoinGUI::removeWallet);
-    
-    connect(wallet_controller, &WalletController::destroyed, this, [this] {
-        // wallet_controller gets destroyed manually, but it leaves our member copy dangling
-        m_wallet_controller = nullptr;
-    });
 
     auto activity = new LoadWalletsActivity(m_wallet_controller, this);
     activity->load();
@@ -860,7 +853,7 @@ WalletController* BitcoinGUI::getWalletController()
 
 void BitcoinGUI::addWallet(WalletModel* walletModel)
 {
-    if (!walletFrame || !m_wallet_controller) return;
+    if (!walletFrame) return;
 
     WalletView* wallet_view = new WalletView(walletModel, platformStyle, walletFrame);
     if (!walletFrame->addView(wallet_view)) return;
@@ -887,9 +880,7 @@ void BitcoinGUI::addWallet(WalletModel* walletModel)
     connect(wallet_view, &WalletView::incomingTokenTransaction, this, &BitcoinGUI::incomingTokenTransaction);
     connect(wallet_view, &WalletView::currentChanged, walletFrame, &WalletFrame::pageChanged);
     connect(this, &BitcoinGUI::setPrivacy, wallet_view, &WalletView::setPrivacy);
-    const bool privacy = isPrivacyModeActivated();
-    wallet_view->setPrivacy(privacy);
-    enableHistoryAction(privacy);
+    wallet_view->setPrivacy(isPrivacyModeActivated());
     const QString display_name = walletModel->getDisplayName();
     m_wallet_selector->addItem(display_name, QVariant::fromValue(walletModel));
 
@@ -925,7 +916,7 @@ void BitcoinGUI::removeWallet(WalletModel* walletModel)
 
 void BitcoinGUI::setCurrentWallet(WalletModel* wallet_model)
 {
-    if (!walletFrame || !m_wallet_controller) return;
+    if (!walletFrame) return;
     walletFrame->setCurrentWallet(wallet_model);
     appTitleBar->setModel(wallet_model);
     walletFrame->updateTabBar();
@@ -1043,7 +1034,6 @@ void BitcoinGUI::createTrayIconMenu()
     // Note: On macOS, the Dock icon is used to provide the tray's functionality.
     MacDockIconHandler* dockIconHandler = MacDockIconHandler::instance();
     connect(dockIconHandler, &MacDockIconHandler::dockIconClicked, [this] {
-        if (m_node.shutdownRequested()) return; // nothing to show, node is shutting down.
         show();
         activateWindow();
     });
@@ -1055,8 +1045,6 @@ void BitcoinGUI::createTrayIconMenu()
         // See https://bugreports.qt.io/browse/QTBUG-91697
         trayIconMenu.get(), &QMenu::aboutToShow,
         [this, show_hide_action, send_action, receive_action, sign_action, verify_action, options_action, node_window_action, quit_action] {
-            if (m_node.shutdownRequested()) return; // nothing to do, node is shutting down.
-
             if (show_hide_action) show_hide_action->setText(
                 (!isHidden() && !isMinimized() && !GUIUtil::isObscured(this)) ?
                     tr("&Hide") :
@@ -1317,7 +1305,7 @@ void BitcoinGUI::setNumBlocks(int count, const QDateTime& blockDate, double nVer
     statusBar()->clearMessage();
 
     // Acquire current block source
-    BlockSource blockSource{clientModel->getBlockSource()};
+    enum BlockSource blockSource = clientModel->getBlockSource();
     switch (blockSource) {
         case BlockSource::NETWORK:
             if (synctype == SyncType::HEADER_PRESYNC) {
@@ -1336,6 +1324,9 @@ void BitcoinGUI::setNumBlocks(int count, const QDateTime& blockDate, double nVer
             } else {
                 progressBarLabel->setText(tr("Processing blocks on disk…"));
             }
+            break;
+        case BlockSource::REINDEX:
+            progressBarLabel->setText(tr("Reindexing blocks on disk…"));
             break;
         case BlockSource::NONE:
             if (synctype != SyncType::BLOCK_SYNC) {
@@ -1950,9 +1941,12 @@ bool BitcoinGUI::isPrivacyModeActivated() const
     return m_mask_values_action->isChecked();
 }
 
-UnitDisplayStatusBarControl::UnitDisplayStatusBarControl(const PlatformStyle* platformStyle)
-    : m_platform_style{platformStyle}
+UnitDisplayStatusBarControl::UnitDisplayStatusBarControl(const PlatformStyle *platformStyle)
+    : optionsModel(nullptr),
+      menu(nullptr),
+      m_platform_style{platformStyle}
 {
+
     // Get params
     menuMargin = GetIntStyleValue("unitdisplaystatusbarcontrol/menu-margin", 5);
     iconHeight = GetIntStyleValue("unitdisplaystatusbarcontrol/icon-height", 0);

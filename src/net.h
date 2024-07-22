@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2022 The Bitcoin Core developers
+// Copyright (c) 2009-2021 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -24,10 +24,10 @@
 #include <span.h>
 #include <streams.h>
 #include <sync.h>
+#include <threadinterrupt.h>
 #include <uint256.h>
 #include <util/check.h>
 #include <util/sock.h>
-#include <util/threadinterrupt.h>
 
 #include <atomic>
 #include <condition_variable>
@@ -40,7 +40,6 @@
 #include <optional>
 #include <queue>
 #include <thread>
-#include <unordered_set>
 #include <vector>
 
 class AddrMan;
@@ -200,9 +199,7 @@ public:
     int nVersion;
     std::string cleanSubVer;
     bool fInbound;
-    // We requested high bandwidth connection to peer
     bool m_bip152_highbandwidth_to;
-    // Peer requested high bandwidth connection
     bool m_bip152_highbandwidth_from;
     int m_starting_height;
     uint64_t nSendBytes;
@@ -238,14 +235,6 @@ public:
     std::string m_type;
 
     CNetMessage(CDataStream&& recv_in) : m_recv(std::move(recv_in)) {}
-    // Only one CNetMessage object will exist for the same message on either
-    // the receive or processing queue. For performance reasons we therefore
-    // delete the copy constructor and assignment operator to avoid the
-    // possibility of copying CNetMessage objects.
-    CNetMessage(CNetMessage&&) = default;
-    CNetMessage(const CNetMessage&) = delete;
-    CNetMessage& operator=(CNetMessage&&) = default;
-    CNetMessage& operator=(const CNetMessage&) = delete;
 
     void SetVersion(int nVersionIn)
     {
@@ -352,12 +341,14 @@ struct CNodeOptions
     NetPermissionFlags permission_flags = NetPermissionFlags::None;
     std::unique_ptr<i2p::sam::Session> i2p_sam_session = nullptr;
     bool prefer_evict = false;
-    size_t recv_flood_size{DEFAULT_MAXRECEIVEBUFFER * 1000};
 };
 
 /** Information about a peer */
 class CNode
 {
+    friend class CConnman;
+    friend struct ConnmanTestMsg;
+
 public:
     const std::unique_ptr<TransportDeserializer> m_deserializer; // Used only by SocketHandler thread
     const std::unique_ptr<const TransportSerializer> m_serializer;
@@ -383,6 +374,12 @@ public:
     Mutex cs_vSend;
     Mutex m_sock_mutex;
     Mutex cs_vRecv;
+
+    RecursiveMutex cs_vProcessMsg;
+    std::list<CNetMessage> vProcessMsg GUARDED_BY(cs_vProcessMsg);
+    size_t nProcessQueueSize GUARDED_BY(cs_vProcessMsg){0};
+
+    RecursiveMutex cs_sendProcessing;
 
     uint64_t nRecvBytes GUARDED_BY(cs_vRecv){0};
 
@@ -420,27 +417,6 @@ public:
     const uint64_t nKeyedNetGroup;
     std::atomic_bool fPauseRecv{false};
     std::atomic_bool fPauseSend{false};
-
-    const ConnectionType m_conn_type;
-
-    /** Move all messages from the received queue to the processing queue. */
-    void MarkReceivedMsgsForProcessing()
-        EXCLUSIVE_LOCKS_REQUIRED(!m_msg_process_queue_mutex);
-
-    /** Poll the next message from the processing queue of this connection.
-     *
-     * Returns std::nullopt if the processing queue is empty, or a pair
-     * consisting of the message and a bool that indicates if the processing
-     * queue has more entries. */
-    std::optional<std::pair<CNetMessage, bool>> PollMessage()
-        EXCLUSIVE_LOCKS_REQUIRED(!m_msg_process_queue_mutex);
-
-    /** Account for the total size of a sent message in the per msg type connection stats. */
-    void AccountForSentBytes(const std::string& msg_type, size_t sent_bytes)
-        EXCLUSIVE_LOCKS_REQUIRED(cs_vSend)
-    {
-        mapSendBytesPerMsgType[msg_type] += sent_bytes;
-    }
 
     bool IsOutboundOrBlockRelayConn() const {
         switch (m_conn_type) {
@@ -516,8 +492,10 @@ public:
     /** Whether this peer provides all services that we want. Used for eviction decisions */
     std::atomic_bool m_has_all_wanted_services{false};
 
-    /** Whether we should relay transactions to this peer. This only changes
-     * from false to true. It will never change back to false. */
+    /** Whether we should relay transactions to this peer (their version
+     *  message did not include fRelay=false and this is not a block-relay-only
+     *  connection). This only changes from false to true. It will never change
+     *  back to false. Used only in inbound eviction logic. */
     std::atomic_bool m_relays_txs{false};
 
     /** Whether this peer has loaded a bloom filter. Used only in inbound
@@ -622,14 +600,10 @@ public:
 private:
     const NodeId id;
     const uint64_t nLocalHostNonce;
+    const ConnectionType m_conn_type;
     std::atomic<int> m_greatest_common_version{INIT_PROTO_VERSION};
 
-    const size_t m_recv_flood_size;
     std::list<CNetMessage> vRecvMsg; // Used only by SocketHandler thread
-
-    Mutex m_msg_process_queue_mutex;
-    std::list<CNetMessage> m_msg_process_queue GUARDED_BY(m_msg_process_queue_mutex);
-    size_t m_msg_process_queue_size GUARDED_BY(m_msg_process_queue_mutex){0};
 
     // Our address, as reported by the peer
     CService addrLocal GUARDED_BY(m_addr_local_mutex);
@@ -657,9 +631,6 @@ private:
 class NetEventsInterface
 {
 public:
-    /** Mutex for anything that is only accessed via the msg processing thread */
-    static Mutex g_msgproc_mutex;
-
     /** Initialize a peer (setup state, queue any initial messages) */
     virtual void InitializeNode(CNode& node, ServiceFlags our_services) = 0;
 
@@ -673,7 +644,7 @@ public:
     * @param[in]   interrupt       Interrupt condition for processing threads
     * @return                      True if there is more work to be done
     */
-    virtual bool ProcessMessages(CNode* pnode, std::atomic<bool>& interrupt) EXCLUSIVE_LOCKS_REQUIRED(g_msgproc_mutex) = 0;
+    virtual bool ProcessMessages(CNode* pnode, std::atomic<bool>& interrupt) = 0;
 
     /**
     * Send queued protocol messages to a given node.
@@ -681,7 +652,7 @@ public:
     * @param[in]   pnode           The node which we are sending messages to.
     * @return                      True if there is more work to be done
     */
-    virtual bool SendMessages(CNode* pnode) EXCLUSIVE_LOCKS_REQUIRED(g_msgproc_mutex) = 0;
+    virtual bool SendMessages(CNode* pnode) EXCLUSIVE_LOCKS_REQUIRED(pnode->cs_sendProcessing) = 0;
 
 
 protected:
@@ -887,6 +858,8 @@ public:
     /** Get a unique deterministic randomizer. */
     CSipHasher GetDeterministicRandomizer(uint64_t id) const;
 
+    unsigned int GetReceiveFloodSize() const;
+
     void WakeMessageHandler() EXCLUSIVE_LOCKS_REQUIRED(!mutexMsgProc);
 
     /** Return true if we should disconnect the peer for failing an inactivity check. */
@@ -997,12 +970,6 @@ private:
     // Network stats
     void RecordBytesRecv(uint64_t bytes);
     void RecordBytesSent(uint64_t bytes) EXCLUSIVE_LOCKS_REQUIRED(!m_total_bytes_sent_mutex);
-
-    /**
-     Return reachable networks for which we have no addresses in addrman and therefore
-     may require loading fixed seeds.
-     */
-    std::unordered_set<Network> GetReachableEmptyNetworks() const;
 
     /**
      * Return vector of current BLOCK_RELAY peers.

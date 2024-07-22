@@ -41,7 +41,7 @@ protected:
     virtual void contextMenuEvent(QContextMenuEvent *event) override;
 
 private:
-    QMenu* contextMenu{nullptr};
+    QMenu *contextMenu;
 };
 
 #endif // BITCOIN_QT_QRIMAGEWIDGET_H

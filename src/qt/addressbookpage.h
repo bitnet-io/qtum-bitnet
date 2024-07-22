@@ -49,7 +49,7 @@ public Q_SLOTS:
 
 private:
     Ui::AddressBookPage *ui;
-    AddressTableModel* model{nullptr};
+    AddressTableModel *model;
     Mode mode;
     Tabs tab;
     QString returnValue;

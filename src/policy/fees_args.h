@@ -5,7 +5,7 @@
 #ifndef BITCOIN_POLICY_FEES_ARGS_H
 #define BITCOIN_POLICY_FEES_ARGS_H
 
-#include <util/fs.h>
+#include <fs.h>
 
 class ArgsManager;
 

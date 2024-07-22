@@ -5,7 +5,7 @@
 #ifndef BITCOIN_UTIL_GETUNIQUEPATH_H
 #define BITCOIN_UTIL_GETUNIQUEPATH_H
 
-#include <util/fs.h>
+#include <fs.h>
 
 /**
  * Helper function for getting a unique path

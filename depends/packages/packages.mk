@@ -1,8 +1,4 @@
-packages:= openssl gmp
-
-boost_packages = boost
-
-libevent_packages = libevent
+packages:=boost openssl libevent gmp
 
 qrencode_linux_packages = qrencode
 qrencode_android_packages = qrencode

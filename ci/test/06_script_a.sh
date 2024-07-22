@@ -1,15 +1,12 @@
 #!/usr/bin/env bash
 #
-# Copyright (c) 2018-2022 The Bitcoin Core developers
+# Copyright (c) 2018-2021 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 export LC_ALL=C.UTF-8
 
-BITCOIN_CONFIG_ALL="--enable-suppress-external-warnings --disable-dependency-tracking"
-if [ -z "$NO_DEPENDS" ]; then
-  BITCOIN_CONFIG_ALL="${BITCOIN_CONFIG_ALL} CONFIG_SITE=$DEPENDS_DIR/$HOST/share/config.site"
-fi
+BITCOIN_CONFIG_ALL="--enable-suppress-external-warnings --disable-dependency-tracking --prefix=$DEPENDS_DIR/$HOST"
 if [ -z "$NO_WERROR" ]; then
   BITCOIN_CONFIG_ALL="${BITCOIN_CONFIG_ALL} --enable-werror"
 fi
@@ -26,7 +23,7 @@ if [ -n "$ANDROID_TOOLS_URL" ]; then
   exit 0
 fi
 
-BITCOIN_CONFIG_ALL="${BITCOIN_CONFIG_ALL} --enable-external-signer --prefix=$BASE_OUTDIR"
+BITCOIN_CONFIG_ALL="${BITCOIN_CONFIG_ALL} --enable-external-signer --bindir=$BASE_OUTDIR/bin --libdir=$BASE_OUTDIR/lib"
 
 if [ -n "$CONFIG_SHELL" ]; then
   CI_EXEC "$CONFIG_SHELL" -c "./autogen.sh"

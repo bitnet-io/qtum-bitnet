@@ -23,8 +23,8 @@
 #include <qrencode.h>
 #endif
 
-QRImageWidget::QRImageWidget(QWidget* parent)
-    : QLabel(parent)
+QRImageWidget::QRImageWidget(QWidget *parent):
+    QLabel(parent), contextMenu(nullptr)
 {
     contextMenu = new QMenu(this);
     contextMenu->addAction(tr("&Save Image…"), this, &QRImageWidget::saveImage);

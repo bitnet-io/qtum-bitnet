@@ -28,7 +28,7 @@ Q_SIGNALS:
     void valueChanged();
 
 private:
-    int role{Qt::UserRole};
+    int role;
 
 private Q_SLOTS:
     void handleSelectionChanged(int idx);

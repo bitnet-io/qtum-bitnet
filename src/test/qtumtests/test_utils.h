@@ -7,7 +7,7 @@
 #include <util/convert.h>
 #include <test/util/setup_common.h>
 #include <boost/filesystem/operations.hpp>
-#include <util/fs.h>
+#include <fs.h>
 
 extern std::unique_ptr<QtumState> globalState;
 

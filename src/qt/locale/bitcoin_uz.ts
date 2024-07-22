@@ -7,23 +7,23 @@
     </message>
     <message>
         <source>Create a new address</source>
-        <translation type="unfinished">Yangi manzil yarating</translation>
+        <translation type="unfinished">Yangi manzil yaratish</translation>
     </message>
     <message>
         <source>&amp;New</source>
-        <translation type="unfinished">&amp;Yangi</translation>
+        <translation type="unfinished">Yangi</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
-        <translation type="unfinished">Tanlangan manzilni tizim vaqtinchalik hotirasida saqlash</translation>
+        <translation type="unfinished">Belgilangan manzilni tizim hotirasiga saqlash</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
-        <translation type="unfinished">&amp;Nusxalash</translation>
+        <translation type="unfinished">&amp;Ko'chirmoq</translation>
     </message>
     <message>
         <source>C&amp;lose</source>
-        <translation type="unfinished">Y&amp;opish</translation>
+        <translation type="unfinished">Yo&amp;pish</translation>
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
@@ -220,7 +220,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Wallet passphrase was successfully changed.</source>
-        <translation type="unfinished">Ҳамён пароли муваффақиятли алмаштирилди.</translation>
+        <translation type="unfinished">Hamyon uchun kiritilgan maxfiy so'z yangisiga almashtirildi.</translation>
     </message>
     <message>
         <source>Warning: The Caps Lock key is on!</source>
@@ -264,6 +264,14 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>A fatal error occurred. Check that settings file is writable, or try running with -nosettings.</source>
         <extracomment>Explanatory text shown on startup when the settings file could not be written. Prompts user to check that we have the ability to write to the file. Explains that the user has the option of running without a settings file.</extracomment>
         <translation type="unfinished">Fatal xatolik yuz berdi. Sozlamalar fayli tahrirlashga yaroqliligini tekshiring yoki -nosettings bilan davom etishga harakat qiling.</translation>
+    </message>
+    <message>
+        <source>Error: Specified data directory "%1" does not exist.</source>
+        <translation type="unfinished">Xatolik. Belgilangan "%1" mavjud emas.</translation>
+    </message>
+    <message>
+        <source>Error: Cannot parse configuration file: %1.</source>
+        <translation type="unfinished">Xatolik. %1 ni tahlil qilish imkonsiz.</translation>
     </message>
     <message>
         <source>Error: %1</source>
@@ -375,6 +383,41 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
 </context>
 <context>
+    <name>bitcoin-core</name>
+    <message>
+        <source>Settings file could not be read</source>
+        <translation type="unfinished">Sozlamalar fayli o'qishga yaroqsiz</translation>
+    </message>
+    <message>
+        <source>Settings file could not be written</source>
+        <translation type="unfinished">Sozlamalar fayli yaratish uchun yaroqsiz</translation>
+    </message>
+    <message>
+        <source>Done loading</source>
+        <translation type="unfinished">Юклаш тайёр</translation>
+    </message>
+    <message>
+        <source>Insufficient funds</source>
+        <translation type="unfinished">Кам миқдор</translation>
+    </message>
+    <message>
+        <source>Unable to start HTTP server. See debug log for details.</source>
+        <translation type="unfinished">HTTP serverni ishga tushirib bo'lmadi. Tafsilotlar uchun disk raskadrovka jurnaliga qarang.</translation>
+    </message>
+    <message>
+        <source>Verifying blocks…</source>
+        <translation type="unfinished">Bloklar tekshirilmoqda…</translation>
+    </message>
+    <message>
+        <source>Verifying wallet(s)…</source>
+        <translation type="unfinished">Hamyon(lar) tekshirilmoqda…</translation>
+    </message>
+    <message>
+        <source>Wallet needed to be rewritten: restart %s to complete</source>
+        <translation type="unfinished">Hamyonni qayta yozish kerak: bajarish uchun 1%s ni qayta ishga tushiring</translation>
+    </message>
+</context>
+<context>
     <name>BitcoinGUI</name>
     <message>
         <source>&amp;Overview</source>
@@ -483,7 +526,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Sign &amp;message…</source>
-        <translation type="unfinished">Xabarni &amp;signlash...</translation>
+        <translation type="unfinished">Kirish &amp;xabarlashish</translation>
     </message>
     <message>
         <source>Sign messages with your Qtum addresses to prove you own them</source>
@@ -491,7 +534,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>&amp;Verify message…</source>
-        <translation type="unfinished">&amp;Xabarni tasdiqlash...</translation>
+        <translation type="unfinished">&amp;Xabarni tasdiqlash</translation>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
@@ -543,11 +586,15 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Indexing blocks on disk…</source>
-        <translation type="unfinished">Diskdagi bloklarni indekslash...</translation>
+        <translation type="unfinished">Diskdagi bloklarni indekslash</translation>
     </message>
     <message>
         <source>Processing blocks on disk…</source>
-        <translation type="unfinished">Diskdagi bloklarni protsesslash...</translation>
+        <translation type="unfinished">Diskdagi bloklarni protsesslash</translation>
+    </message>
+    <message>
+        <source>Reindexing blocks on disk…</source>
+        <translation type="unfinished">Diskdagi bloklarni qayta indekslash...</translation>
     </message>
     <message>
         <source>Connecting to peers…</source>
@@ -555,19 +602,19 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation type="unfinished">Тўловлар (QR кодлари ва qtum ёрдамида яратишлар: URI’лар) сўраш</translation>
+        <translation type="unfinished">To'lovlarni so'rash(QR kolar va bitkoin yaratish: URL manzillar)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
-        <translation type="unfinished">Фойдаланилган жўнатилган манзиллар ва ёрлиқлар рўйхатини кўрсатиш</translation>
+        <translation type="unfinished">Manzillar va yorliqlar ro'yxatini ko'rsatish</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
-        <translation type="unfinished">Фойдаланилган қабул қилинган манзиллар ва ёрлиқлар рўйхатини кўрсатиш</translation>
+        <translation type="unfinished">Qabul qilish manzillari va yorliqlar ro'yxatini ko'rsatish</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
-        <translation type="unfinished">&amp;Буйруқлар сатри мосламалари</translation>
+        <translation type="unfinished">&amp;Command-line sozlamalari</translation>
     </message>
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
@@ -578,7 +625,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>%1 behind</source>
-        <translation type="unfinished">%1 орқада</translation>
+        <translation type="unfinished">%1 yonida</translation>
     </message>
     <message>
         <source>Catching up…</source>
@@ -586,27 +633,27 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Last received block was generated %1 ago.</source>
-        <translation type="unfinished">Сўнги қабул қилинган блок %1 олдин яратилган.</translation>
+        <translation type="unfinished">%1 oldin oxirgi marta blok qabul qilingan edi.</translation>
     </message>
     <message>
         <source>Transactions after this will not yet be visible.</source>
-        <translation type="unfinished">Бундан кейинги пул ўтказмалари кўринмайдиган бўлади.</translation>
+        <translation type="unfinished">Shundan keyingi operatsiyalar hali ko'rinmaydi.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Хатолик</translation>
+        <translation type="unfinished">Xatolik</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Диққат</translation>
+        <translation type="unfinished">Eslatma</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Маълумот</translation>
+        <translation type="unfinished">Informatsiya</translation>
     </message>
     <message>
         <source>Up to date</source>
-        <translation type="unfinished">Янгиланган</translation>
+        <translation type="unfinished">Hozirgi kunda</translation>
     </message>
     <message>
         <source>Load Partially Signed Qtum Transaction</source>
@@ -642,7 +689,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Open Wallet</source>
-        <translation type="unfinished">Ochiq hamyon</translation>
+        <translation type="unfinished">Hamyonni ochish</translation>
     </message>
     <message>
         <source>Open a wallet</source>
@@ -832,11 +879,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Fee:</source>
-        <translation type="unfinished">Солиқ:</translation>
-    </message>
-    <message>
-        <source>Dust:</source>
-        <translation type="unfinished">Ахлат қутиси:</translation>
+        <translation type="unfinished">Narx:</translation>
     </message>
     <message>
         <source>After Fee:</source>
@@ -872,7 +915,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Date</source>
-        <translation type="unfinished">Сана</translation>
+        <translation type="unfinished">Sana</translation>
     </message>
     <message>
         <source>Confirmations</source>
@@ -912,7 +955,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Copy quantity</source>
-        <translation type="unfinished">Нусха сони</translation>
+        <translation type="unfinished">Miqdorni nusxalash</translation>
     </message>
     <message>
         <source>Copy fee</source>
@@ -920,11 +963,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Copy after fee</source>
-        <translation type="unfinished">Нусха солиқдан сўнг</translation>
+        <translation type="unfinished">'To'lovdan keyin' ni nusxalash</translation>
     </message>
     <message>
         <source>Copy bytes</source>
-        <translation type="unfinished">Нусха байти</translation>
+        <translation type="unfinished">Baytlarni nusxalash</translation>
     </message>
     <message>
         <source>Copy dust</source>
@@ -932,7 +975,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Copy change</source>
-        <translation type="unfinished">Нусха қайтими</translation>
+        <translation type="unfinished">O'zgarishni nusxalash</translation>
     </message>
     <message>
         <source>(%1 locked)</source>
@@ -1065,7 +1108,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Wallet</source>
-        <translation type="unfinished">Ҳамён</translation>
+        <translation type="unfinished">Hamyon</translation>
     </message>
     <message>
         <source>Encrypt the wallet. The wallet will be encrypted with a passphrase of your choice.</source>
@@ -1129,39 +1172,39 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <name>EditAddressDialog</name>
     <message>
         <source>Edit Address</source>
-        <translation type="unfinished">Манзилларни таҳрирлаш</translation>
+        <translation type="unfinished">Manzilni tahrirlash</translation>
     </message>
     <message>
         <source>&amp;Label</source>
-        <translation type="unfinished">&amp;Ёрлик</translation>
+        <translation type="unfinished">&amp;Yorliq</translation>
     </message>
     <message>
         <source>The label associated with this address list entry</source>
-        <translation type="unfinished">Ёрлиқ ушбу манзилар рўйхати ёзуви билан боғланган</translation>
+        <translation type="unfinished">Bu manzillar roʻyxati yozuvi bilan bogʻlangan yorliq</translation>
     </message>
     <message>
         <source>The address associated with this address list entry. This can only be modified for sending addresses.</source>
-        <translation type="unfinished">Манзил ушбу манзиллар рўйхати ёзуви билан боғланган. Уни фақат жўнатиладиган манзиллар учун ўзгартирса бўлади.</translation>
+        <translation type="unfinished">Bu manzillar roʻyxati yozuvi bilan bogʻlangan yorliq. Bu faqat manzillarni yuborish uchun o'zgartirilishi mumkin.</translation>
     </message>
     <message>
         <source>&amp;Address</source>
-        <translation type="unfinished">&amp;Манзил</translation>
+        <translation type="unfinished">&amp;Manzil</translation>
     </message>
     <message>
         <source>New sending address</source>
-        <translation type="unfinished">Янги жунатилувчи манзил</translation>
+        <translation type="unfinished">Yangi jo'natish manzili</translation>
     </message>
     <message>
         <source>Edit receiving address</source>
-        <translation type="unfinished">Кабул килувчи манзилни тахрирлаш</translation>
+        <translation type="unfinished">Qabul qiluvchi manzilini tahrirlash</translation>
     </message>
     <message>
         <source>Edit sending address</source>
-        <translation type="unfinished">Жунатилувчи манзилни тахрирлаш</translation>
+        <translation type="unfinished">Yuboruvchi manzilini tahrirlash</translation>
     </message>
     <message>
         <source>The entered address "%1" is not a valid Qtum address.</source>
-        <translation type="unfinished">Киритилган "%1" манзили тўғри Qtum манзили эмас.</translation>
+        <translation type="unfinished">%1 manzil Qtum da mavjud manzil emas</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -1173,38 +1216,42 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
-        <translation type="unfinished">Ҳамён қулфдан чиқмади.</translation>
+        <translation type="unfinished">Hamyonni ochish imkonsiz</translation>
     </message>
     <message>
         <source>New key generation failed.</source>
-        <translation type="unfinished">Янги калит яратиш амалга ошмади.</translation>
+        <translation type="unfinished">Yangi kalit yaratilishi amalga oshmadi.</translation>
     </message>
 </context>
 <context>
     <name>FreespaceChecker</name>
     <message>
         <source>A new data directory will be created.</source>
-        <translation type="unfinished">Янги маълумотлар директорияси яратилади.</translation>
+        <translation type="unfinished">Yangi ma'lumot manzili yaratiladi.</translation>
     </message>
     <message>
         <source>name</source>
-        <translation type="unfinished">номи</translation>
+        <translation type="unfinished">nom</translation>
     </message>
     <message>
         <source>Directory already exists. Add %1 if you intend to create a new directory here.</source>
-        <translation type="unfinished">Директория аллақачон мавжуд. Агар бу ерда янги директория яратмоқчи бўлсангиз, %1 қўшинг.</translation>
+        <translation type="unfinished">Manzil allaqachon yaratilgan. %1 ni qo'shing, agar yangi manzil yaratmoqchi bo'lsangiz.</translation>
     </message>
     <message>
         <source>Path already exists, and is not a directory.</source>
-        <translation type="unfinished">Йўл аллақачон мавжуд. У директория эмас.</translation>
+        <translation type="unfinished">Ushbu manzil allaqachon egallangan.</translation>
     </message>
     <message>
         <source>Cannot create data directory here.</source>
-        <translation type="unfinished">Маълумотлар директориясини бу ерда яратиб бўлмайди..</translation>
+        <translation type="unfinished">Ma'lumotlar bu yerda saqlanishi mumkin emas.</translation>
     </message>
 </context>
 <context>
     <name>Intro</name>
+    <message>
+        <source>Qtum</source>
+        <translation type="unfinished">Bitkoin</translation>
+    </message>
     <message numerus="yes">
         <source>%n GB of space available</source>
         <translation type="unfinished">
@@ -1252,15 +1299,15 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
-        <translation type="unfinished">Хато: кўрсатилган "%1" маълумотлар директориясини яратиб бўлмайди.</translation>
+        <translation type="unfinished">Xatolik: Belgilangan %1 ma'lumotlar katalogini yaratib bo'lmaydi</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Хатолик</translation>
+        <translation type="unfinished">Xatolik</translation>
     </message>
     <message>
         <source>Welcome</source>
-        <translation type="unfinished">Хуш келибсиз</translation>
+        <translation type="unfinished">Xush kelibsiz</translation>
     </message>
     <message>
         <source>Welcome to %1.</source>
@@ -1292,18 +1339,18 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Use the default data directory</source>
-        <translation type="unfinished">Стандарт маълумотлар директориясидан фойдаланиш</translation>
+        <translation type="unfinished">Standart ma'lumotlar katalogidan foydalanish</translation>
     </message>
     <message>
         <source>Use a custom data directory:</source>
-        <translation type="unfinished">Бошқа маълумотлар директориясида фойдаланинг:</translation>
+        <translation type="unfinished">O'zingiz xohlagan ma'lumotlar katalogidan foydalanish:</translation>
     </message>
 </context>
 <context>
     <name>HelpMessageDialog</name>
     <message>
         <source>version</source>
-        <translation type="unfinished">версияси</translation>
+        <translation type="unfinished">versiya</translation>
     </message>
     <message>
         <source>About %1</source>
@@ -1311,7 +1358,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Command-line options</source>
-        <translation type="unfinished">Буйруқлар сатри мосламалари</translation>
+        <translation type="unfinished">Command-line sozlamalari</translation>
     </message>
 </context>
 <context>
@@ -1329,7 +1376,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <name>ModalOverlay</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Шакл</translation>
+        <translation type="unfinished">Forma</translation>
     </message>
     <message>
         <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the qtum network, as detailed below.</source>
@@ -1353,7 +1400,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Last block time</source>
-        <translation type="unfinished">Сўнгги блок вақти</translation>
+        <translation type="unfinished">Oxirgi bloklash vaqti</translation>
     </message>
     <message>
         <source>Progress</source>
@@ -1610,7 +1657,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <name>OverviewPage</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Шакл</translation>
+        <translation type="unfinished">Forma</translation>
     </message>
     <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Qtum network after a connection is established, but this process has not completed yet.</source>
@@ -1948,7 +1995,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
-        <translation type="unfinished">Hamyonni ochish imkonsiz.</translation>
+        <translation type="unfinished">Hamyonni ochish imkonsiz</translation>
     </message>
     </context>
 <context>
@@ -1982,7 +2029,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <name>RecentRequestsTableModel</name>
     <message>
         <source>Date</source>
-        <translation type="unfinished">Сана</translation>
+        <translation type="unfinished">Sana</translation>
     </message>
     <message>
         <source>Label</source>
@@ -2033,7 +2080,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Fee:</source>
-        <translation type="unfinished">Солиқ:</translation>
+        <translation type="unfinished">Narx:</translation>
     </message>
     <message>
         <source>After Fee:</source>
@@ -2076,10 +2123,6 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Шаклнинг барча майдончаларини тозалаш</translation>
     </message>
     <message>
-        <source>Dust:</source>
-        <translation type="unfinished">Ахлат қутиси:</translation>
-    </message>
-    <message>
         <source>Clear &amp;All</source>
         <translation type="unfinished">Барчасини &amp; Тозалаш</translation>
     </message>
@@ -2097,7 +2140,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Copy quantity</source>
-        <translation type="unfinished">Нусха сони</translation>
+        <translation type="unfinished">Miqdorni nusxalash</translation>
     </message>
     <message>
         <source>Copy amount</source>
@@ -2109,11 +2152,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Copy after fee</source>
-        <translation type="unfinished">Нусха солиқдан сўнг</translation>
+        <translation type="unfinished">'To'lovdan keyin' ni nusxalash</translation>
     </message>
     <message>
         <source>Copy bytes</source>
-        <translation type="unfinished">Нусха байти</translation>
+        <translation type="unfinished">Baytlarni nusxalash</translation>
     </message>
     <message>
         <source>Copy dust</source>
@@ -2121,7 +2164,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Copy change</source>
-        <translation type="unfinished">Нусха қайтими</translation>
+        <translation type="unfinished">O'zgarishni nusxalash</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -2227,7 +2270,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Date</source>
-        <translation type="unfinished">Сана</translation>
+        <translation type="unfinished">Sana</translation>
     </message>
     <message>
         <source>Source</source>
@@ -2324,7 +2367,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     <name>TransactionTableModel</name>
     <message>
         <source>Date</source>
-        <translation type="unfinished">Сана</translation>
+        <translation type="unfinished">Sana</translation>
     </message>
     <message>
         <source>Type</source>
@@ -2472,7 +2515,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Date</source>
-        <translation type="unfinished">Сана</translation>
+        <translation type="unfinished">Sana</translation>
     </message>
     <message>
         <source>Type</source>
@@ -2532,39 +2575,4 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Joriy ichki oynaning ichidagi malumotlarni faylga yuklab olish</translation>
     </message>
     </context>
-<context>
-    <name>bitcoin-core</name>
-    <message>
-        <source>Done loading</source>
-        <translation type="unfinished">Юклаш тайёр</translation>
-    </message>
-    <message>
-        <source>Insufficient funds</source>
-        <translation type="unfinished">Кам миқдор</translation>
-    </message>
-    <message>
-        <source>Unable to start HTTP server. See debug log for details.</source>
-        <translation type="unfinished">HTTP serverni ishga tushirib bo'lmadi. Tafsilotlar uchun disk raskadrovka jurnaliga qarang.</translation>
-    </message>
-    <message>
-        <source>Verifying blocks…</source>
-        <translation type="unfinished">Bloklar tekshirilmoqda…</translation>
-    </message>
-    <message>
-        <source>Verifying wallet(s)…</source>
-        <translation type="unfinished">Hamyon(lar) tekshirilmoqda…</translation>
-    </message>
-    <message>
-        <source>Wallet needed to be rewritten: restart %s to complete</source>
-        <translation type="unfinished">Hamyonni qayta yozish kerak: bajarish uchun 1%s ni qayta ishga tushiring</translation>
-    </message>
-    <message>
-        <source>Settings file could not be read</source>
-        <translation type="unfinished">Sozlamalar fayli o'qishga yaroqsiz</translation>
-    </message>
-    <message>
-        <source>Settings file could not be written</source>
-        <translation type="unfinished">Sozlamalar fayli yaratish uchun yaroqsiz</translation>
-    </message>
-</context>
 </TS>

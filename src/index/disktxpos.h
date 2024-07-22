@@ -10,7 +10,7 @@
 
 struct CDiskTxPos : public FlatFilePos
 {
-    unsigned int nTxOffset{0}; // after header
+    unsigned int nTxOffset; // after header
 
     SERIALIZE_METHODS(CDiskTxPos, obj)
     {
@@ -21,7 +21,15 @@ struct CDiskTxPos : public FlatFilePos
     CDiskTxPos(const FlatFilePos &blockIn, unsigned int nTxOffsetIn) : FlatFilePos(blockIn.nFile, blockIn.nPos), nTxOffset(nTxOffsetIn) {
     }
 
-    CDiskTxPos() {}
+    CDiskTxPos() {
+        SetNull();
+    }
+
+    void SetNull() {
+        FlatFilePos::SetNull();
+        nTxOffset = 0;
+    }
 };
+
 
 #endif // BITCOIN_INDEX_DISKTXPOS_H

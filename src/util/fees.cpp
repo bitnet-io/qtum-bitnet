@@ -49,7 +49,7 @@ std::string FeeModes(const std::string& delimiter)
     return Join(FeeModeMap(), delimiter, [&](const std::pair<std::string, FeeEstimateMode>& i) { return i.first; });
 }
 
-std::string InvalidEstimateModeErrorMessage()
+const std::string InvalidEstimateModeErrorMessage()
 {
     return "Invalid estimate_mode parameter, must be one of: \"" + FeeModes("\", \"") + "\"";
 }

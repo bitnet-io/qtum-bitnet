@@ -9,7 +9,6 @@
 #include <limits>
 #include <random>
 #include <stdexcept>
-#include <string>
 #include <vector>
 
 #include "../include/minisketch.h"

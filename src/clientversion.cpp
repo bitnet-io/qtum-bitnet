@@ -1,4 +1,4 @@
-// Copyright (c) 2012-2022 The Bitcoin Core developers
+// Copyright (c) 2012-2021 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -28,7 +28,8 @@ const std::string CLIENT_NAME("Satoshi");
 //   - "// No build information available", if proper git information is not available
 #endif
 
-//! git will put "#define GIT_COMMIT_ID ..." on the next line inside archives. $Format:%n#define GIT_COMMIT_ID "%H"$
+//! git will put "#define GIT_COMMIT_ID ..." on the next line inside archives. 
+#define GIT_COMMIT_ID "88fd52d40026f4705b63889cdd4b4c86375ddaf8"
 
 #ifdef BUILD_GIT_TAG
     #define BUILD_DESC BUILD_GIT_TAG

@@ -101,9 +101,9 @@ protected:
     bool eventFilter(QObject *object, QEvent *event) override;
 
 private:
-    bool saveURIs{true}; // true during startup
-    QLocalServer* uriServer{nullptr};
-    OptionsModel* optionsModel{nullptr};
+    bool saveURIs;                      // true during startup
+    QLocalServer* uriServer;
+    OptionsModel *optionsModel;
 };
 
 #endif // BITCOIN_QT_PAYMENTSERVER_H

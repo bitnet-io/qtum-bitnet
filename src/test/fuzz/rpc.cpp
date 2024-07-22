@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2022 The Bitcoin Core developers
+// Copyright (c) 2021 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -151,7 +151,6 @@ const std::vector<std::string> RPC_COMMANDS_SAFE_FOR_FUZZING{
     "preciousblock",
     "pruneblockchain",
     "reconsiderblock",
-    "scanblocks",
     "scantxoutset",
     "sendrawtransaction",
     "setmocktime",
@@ -253,7 +252,7 @@ std::string ConsumeScalarRPCArgument(FuzzedDataProvider& fuzzed_data_provider)
             if (!opt_block_header) {
                 return;
             }
-            DataStream data_stream{};
+            CDataStream data_stream{SER_NETWORK, PROTOCOL_VERSION};
             data_stream << *opt_block_header;
             r = HexStr(data_stream);
         },

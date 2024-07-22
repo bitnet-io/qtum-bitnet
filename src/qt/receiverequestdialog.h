@@ -9,7 +9,6 @@
 
 #include <QDialog>
 
-
 class PlatformStyle;
 class ReceiveCoinsDialog;
 class WalletModel;
@@ -33,6 +32,7 @@ public Q_SLOTS:
     void clear();
     void reject() override;
     void accept() override;
+
 private Q_SLOTS:
     void on_btnCopyURI_clicked();
     void on_btnCopyAddress_clicked();
@@ -47,7 +47,7 @@ private:
 
 private:
     Ui::ReceiveRequestDialog *ui;
-    WalletModel* model{nullptr};
+    WalletModel *model;
     SendCoinsRecipient info;
     const PlatformStyle *platformStyle;
     ReceiveCoinsDialog* requestPaymentDialog;
