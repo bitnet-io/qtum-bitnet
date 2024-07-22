@@ -164,7 +164,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">تأكيد تشفير المحفظة</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
         <translation type="unfinished">تحذير: إذا قمت بتشفير المحفظة وأضعت الكلمة السرية؛ &lt;b&gt;ستفقد كل البتكوين&lt;/b&gt;!</translation>
     </message>
     <message>
@@ -303,7 +303,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">‫القيمة‬</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a Bitnet IO address (e.g. %1)</source>
         <translation type="unfinished">ادخل عنوان محفطة البتكوين (مثال %1)</translation>
     </message>
     <message>
@@ -603,8 +603,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">‫لايمكن الكتابة في المجلد '%s'؛ تحقق من الصلاحيات.‬</translation>
     </message>
     <message>
-        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Qtum Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
-        <translation type="unfinished">%s طلب الاستماع على منفذ %u. يعتبر منفذه "سيئًا" وبالتالي فمن غير المحتمل أن يتصل به أي من أقران Qtum Core. انظر الى doc / p2p-bad-ports.md للحصول على التفاصيل والقائمة الكاملة.</translation>
+        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Bitnet Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
+        <translation type="unfinished">%s طلب الاستماع على منفذ %u. يعتبر منفذه "سيئًا" وبالتالي فمن غير المحتمل أن يتصل به أي من أقران Bitnet Core. انظر الى doc / p2p-bad-ports.md للحصول على التفاصيل والقائمة الكاملة.</translation>
     </message>
     <message>
         <source>Failed to rename invalid peers.dat file. Please move or delete it and try again.</source>
@@ -2224,8 +2224,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">&amp; مسار البرنامج النصي للموقّع الخارجي</translation>
     </message>
     <message>
-        <source>Full path to a Qtum Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
-        <translation type="unfinished">‫مثال لمسار كامل متوافق مع البتكوين الأساسي Qtum Core (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). احذر: يمكن أن تسرق البرمجيات الضارة عملاتك!‬</translation>
+        <source>Full path to a Bitnet Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
+        <translation type="unfinished">‫مثال لمسار كامل متوافق مع البتكوين الأساسي Bitnet Core (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). احذر: يمكن أن تسرق البرمجيات الضارة عملاتك!‬</translation>
     </message>
     <message>
         <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>

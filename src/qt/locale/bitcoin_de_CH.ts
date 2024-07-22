@@ -164,8 +164,8 @@ Das Signieren ist nur mit Adressen vom Typ 'Legacy' möglich.</translation>
         <translation type="unfinished">Wallet-Verschlüsselung bestätigen</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished">Warnung: Wenn Sie Ihre Wallet verschlüsseln und Ihre Passphrase verlieren, werden Sie &lt;b&gt;ALLE IHRE QTUMS VERLIEREN&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
+        <translation type="unfinished">Warnung: Wenn Sie Ihre Wallet verschlüsseln und Ihre Passphrase verlieren, werden Sie &lt;b&gt;ALLE IHRE BITS VERLIEREN&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -303,7 +303,7 @@ Das Signieren ist nur mit Adressen vom Typ 'Legacy' möglich.</translation>
         <translation type="unfinished">Betrag</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a Bitnet IO address (e.g. %1)</source>
         <translation type="unfinished">Qtum-Adresse eingeben (z.B. %1)</translation>
     </message>
     <message>

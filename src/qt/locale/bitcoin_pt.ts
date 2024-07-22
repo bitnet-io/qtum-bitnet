@@ -164,8 +164,8 @@ Assinar só é possível com endereços do tipo "legado".</translation>
         <translation type="unfinished">Confirmar encriptação da carteira</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished">Aviso: se encriptar a sua carteira e perder a sua frase de segurança, &lt;b&gt;PERDERÁ TODAS AS SUAS QTUMS&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
+        <translation type="unfinished">Aviso: se encriptar a sua carteira e perder a sua frase de segurança, &lt;b&gt;PERDERÁ TODAS AS SUAS BITS&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -303,7 +303,7 @@ Assinar só é possível com endereços do tipo "legado".</translation>
         <translation type="unfinished">Quantia</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a Bitnet IO address (e.g. %1)</source>
         <translation type="unfinished">Introduza um endereço Qtum (ex. %1)</translation>
     </message>
     <message>
@@ -591,8 +591,8 @@ deve ser fornecido.</translation>
         <translation type="unfinished">O processo de atualização do -txindex iniciado por uma versão anterior não foi concluído. Reinicie com a versão antiga ou faça um -reindex completo.</translation>
     </message>
     <message>
-        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Qtum Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
-        <translation type="unfinished">%s solicitou abertura da porta %u. Esta porta é considerada "ruim" e é improvável que outros usuários do Qtum Core conseguirão se conectar. Veja doc/p2p-bad-ports.md para detalhes e uma lista completa.</translation>
+        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Bitnet Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
+        <translation type="unfinished">%s solicitou abertura da porta %u. Esta porta é considerada "ruim" e é improvável que outros usuários do Bitnet Core conseguirão se conectar. Veja doc/p2p-bad-ports.md para detalhes e uma lista completa.</translation>
     </message>
     <message>
         <source>-reindex-chainstate option is not compatible with -blockfilterindex. Please temporarily disable blockfilterindex while using -reindex-chainstate, or replace -reindex-chainstate with -reindex to fully rebuild all indexes.</source>
@@ -2404,8 +2404,8 @@ A pasta de blocos especificados "%s" não existe.</translation>
         <translation type="unfinished">&amp;Caminho do script para signatário externo </translation>
     </message>
     <message>
-        <source>Full path to a Qtum Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
-        <translation type="unfinished">Caminho completo para um script compatível com Qtum Core (por exemplo, C: \ Downloads \ hwi.exe ou /Users/you/Downloads/hwi.py). Cuidado: o malware pode roubar suas moedas!</translation>
+        <source>Full path to a Bitnet Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
+        <translation type="unfinished">Caminho completo para um script compatível com Bitnet Core (por exemplo, C: \ Downloads \ hwi.exe ou /Users/you/Downloads/hwi.py). Cuidado: o malware pode roubar suas moedas!</translation>
     </message>
     <message>
         <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>

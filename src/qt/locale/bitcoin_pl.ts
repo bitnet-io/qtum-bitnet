@@ -114,7 +114,7 @@ Podpisywanie jest możliwe tylko z adresami typu 'legacy'.</translation>
         <translation type="unfinished">Potwierdź szyfrowanie portfela </translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
         <translation type="unfinished">Ostrzeżenie: Jeśli zaszyfrujesz swój portfel i zgubisz hasło - &lt;b&gt;STRACISZ WSZYSTKIE SWOJE BITCONY&lt;/b&gt;!</translation>
     </message>
     <message>
@@ -253,7 +253,7 @@ Podpisywanie jest możliwe tylko z adresami typu 'legacy'.</translation>
         <translation type="unfinished">Kwota</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a Bitnet IO address (e.g. %1)</source>
         <translation type="unfinished">Wprowadź adres qtumowy (np. %1)</translation> 
   </message>
     <message>
@@ -2265,8 +2265,8 @@ Podpisywanie jest możliwe tylko z adresami typu 'legacy'.</translation>
         <translation type="unfinished">&amp;Ścieżka zewnętrznego skryptu podpisującego</translation>
     </message>
     <message>
-        <source>Full path to a Qtum Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
-        <translation type="unfinished">Pełna ścieżka do skryptu zgodnego z Qtum Core (np. C:\Downloads\hwi.exe lub /Users/you/Downloads/hwi.py). Uwaga: złośliwe oprogramowanie może ukraść Twoje monety!</translation>
+        <source>Full path to a Bitnet Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
+        <translation type="unfinished">Pełna ścieżka do skryptu zgodnego z Bitnet Core (np. C:\Downloads\hwi.exe lub /Users/you/Downloads/hwi.py). Uwaga: złośliwe oprogramowanie może ukraść Twoje monety!</translation>
     </message>
     <message>
         <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>

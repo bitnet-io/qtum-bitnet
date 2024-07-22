@@ -164,7 +164,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">ウォレットの暗号化の承諾</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
         <translation type="unfinished">警告: ウォレットの暗号化後にパスフレーズを忘れてしまった場合、&lt;b&gt;あなたの Qtum はすべて失われます&lt;/b&gt;！</translation>
     </message>
     <message>
@@ -304,7 +304,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">金額</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a Bitnet IO address (e.g. %1)</source>
         <translation type="unfinished">Qtum アドレスを入力してください (例: %1)</translation>
    </message>
     <message>
@@ -642,8 +642,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">以前のバージョンで開始された -txindex アップグレードを完了できません。 以前のバージョンで再起動するか、 -reindex を実行してください。</translation>
     </message>
     <message>
-        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Qtum Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
-        <translation type="unfinished">%s ポート %u でリッスンするように要求します。このポートは「不良」と見なされるため、Qtum Core ピアが接続する可能性はほとんどありません。詳細と完全なリストについては、doc/p2p-bad-ports.md を参照してください。</translation>
+        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Bitnet Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
+        <translation type="unfinished">%s ポート %u でリッスンするように要求します。このポートは「不良」と見なされるため、Bitnet Core ピアが接続する可能性はほとんどありません。詳細と完全なリストについては、doc/p2p-bad-ports.md を参照してください。</translation>
     </message>
     <message>
         <source>-reindex-chainstate option is not compatible with -blockfilterindex. Please temporarily disable blockfilterindex while using -reindex-chainstate, or replace -reindex-chainstate with -reindex to fully rebuild all indexes.</source>
@@ -2442,8 +2442,8 @@ Unable to restore backup of wallet.</source>
         <translation type="unfinished">HWIのパス(&amp;E)</translation>
     </message>
     <message>
-        <source>Full path to a Qtum Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
-        <translation type="unfinished">Qtum Core対応のプログラムのフルパス (例: C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py)。 注意: マルウエアはあなたのコインを盗む恐れがあります！</translation>
+        <source>Full path to a Bitnet Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
+        <translation type="unfinished">Bitnet Core対応のプログラムのフルパス (例: C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py)。 注意: マルウエアはあなたのコインを盗む恐れがあります！</translation>
     </message>
     <message>
         <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>

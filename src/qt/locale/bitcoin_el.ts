@@ -164,8 +164,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Επιβεβαίωσε κρυπτογράφηση πορτοφολιού</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished">Προσόχη! Εάν κρυπτογραφήσεις το πορτοφόλι σου και χάσεις τη φράση αποκατάστασης, θα &lt;b&gt; ΧΑΣΕΙΣ ΟΛΑ ΣΟΥ ΤΑ QTUM &lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
+        <translation type="unfinished">Προσόχη! Εάν κρυπτογραφήσεις το πορτοφόλι σου και χάσεις τη φράση αποκατάστασης, θα &lt;b&gt; ΧΑΣΕΙΣ ΟΛΑ ΣΟΥ ΤΑ BIT &lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -295,7 +295,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Ποσό</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a Bitnet IO address (e.g. %1)</source>
         <translation type="unfinished">Εισάγετε μια διεύθυνση Qtum (π.χ. %1)</translation>
     </message>
     <message>
@@ -2084,8 +2084,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Εξωτερική συσκευή υπογραφής (π.χ. πορτοφόλι υλικού)</translation>
     </message>
     <message>
-        <source>Full path to a Qtum Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
-        <translation type="unfinished">Πλήρης διαδρομή ενός script συμβατού με το Qtum Core (π.χ.: C:\Downloads\hwi.exe ή /Users/you/Downloads/hwi.py). Προσοχή: το κακόβουλο λογισμικό μπορεί να κλέψει τα νομίσματά σας!</translation>
+        <source>Full path to a Bitnet Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
+        <translation type="unfinished">Πλήρης διαδρομή ενός script συμβατού με το Bitnet Core (π.χ.: C:\Downloads\hwi.exe ή /Users/you/Downloads/hwi.py). Προσοχή: το κακόβουλο λογισμικό μπορεί να κλέψει τα νομίσματά σας!</translation>
     </message>
     <message>
         <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>

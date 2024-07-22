@@ -47,7 +47,7 @@
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
-        <translation type="unfinished">选择接收QTUM地址</translation>
+        <translation type="unfinished">选择接收BIT地址</translation>
     </message>
     <message>
         <source>C&amp;hoose</source>
@@ -63,7 +63,7 @@
     </message>
     <message>
         <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">这些是你的QTUM支付地址。在发送之前，一定要核对金额和接收地址。</translation>
+        <translation type="unfinished">这些是你的BIT支付地址。在发送之前，一定要核对金额和接收地址。</translation>
     </message>
     <message>
         <source>These are your Qtum addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
@@ -155,8 +155,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">确认钱包加密</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished">警告: 如果把钱包加密后又忘记密码，你就会从此&lt;b&gt;失去其中所有的QTUM了&lt;/b&gt;！</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
+        <translation type="unfinished">警告: 如果把钱包加密后又忘记密码，你就会从此&lt;b&gt;失去其中所有的BIT了&lt;/b&gt;！</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -548,8 +548,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">无法完成由之前版本启动的 -txindex 升级。请用之前的版本重新启动，或者进行一次完整的 -reindex 。</translation>
     </message>
     <message>
-        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Qtum Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
-        <translation type="unfinished">%s请求监听端口 %u。这个端口被认为是“坏的”，所以不太可能有Qtum Core节点会连接到它。有关详细信息和完整列表，请参见 doc/p2p-bad-ports.md 。</translation>
+        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Bitnet Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
+        <translation type="unfinished">%s请求监听端口 %u。这个端口被认为是“坏的”，所以不太可能有Bitnet Core节点会连接到它。有关详细信息和完整列表，请参见 doc/p2p-bad-ports.md 。</translation>
     </message>
     <message>
         <source>-reindex-chainstate option is not compatible with -blockfilterindex. Please temporarily disable blockfilterindex while using -reindex-chainstate, or replace -reindex-chainstate with -reindex to fully rebuild all indexes.</source>
@@ -1045,7 +1045,7 @@ Unable to restore backup of wallet.</source>
     </message>
     <message>
         <source>Send coins to a Qtum address</source>
-        <translation type="unfinished">向一个QTUM地址发币</translation>
+        <translation type="unfinished">向一个BIT地址发币</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -1093,7 +1093,7 @@ Unable to restore backup of wallet.</source>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
-        <translation type="unfinished">校验消息，确保该消息是由指定的QTUM地址所有者签名的</translation>
+        <translation type="unfinished">校验消息，确保该消息是由指定的BIT地址所有者签名的</translation>
     </message>
     <message>
         <source>&amp;Load PSBT from file…</source>
@@ -1211,7 +1211,7 @@ Unable to restore backup of wallet.</source>
     </message>
     <message>
         <source>Load Partially Signed Qtum Transaction</source>
-        <translation type="unfinished">加载部分签名QTUM交易（PSBT）</translation>
+        <translation type="unfinished">加载部分签名BIT交易（PSBT）</translation>
     </message>
     <message>
         <source>Load PSBT from &amp;clipboard…</source>
@@ -1219,7 +1219,7 @@ Unable to restore backup of wallet.</source>
     </message>
     <message>
         <source>Load Partially Signed Qtum Transaction from clipboard</source>
-        <translation type="unfinished">从剪贴板中加载部分签名QTUM交易（PSBT）</translation>
+        <translation type="unfinished">从剪贴板中加载部分签名BIT交易（PSBT）</translation>
     </message>
     <message>
         <source>Node window</source>
@@ -1335,7 +1335,7 @@ Unable to restore backup of wallet.</source>
         <source>%n active connection(s) to Qtum network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
-            <numerusform> %n 与QTUM网络接。</numerusform>
+            <numerusform> %n 与BIT网络接。</numerusform>
         </translation>
     </message>
     <message>
@@ -1712,7 +1712,7 @@ Unable to restore backup of wallet.</source>
     </message>
     <message>
         <source>The entered address "%1" is not a valid Qtum address.</source>
-        <translation type="unfinished">输入的地址 %1 并不是有效的QTUM地址。</translation>
+        <translation type="unfinished">输入的地址 %1 并不是有效的BIT地址。</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -1738,7 +1738,7 @@ Unable to restore backup of wallet.</source>
     <name>Intro</name>
     <message>
         <source>Qtum</source>
-        <translation type="unfinished">QTUM</translation>
+        <translation type="unfinished">BIT</translation>
     </message>
     <message numerus="yes">
         <source>%n GB of space available</source>
@@ -1771,7 +1771,7 @@ Unable to restore backup of wallet.</source>
     </message>
     <message>
         <source>%1 will download and store a copy of the Qtum block chain.</source>
-        <translation type="unfinished">%1 将会下载并存储QTUM区块链。</translation>
+        <translation type="unfinished">%1 将会下载并存储BIT区块链。</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1879,7 +1879,7 @@ Unable to restore backup of wallet.</source>
     <name>OpenURIDialog</name>
     <message>
         <source>Open qtum URI</source>
-        <translation type="unfinished">打开QTUMURI</translation>
+        <translation type="unfinished">打开BITURI</translation>
     </message>
     </context>
 <context>
@@ -2042,7 +2042,7 @@ Unable to restore backup of wallet.</source>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation type="unfinished">选择显示及发送QTUM时使用的最小单位。</translation>
+        <translation type="unfinished">选择显示及发送BIT时使用的最小单位。</translation>
     </message>
     <message>
         <source>Third-party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
@@ -2054,7 +2054,7 @@ Unable to restore backup of wallet.</source>
     </message>
     <message>
         <source>Connect to the Qtum network through a separate SOCKS5 proxy for Tor onion services.</source>
-        <translation type="unfinished">连接QTUM网络时专门为Tor onion服务使用另一个 SOCKS5 代理。</translation>
+        <translation type="unfinished">连接BIT网络时专门为Tor onion服务使用另一个 SOCKS5 代理。</translation>
     </message>
     <message>
         <source>Monospaced font in the Overview tab:</source>
@@ -2285,7 +2285,7 @@ If you are receiving this error you should request the merchant provide a BIP21 
     </message>
     <message>
         <source>URI cannot be parsed! This can be caused by an invalid Qtum address or malformed URI parameters.</source>
-        <translation type="unfinished">无法解析 URI 地址！可能是因为QTUM地址无效，或是 URI 参数格式错误。</translation>
+        <translation type="unfinished">无法解析 URI 地址！可能是因为BIT地址无效，或是 URI 参数格式错误。</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -2699,7 +2699,7 @@ For more information on using this console, type %6.
     </message>
     <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Qtum network.</source>
-        <translation type="unfinished">可在支付请求上备注一条信息，在打开支付请求时可以看到。注意:该消息不是通过QTUM网络传送。</translation>
+        <translation type="unfinished">可在支付请求上备注一条信息，在打开支付请求时可以看到。注意:该消息不是通过BIT网络传送。</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
@@ -2928,7 +2928,7 @@ For more information on using this console, type %6.
     </message>
     <message>
         <source>Creates a Partially Signed Qtum Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation type="unfinished">创建一个“部分签名QTUM交易”（PSBT），以用于诸如离线%1钱包，或是兼容PSBT的硬件钱包这类用途。</translation>
+        <translation type="unfinished">创建一个“部分签名BIT交易”（PSBT），以用于诸如离线%1钱包，或是兼容PSBT的硬件钱包这类用途。</translation>
     </message>
     <message>
         <source> from wallet '%1'</source>
@@ -2968,7 +2968,7 @@ For more information on using this console, type %6.
     <message>
         <source>Please, review your transaction. You can create and send this transaction or create a Partially Signed Qtum Transaction (PSBT), which you can save or copy and then sign with, e.g., an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <extracomment>Text to inform a user attempting to create a transaction of their current options. At this stage, a user can send their transaction or create a PSBT. This string is displayed when both private keys and PSBT controls are enabled.</extracomment>
-        <translation type="unfinished">请务必仔细检查您的交易。你可以创建并发送这笔交易；也可以创建一个“部分签名QTUM交易(PSBT)”，它可以被保存下来或被复制出去，然后就可以对它进行签名，比如用离线%1钱包，或是用兼容PSBT的硬件钱包。</translation>
+        <translation type="unfinished">请务必仔细检查您的交易。你可以创建并发送这笔交易；也可以创建一个“部分签名BIT交易(PSBT)”，它可以被保存下来或被复制出去，然后就可以对它进行签名，比如用离线%1钱包，或是用兼容PSBT的硬件钱包。</translation>
     </message>
     <message>
         <source>Please, review your transaction.</source>

@@ -1,15 +1,15 @@
-Qtum Core
+Bitnet Core
 =============
 
 Setup
 ---------------------
-Qtum Core is the original Qtum client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Qtum transactions, which requires several gigabytes of disk space. Depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
+Bitnet Core is the original Qtum client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Qtum transactions, which requires several gigabytes of disk space. Depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
-To download Qtum Core, visit [qtumcore.org](https://qtumeco.io/wallet).
+To download Bitnet Core, visit [qtumcore.org](https://qtumeco.io/wallet).
 
 Running
 ---------------------
-The following are some helpful notes on how to run Qtum Core on your native platform.
+The following are some helpful notes on how to run Bitnet Core on your native platform.
 
 ### Unix
 
@@ -24,7 +24,7 @@ Unpack the files into a directory, and then run qtum-qt.exe.
 
 ### macOS
 
-Drag Qtum Core to your applications folder, and then run Qtum Core.
+Drag Bitnet Core to your applications folder, and then run Bitnet Core.
 
 ### Need Help?
 
@@ -36,7 +36,7 @@ for help and more information.
 
 Building
 ---------------------
-The following are developer notes on how to build Qtum Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build Bitnet Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [Dependencies](dependencies.md)
 - [macOS Build Notes](build-osx.md)

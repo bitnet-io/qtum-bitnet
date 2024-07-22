@@ -1,5 +1,5 @@
-#ifndef QTUMHWITOOL_H
-#define QTUMHWITOOL_H
+#ifndef BITHWITOOL_H
+#define BITHWITOOL_H
 
 #include <QObject>
 #include <QString>
@@ -253,4 +253,4 @@ private:
     QtumHwiToolPriv* d;
 };
 
-#endif // QTUMHWITOOL_H
+#endif // BITHWITOOL_H

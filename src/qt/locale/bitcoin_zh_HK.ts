@@ -163,7 +163,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">確認錢包加密</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
         <translation type="unfinished">警告: 如果你將錢包加密後又忘記密碼，你就會&lt;b&gt;失去所有 Qtum 了&lt;/b&gt;！</translation>
    </message>
     <message>
@@ -302,7 +302,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">金额</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a Bitnet IO address (e.g. %1)</source>
         <translation type="unfinished">輸入一個 Qtum 位址 (例如 %1)</translation>
     </message>
     <message>
@@ -568,8 +568,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">无法完成由之前版本启动的 -txindex 升级。请用之前的版本重新启动，或者进行一次完整的 -reindex 。</translation>
     </message>
     <message>
-        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Qtum Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
-        <translation type="unfinished">%s请求监听端口 %u。这个端口被认为是“坏的”，所以不太可能有Qtum Core节点会连接到它。有关详细信息和完整列表，请参见 doc/p2p-bad-ports.md 。</translation>
+        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Bitnet Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
+        <translation type="unfinished">%s请求监听端口 %u。这个端口被认为是“坏的”，所以不太可能有Bitnet Core节点会连接到它。有关详细信息和完整列表，请参见 doc/p2p-bad-ports.md 。</translation>
     </message>
     <message>
         <source>-reindex-chainstate option is not compatible with -blockfilterindex. Please temporarily disable blockfilterindex while using -reindex-chainstate, or replace -reindex-chainstate with -reindex to fully rebuild all indexes.</source>

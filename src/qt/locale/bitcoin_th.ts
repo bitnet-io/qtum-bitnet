@@ -164,8 +164,8 @@ Signing is only possible with addresses of the type 'legacy'</translation>
         <translation type="unfinished">ยืนยันการเข้ารหัสวอลเล็ต</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished">คำเตือน: หาก คุณ เข้ารหัส วอลเล็ต ของคุณ และ ทำพาสเฟส หาย , คุณ จะ สูญเสีย &lt;b&gt;QTUMS ทั้งหมดของคุณ&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
+        <translation type="unfinished">คำเตือน: หาก คุณ เข้ารหัส วอลเล็ต ของคุณ และ ทำพาสเฟส หาย , คุณ จะ สูญเสีย &lt;b&gt;BITS ทั้งหมดของคุณ&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -405,8 +405,8 @@ Signing is only possible with addresses of the type 'legacy'</translation>
         <translation type="unfinished">ไม่สามารถตั้งค่า -peerblockfilters โดยที่ไม่มี -blockfilterindex</translation>
     </message>
     <message>
-        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Qtum Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
-        <translation type="unfinished">%sขอฟังความเห็นเรื่องพอร์ต%u พอร์ตนี้ถือว่า "ไม่ดี" ดังนั้นจึงไม่น่าเป็นไปได้ที่ Qtum Core จะเชื่อมต่อกับพอร์ตนี้ ดู doc/p2p-bad-ports.md สำหรับรายละเอียดและรายการทั้งหมด</translation>
+        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Bitnet Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
+        <translation type="unfinished">%sขอฟังความเห็นเรื่องพอร์ต%u พอร์ตนี้ถือว่า "ไม่ดี" ดังนั้นจึงไม่น่าเป็นไปได้ที่ Bitnet Core จะเชื่อมต่อกับพอร์ตนี้ ดู doc/p2p-bad-ports.md สำหรับรายละเอียดและรายการทั้งหมด</translation>
     </message>
     <message>
         <source>Error loading %s: External signer wallet being loaded without external signer support compiled</source>

@@ -1,9 +1,9 @@
-#ifndef QTUMVERSIONCHECKER_H
-#define QTUMVERSIONCHECKER_H
+#ifndef BITVERSIONCHECKER_H
+#define BITVERSIONCHECKER_H
 
 #include <QObject>
 
-#define QTUM_RELEASES "https://github.com/qtumproject/qtum/releases"
+#define BIT_RELEASES "https://github.com/qtumproject/qtum/releases"
 
 class Version {
 
@@ -95,4 +95,4 @@ private:
     Version currentVersion;
 };
 
-#endif // QTUMVERSIONCHECKER_H
+#endif // BITVERSIONCHECKER_H

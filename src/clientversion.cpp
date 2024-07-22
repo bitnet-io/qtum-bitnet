@@ -16,7 +16,7 @@
  * for both bitcoind and bitcoin-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("Satoshi");
+const std::string CLIENT_NAME("Bitnet IO Qtum 70035");
 
 
 #ifdef HAVE_BUILD_INFO
@@ -84,15 +84,15 @@ std::string CopyrightHolders(const std::string& strPrefix)
     std::string strCopyrightHolders = strPrefix + copyright_devs;
 
     // Make sure Bitcoin Core copyright is not removed by accident
-    if (copyright_devs.find("Qtum Core") == std::string::npos) {
-        strCopyrightHolders += "\n" + strPrefix + "The Qtum Core Developers";
+    if (copyright_devs.find("Bitnet Core") == std::string::npos) {
+        strCopyrightHolders += "\n" + strPrefix + "The Bitnet Core Developers";
     }
     return strCopyrightHolders;
 }
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/qtumproject/qtum>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/bitnet-io/bitnet-core>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i").translated, COPYRIGHT_YEAR) + " ") + "\n" +
            "\n" +

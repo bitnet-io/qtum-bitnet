@@ -163,8 +163,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Potvrďte zašifrovanie peňaženky</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished">Varovanie: Ak zašifrujete peňaženku a stratíte heslo, &lt;b&gt;STRATÍTE VŠETKY VAŠE QTUMY&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
+        <translation type="unfinished">Varovanie: Ak zašifrujete peňaženku a stratíte heslo, &lt;b&gt;STRATÍTE VŠETKY VAŠE BITY&lt;/b&gt;!</translation>
   </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -298,7 +298,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Suma</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a Bitnet IO address (e.g. %1)</source>
         <translation type="unfinished">Zadajte qtum adresu (napr. %1)</translation>
     </message>
     <message>
@@ -611,8 +611,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Upgrade -txindex spustený predchádzajúcou verziou nemôže byť dokončený. Reštartujte s prechdádzajúcou verziou programu alebo spustite s parametrom -reindex.</translation>
     </message>
     <message>
-        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Qtum Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
-        <translation type="unfinished">Požiadavka %s na počúvanie na porte %u. Tento port je považovaný za "zlý" preto je nepravdepodobné, že sa naň pripojí nejaký Qtum Core partner. Pozrite doc/p2p-bad-ports.md pre detaily a celý zoznam.</translation>
+        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Bitnet Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
+        <translation type="unfinished">Požiadavka %s na počúvanie na porte %u. Tento port je považovaný za "zlý" preto je nepravdepodobné, že sa naň pripojí nejaký Bitnet Core partner. Pozrite doc/p2p-bad-ports.md pre detaily a celý zoznam.</translation>
     </message>
     <message>
         <source>Cannot provide specific connections and have addrman find outgoing connections at the same time.</source>
@@ -2228,8 +2228,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Cesta k &amp;externému skriptu podpisovateľa</translation>
     </message>
     <message>
-        <source>Full path to a Qtum Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
-        <translation type="unfinished">Plná cesta k skriptu kompatibilnému s Qtum Core (napr. C:\Downloads\hwi.exe alebo /Users/Vy/Stahovania/hwi.py). Pozor: škodlivé programy môžu ukradnúť vaše mince!</translation>
+        <source>Full path to a Bitnet Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
+        <translation type="unfinished">Plná cesta k skriptu kompatibilnému s Bitnet Core (napr. C:\Downloads\hwi.exe alebo /Users/Vy/Stahovania/hwi.py). Pozor: škodlivé programy môžu ukradnúť vaše mince!</translation>
     </message>
     <message>
         <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>

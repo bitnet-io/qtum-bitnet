@@ -164,8 +164,8 @@ Firmar solo es posible con direcciones del tipo «Legacy».</translation>
         <translation type="unfinished">Confirma el cifrado de este monedero</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished">Atención: Si cifras tu monedero y pierdes la contraseña, &lt;b&gt;¡PERDERÁS TODOS TUS QTUMS!&lt;/b&gt;</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
+        <translation type="unfinished">Atención: Si cifras tu monedero y pierdes la contraseña, &lt;b&gt;¡PERDERÁS TODOS TUS BITS!&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -299,7 +299,7 @@ Firmar solo es posible con direcciones del tipo «Legacy».</translation>
         <translation type="unfinished">Importe</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a Bitnet IO address (e.g. %1)</source>
         <translation type="unfinished">Ingresa una dirección de Qtum (Ejemplo: %1)</translation>
     </message>
     <message>
@@ -618,8 +618,8 @@ Firmar solo es posible con direcciones del tipo «Legacy».</translation>
         <translation type="unfinished">La actualización -txindex iniciada por una versión anterior no puede completarse. Reinicie con la versión anterior o ejecute un -reindex completo.</translation>
     </message>
     <message>
-        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Qtum Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
-        <translation type="unfinished">solicitud %s de escucha en el puerto %u . Este puerto se considera "malo" y por lo tanto es poco probable que ningún par de Qtum Core se conecte a él. Ver doc/p2p-bad-ports.md para más detalles y una lista completa.</translation>
+        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Bitnet Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
+        <translation type="unfinished">solicitud %s de escucha en el puerto %u . Este puerto se considera "malo" y por lo tanto es poco probable que ningún par de Bitnet Core se conecte a él. Ver doc/p2p-bad-ports.md para más detalles y una lista completa.</translation>
     </message>
     <message>
         <source>-reindex-chainstate option is not compatible with -blockfilterindex. Please temporarily disable blockfilterindex while using -reindex-chainstate, or replace -reindex-chainstate with -reindex to fully rebuild all indexes.</source>
@@ -2409,8 +2409,8 @@ No es posible restaurar la copia de seguridad del monedero.</translation>
         <translation type="unfinished">Ruta de script de firma &amp;externo</translation>
     </message>
     <message>
-        <source>Full path to a Qtum Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
-        <translation type="unfinished">Ruta completa al script compatible con Qtum Core (ej. C:\Descargas\hwi.exe o /Usuarios/SuUsuario/Descargas/hwi.py). Cuidado: código malicioso podría robarle sus monedas!</translation>
+        <source>Full path to a Bitnet Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
+        <translation type="unfinished">Ruta completa al script compatible con Bitnet Core (ej. C:\Descargas\hwi.exe o /Usuarios/SuUsuario/Descargas/hwi.py). Cuidado: código malicioso podría robarle sus monedas!</translation>
     </message>
     <message>
         <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>

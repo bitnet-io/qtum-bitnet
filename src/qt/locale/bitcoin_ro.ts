@@ -160,8 +160,8 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <translation type="unfinished">Confirmaţi criptarea portofelului</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished">Atenţie: Dacă va criptati portofelul si ulterior pierdeti parola, &lt;b&gt;VEŢI PIERDE TOTI QTUMII&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
+        <translation type="unfinished">Atenţie: Dacă va criptati portofelul si ulterior pierdeti parola, &lt;b&gt;VEŢI PIERDE TOTI BITII&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -286,7 +286,7 @@ Semnarea este posibilă numai cu adrese de tip "legacy".</translation>
         <translation type="unfinished">Sumă</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a Bitnet IO address (e.g. %1)</source>
         <translation type="unfinished">Introduceţi o adresă Qtum (de exemplu %1)</translation>
    </message>
     <message>

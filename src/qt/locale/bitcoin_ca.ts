@@ -164,8 +164,8 @@ Només és possible firmar amb adreces del tipus "legacy".</translation>
         <translation type="unfinished">Confirma el xifratge de la cartera</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished">Avís: si xifreu la cartera i perdeu la contrasenya, &lt;b&gt;PERDREU TOTS ELS QTUMS&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
+        <translation type="unfinished">Avís: si xifreu la cartera i perdeu la contrasenya, &lt;b&gt;PERDREU TOTS ELS BITS&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -295,7 +295,7 @@ Només és possible firmar amb adreces del tipus "legacy".</translation>
         <translation type="unfinished">Import</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a Bitnet IO address (e.g. %1)</source>
         <translation type="unfinished">Introduïu una adreça de Qtum (p. ex. %1)</translation>
     </message>
     <message>
@@ -2066,8 +2066,8 @@ Això és ideal per a carteres de mode només lectura.</translation>
         <translation type="unfinished">&amp;Camí de l'script del signatari extern</translation>
     </message>
     <message>
-        <source>Full path to a Qtum Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
-        <translation type="unfinished">Camí complet a un script compatible amb Qtum Core (per exemple, C:\Downloads\hwi.exe o /Users/you/Downloads/hwi.py). Aneu amb compte: el programari maliciós pot robar-vos les monedes!</translation>
+        <source>Full path to a Bitnet Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
+        <translation type="unfinished">Camí complet a un script compatible amb Bitnet Core (per exemple, C:\Downloads\hwi.exe o /Users/you/Downloads/hwi.py). Aneu amb compte: el programari maliciós pot robar-vos les monedes!</translation>
     </message>
     <message>
         <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>

@@ -148,12 +148,12 @@
     </message>
     <message>
         <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>송금이 가능한 QTUM 주소입니다. 송금 전에 반드시 주소와 금액이 정확한지 확인해주세요. </translation>
+        <translation>송금이 가능한 BIT 주소입니다. 송금 전에 반드시 주소와 금액이 정확한지 확인해주세요. </translation>
     </message>
     <message>
         <source>These are your Qtum addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
-        <translation>지불 수신용 QTUM주소. 신규 주소를 만들려면 'Create new receiving address' 버튼을 사용하세요.
+        <translation>지불 수신용 BIT주소. 신규 주소를 만들려면 'Create new receiving address' 버튼을 사용하세요.
 서명은 '레거시' 타입의 주소만 가능합니다.</translation>
     </message>
     <message>
@@ -253,8 +253,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation>지갑 암호화 확인</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation>경고: 암호화 이후 비밀번호를 잃어버리면 &lt;b&gt;지갑에 있는 모든 QTUM을 잃게됩니다&lt;/b&gt;！</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
+        <translation>경고: 암호화 이후 비밀번호를 잃어버리면 &lt;b&gt;지갑에 있는 모든 BIT을 잃게됩니다&lt;/b&gt;！</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -375,7 +375,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Send coins to a Qtum address</source>
-        <translation type="unfinished">QTUM 주소로 QTUM 코인 보내기</translation>
+        <translation type="unfinished">BIT 주소로 BIT 코인 보내기</translation>
     </message>
     <message>
         <source>&amp;Receive</source>
@@ -523,7 +523,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Sign messages with your Qtum addresses to prove you own them</source>
-        <translation type="unfinished">소유하고 있는 QTUM 주소의 키로 메시지 서명을 하여 해당 QTUM 주소의 소유권을 증명하세요. </translation>
+        <translation type="unfinished">소유하고 있는 BIT 주소의 키로 메시지 서명을 하여 해당 BIT 주소의 소유권을 증명하세요. </translation>
     </message>
     <message>
         <source>&amp;Verify message…</source>
@@ -701,7 +701,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <source>%n active connection(s) to Qtum network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
-            <numerusform>QTUM 네트워크에 활성화된 %n연결</numerusform>
+            <numerusform>BIT 네트워크에 활성화된 %n연결</numerusform>
         </translation>
     </message>
     <message>
@@ -773,7 +773,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Load Partially Signed Qtum Transaction</source>
-        <translation>부분적으로 서명된 QTUM 트랜잭션 불러오기</translation>
+        <translation>부분적으로 서명된 BIT 트랜잭션 불러오기</translation>
     </message>
     <message>
         <source>Load PSBT from &amp;clipboard…</source>
@@ -781,7 +781,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Load Partially Signed Qtum Transaction from clipboard</source>
-        <translation>클립보드로부터 부분적으로 서명된 QTUM 트랜잭션 불러오기</translation>
+        <translation>클립보드로부터 부분적으로 서명된 BIT 트랜잭션 불러오기</translation>
     </message>
     <message>
         <source>%1 behind</source>
@@ -801,7 +801,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Qtum</source>
-        <translation type="unfinished">QTUM</translation>
+        <translation type="unfinished">BIT</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1528,8 +1528,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">가스 상한액. 디폴트 = %1, 최고 = %2.</translation>
     </message>
     <message>
-        <source>Gas price: QTUM price per gas unit. Default = %1, Min = %2</source>
-        <translation type="unfinished">가스 단가: 가스 유닛에 대한 QTUM 가격. 디폴트 = %1, 최저 = %2.</translation>
+        <source>Gas price: BIT price per gas unit. Default = %1, Min = %2</source>
+        <translation type="unfinished">가스 단가: 가스 유닛에 대한 BIT 가격. 디폴트 = %1, 최저 = %2.</translation>
     </message>
 </context>
 <context>
@@ -1568,7 +1568,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>The entered address &quot;%1&quot; is not a valid Qtum address.</source>
-        <translation>입력한 주소 %1는 유효한 QTUM 주소가 아닙니다. </translation>
+        <translation>입력한 주소 %1는 유효한 BIT 주소가 아닙니다. </translation>
     </message>
     <message>
         <source>Address &quot;%1&quot; already exists as a receiving address with label &quot;%2&quot; and so cannot be added as a sending address.</source>
@@ -1713,7 +1713,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Qtum</source>
-        <translation>QTUM</translation>
+        <translation>BIT</translation>
     </message>
     <message numerus="yes">
         <source>%n GB of space available</source>
@@ -1750,7 +1750,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>%1 will download and store a copy of the Qtum block chain.</source>
-        <translation>%1이 QTUM 블록체인을 다운로드 및 저장할 예정입니다. </translation>
+        <translation>%1이 BIT 블록체인을 다운로드 및 저장할 예정입니다. </translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1781,7 +1781,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Attempting to spend qtums that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation>네트워크는 미확인된 거래에 속한 QTUM 사용을 승인하지 않습니다 </translation>
+        <translation>네트워크는 미확인된 거래에 속한 BIT 사용을 승인하지 않습니다 </translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1845,7 +1845,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     <name>OpenURIDialog</name>
     <message>
         <source>Open qtum URI</source>
-        <translation>QTUM URI 열기</translation>
+        <translation>BIT URI 열기</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -2022,12 +2022,12 @@ Please make sure to keep an updated antivirus and operating system. We can not r
  </translation>
     </message>
     <message>
-        <source>Full path to a Qtum Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
-        <translation type="unfinished">QTUM 코어 호환 스크립트의 전체 경로 (예: C:\Downloads\whi.exe 또는 /Users/you/Downloads/hwi.py). 주의: 악성 프로그램이 코인을 훔칠 수 있습니다!</translation>
+        <source>Full path to a Bitnet Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
+        <translation type="unfinished">BIT 코어 호환 스크립트의 전체 경로 (예: C:\Downloads\whi.exe 또는 /Users/you/Downloads/hwi.py). 주의: 악성 프로그램이 코인을 훔칠 수 있습니다!</translation>
     </message>
     <message>
         <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>라우터에서 QTUM 클라이언트 포트를 자동적으로 엽니다. 라우터에서 UPnP를 지원하고 활성화 했을 경우에만 동작합니다.</translation>
+        <translation>라우터에서 BIT 클라이언트 포트를 자동적으로 엽니다. 라우터에서 UPnP를 지원하고 활성화 했을 경우에만 동작합니다.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -2035,7 +2035,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Automatically open the Qtum client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
-        <translation>라우터에서 QTUM 클라이언트 포트를 자동으로 엽니다. 이는 라우터가 NAT-PMP를 지원하고 활성화 된 경우에만 작동합니다. 외부 포트는 무작위 일 수 있습니다.</translation>
+        <translation>라우터에서 BIT 클라이언트 포트를 자동으로 엽니다. 이는 라우터가 NAT-PMP를 지원하고 활성화 된 경우에만 작동합니다. 외부 포트는 무작위 일 수 있습니다.</translation>
     </message>
     <message>
         <source>Map port using NA&amp;T-PMP</source>
@@ -2051,7 +2051,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
     </message>
     <message>
         <source>Connect to the Qtum network through a SOCKS5 proxy.</source>
-        <translation>SOCKS5 프록시를 통해 QTUM 네트워크에 연결합니다.</translation>
+        <translation>SOCKS5 프록시를 통해 BIT 네트워크에 연결합니다.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -2622,8 +2622,8 @@ BIP70의 광범위한 보안 결함으로 인해 모든 가맹점에서는 지�
         <translation>금액</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
-        <translation>QTUM 주소를 입력해주세요 (예시, %1)</translation>
+        <source>Enter a Bitnet IO address (e.g. %1)</source>
+        <translation>BIT 주소를 입력해주세요 (예시, %1)</translation>
     </message>
     <message>
         <source>Unroutable</source>
@@ -3731,7 +3731,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
     </message>
     <message>
         <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for qtum transactions than the network can process.</source>
-        <translation>거래량이 블록에 남은 공간보다 적은 경우, 채굴자나 중계 노드들이 최소 수수료를 허용할 수 있습니다. 최소 수수료만 지불하는건 괜찮지만, 네트워크가 처리할 수 있는 용량을 넘는 QTUM 거래가 있을 경우에는 이 거래가 승인이 안될 수 있다는 점을 유의하세요.</translation>
+        <translation>거래량이 블록에 남은 공간보다 적은 경우, 채굴자나 중계 노드들이 최소 수수료를 허용할 수 있습니다. 최소 수수료만 지불하는건 괜찮지만, 네트워크가 처리할 수 있는 용량을 넘는 BIT 거래가 있을 경우에는 이 거래가 승인이 안될 수 있다는 점을 유의하세요.</translation>
     </message>
     <message>
         <source>A too low fee might result in a never confirming transaction (read the tooltip)</source>
@@ -3881,7 +3881,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
     <message>
         <source>Please, review your transaction proposal. This will produce a Partially Signed Qtum Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <extracomment>Text to inform a user attempting to create a transaction of their current options. At this stage, a user can only create a PSBT. This string is displayed when private keys are disabled and an external signer is not available.</extracomment>
-        <translation>거래 제안을 검토해 주십시오. 이것은 당신이 저장하거나 복사한 뒤 e.g. 오프라인 %1 지갑 또는 PSBT 호환 하드웨어 지갑으로 서명할 수 있는 PSBT (부분적으로 서명된 QTUM 트랜잭션)를 생성할 것입니다.</translation>
+        <translation>거래 제안을 검토해 주십시오. 이것은 당신이 저장하거나 복사한 뒤 e.g. 오프라인 %1 지갑 또는 PSBT 호환 하드웨어 지갑으로 서명할 수 있는 PSBT (부분적으로 서명된 BIT 트랜잭션)를 생성할 것입니다.</translation>
     </message>
     <message>
         <source>Do you want to create this transaction?</source>
@@ -3891,7 +3891,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
     <message>
         <source>Please, review your transaction. You can create and send this transaction or create a Partially Signed Qtum Transaction (PSBT), which you can save or copy and then sign with, e.g., an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <extracomment>Text to inform a user attempting to create a transaction of their current options. At this stage, a user can send their transaction or create a PSBT. This string is displayed when both private keys and PSBT controls are enabled.</extracomment>
-        <translation type="unfinished">당신의 트랜잭션을 검토하세요. 당신은 트랜잭션을 생성하고 보낼 수 있습니다. 혹은 부분적으로 서명된 QTUM 트랜잭션 (PSBT, Partially Signed Qtum Transaction)을 생성하고, 저장하거나 복사하여 오프라인 %1지갑으로 서명할수도 있습니다. PSBT가 적용되는 하드월렛으로 서명할 수도 있습니다. </translation>
+        <translation type="unfinished">당신의 트랜잭션을 검토하세요. 당신은 트랜잭션을 생성하고 보낼 수 있습니다. 혹은 부분적으로 서명된 BIT 트랜잭션 (PSBT, Partially Signed Qtum Transaction)을 생성하고, 저장하거나 복사하여 오프라인 %1지갑으로 서명할수도 있습니다. PSBT가 적용되는 하드월렛으로 서명할 수도 있습니다. </translation>
     </message>
     <message>
         <source>from wallet %1</source>
@@ -3962,7 +3962,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
     </message>
     <message>
         <source>Warning: Invalid Qtum address</source>
-        <translation>경고: 무효한 QTUM 주소</translation>
+        <translation>경고: 무효한 BIT 주소</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -4127,8 +4127,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">자금과 데이터를 받을 컨트랙트 주소</translation>
     </message>
     <message>
-        <source>The amount in QTUM to send. Default = 0.</source>
-        <translation type="unfinished">보낼 QTUM 개수. 디폴트는 0</translation>
+        <source>The amount in BIT to send. Default = 0.</source>
+        <translation type="unfinished">보낼 BIT 개수. 디폴트는 0</translation>
     </message>
     <message>
         <source>The qtum address that will be used as sender.</source>
@@ -4167,8 +4167,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">가스 상한액. 디폴트 = %1, 최고 = %2.</translation>
     </message>
     <message>
-        <source>Gas price: QTUM price per gas unit. Default = %1, Min = %2</source>
-        <translation type="unfinished">가스 단가: 가스 유닛에 대한 QTUM 가격. 디폴트 = %1, 최저 = %2.</translation>
+        <source>Gas price: BIT price per gas unit. Default = %1, Min = %2</source>
+        <translation type="unfinished">가스 단가: 가스 유닛에 대한 BIT 가격. 디폴트 = %1, 최저 = %2.</translation>
     </message>
 </context>
 <context>
@@ -4226,8 +4226,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">가스 상한액. 디폴트 = %1, 최고 = %2.</translation>
     </message>
     <message>
-        <source>Gas price: QTUM price per gas unit. Default = %1, Min = %2</source>
-        <translation type="unfinished">가스 단가: 가스 유닛에 대한 QTUM 가격. 디폴트 = %1, 최저 = %2.</translation>
+        <source>Gas price: BIT price per gas unit. Default = %1, Min = %2</source>
+        <translation type="unfinished">가스 단가: 가스 유닛에 대한 BIT 가격. 디폴트 = %1, 최저 = %2.</translation>
     </message>
     <message>
         <source>Are you sure you want to send? &lt;br /&gt;&lt;br /&gt;</source>
@@ -4284,7 +4284,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
     </message>
     <message>
         <source>You can sign messages/agreements with your addresses to prove you can receive qtums sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>소유하고 계신 주소로 메시지/협의에 대해 서명하여 해당 주소를 통해 QTUM을 받을 수 있음을 증명할 수 있습니다. 피싱 공격을 예방하기 위해 명확하지 않은 내용 또는 랜덤 메시지에 대한 서명은 삼가 하시고 메시지에 대해 충분히 동의할 경우에만 서명하세요. </translation>
+        <translation>소유하고 계신 주소로 메시지/협의에 대해 서명하여 해당 주소를 통해 BIT을 받을 수 있음을 증명할 수 있습니다. 피싱 공격을 예방하기 위해 명확하지 않은 내용 또는 랜덤 메시지에 대한 서명은 삼가 하시고 메시지에 대해 충분히 동의할 경우에만 서명하세요. </translation>
     </message>
     <message>
         <source>The Qtum address to sign the message with</source>
@@ -4441,8 +4441,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">스테이킹</translation>
     </message>
     <message>
-        <source>0.000 000 00 QTUM</source>
-        <translation type="unfinished">0.000 000 00 QTUM</translation>
+        <source>0.000 000 00 BIT</source>
+        <translation type="unfinished">0.000 000 00 BIT</translation>
     </message>
     <message>
         <source>Staking</source>
@@ -4461,8 +4461,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">블록 보상</translation>
     </message>
     <message>
-        <source>4 QTUM/Block</source>
-        <translation type="unfinished">4 QTUM / 블록</translation>
+        <source>4 BIT/Block</source>
+        <translation type="unfinished">4 BIT / 블록</translation>
     </message>
     <message>
         <source>Network weight:</source>
@@ -5293,7 +5293,7 @@ Go to File &gt; Open Wallet to load a wallet.
     </message>
     <message>
         <source>Partially Signed Transaction (*.psbt)</source>
-        <translation type="unfinished">부분적으로 서명된 QTUM 트랜잭션 (* .psbt)</translation>
+        <translation type="unfinished">부분적으로 서명된 BIT 트랜잭션 (* .psbt)</translation>
     </message>
     <message>
         <source>PSBT file must be smaller than 100 MiB</source>
@@ -5419,8 +5419,8 @@ Go to File &gt; Open Wallet to load a wallet.
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Qtum Core</source>
-        <translation type="unfinished">Qtum Core</translation>
+        <source>Bitnet Core</source>
+        <translation type="unfinished">Bitnet Core</translation>
     </message>
     <message>
         <source>Settings file could not be read</source>
@@ -5472,7 +5472,7 @@ Go to File &gt; Open Wallet to load a wallet.
     </message>
     <message>
         <source>Error: Dumpfile version is not supported. This version of qtum-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
-        <translation type="unfinished">오류 : 덤프파일 버젼이 지원되지 않습니다. 이 QTUM 지갑 버젼은 오직 버젼1의 덤프파일을 지원합니다. %s버젼의 덤프파일을 얻었습니다.</translation>
+        <translation type="unfinished">오류 : 덤프파일 버젼이 지원되지 않습니다. 이 BIT 지갑 버젼은 오직 버젼1의 덤프파일을 지원합니다. %s버젼의 덤프파일을 얻었습니다.</translation>
     </message>
     <message>
         <source>Error: Legacy wallets only support the "legacy", "p2sh-segwit", and "bech32" address types</source>

@@ -164,8 +164,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Підтвердить шифрування гаманця</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished">Увага: Якщо ви зашифруєте гаманець і забудете пароль, ви &lt;b&gt;ВТРАТИТЕ ВСІ СВОЇ QTUMS&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
+        <translation type="unfinished">Увага: Якщо ви зашифруєте гаманець і забудете пароль, ви &lt;b&gt;ВТРАТИТЕ ВСІ СВОЇ BITS&lt;/b&gt;!</translation>
    </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -303,7 +303,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Кількість</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a Bitnet IO address (e.g. %1)</source>
         <translation type="unfinished">Введіть qtum-адресу (наприклад, %1)</translation> 
    </message>
     <message>
@@ -669,8 +669,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Оновлення -txindex, що було почате попередньою версією, не вдалося завершити. Перезапустить попередню версію або виконайте повний -reindex.</translation>
     </message>
     <message>
-        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Qtum Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
-        <translation type="unfinished">%s запитує прослуховування порту %u . Цей порт вважається "поганим", і тому малоймовірно, що будь-які інші вузли Qtum Core підключаться до нього. Дивіться doc/p2p-bad-ports.md для отримання детальної інформації та повного списку.</translation>
+        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Bitnet Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
+        <translation type="unfinished">%s запитує прослуховування порту %u . Цей порт вважається "поганим", і тому малоймовірно, що будь-які інші вузли Bitnet Core підключаться до нього. Дивіться doc/p2p-bad-ports.md для отримання детальної інформації та повного списку.</translation>
     </message>
     <message>
         <source>-reindex-chainstate option is not compatible with -blockfilterindex. Please temporarily disable blockfilterindex while using -reindex-chainstate, or replace -reindex-chainstate with -reindex to fully rebuild all indexes.</source>

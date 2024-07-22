@@ -1667,6 +1667,7 @@ bool CheckIndexProof(const CBlockIndex& block, const Consensus::Params& consensu
     }
 }
 
+/*
 CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
 {
     if(nHeight <= consensusParams.nLastBigReward)
@@ -1684,6 +1685,30 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
     // Subsidy is cut in half every 985500 blocks which will occur approximately every 4 years.
     nSubsidy >>= halvings;
     return nSubsidy;
+}
+*/
+
+CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
+
+{
+    int halvings = nHeight / consensusParams.nSubsidyHalvingInterval;
+    // Force block reward to zero when right shift is undefined.
+    if (halvings >= 64)
+        return 0;
+
+    if (nHeight < 150000) {
+    CAmount nSubsidy = 10000 * COIN;
+    // Subsidy is cut in half every 210,000 blocks which will occur approximately every 4 years.
+    nSubsidy >>= halvings;
+    return nSubsidy;
+    }
+        // testing for release Changing the block reward at block 150000 to 100 coins
+    else {
+    CAmount nSubsidy = 100 * COIN;
+    nSubsidy >>= halvings;
+    return nSubsidy;
+    }
+
 }
 
 CoinsViews::CoinsViews(

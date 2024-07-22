@@ -164,7 +164,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Potvrdite šifrovanje novčanika</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source> 
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source> 
         <translation type="unfinished">Upozorenje: Ako šifrujete svoj novčanik, i potom izgubite svoju pristupnu frazu &lt;b&gt;IZGUBIĆETE SVE SVOJE BITKOINE&lt;/b&gt;!</translation>
     </message>
     <message>
@@ -281,7 +281,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Kolicina</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a Bitnet IO address (e.g. %1)</source>
         <translation type="unfinished">Унеси Биткоин адресу, (нпр %1)</translation>
     </message>
     <message>
@@ -1892,7 +1892,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">&amp;Путања скрипте спољног потписника</translation>
     </message>
     <message>
-        <source>Full path to a Qtum Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
+        <source>Full path to a Bitnet Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
         <translation type="unfinished">Пуна путања до скрипте компатибилне са Битцоин Цоре (нпр. Ц:\Довнлоадс\хви.еке или /Усерс/иоу/Довнлоадс/хви.пи). Пазите: злонамерни софтвер може украсти ваше новчиће</translation>
     </message>
     <message>

@@ -164,8 +164,8 @@ Pasirašymas galimas tik su 'legacy' tipo adresais.</translation>
         <translation type="unfinished">Patvirtinkite piniginės užšifravimą</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished">Dėmesio: jei užšifruosite savo piniginę ir pamesite slaptafrazę, jūs&lt;b&gt;PRARASITE VISUS SAVO QTUMUS&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
+        <translation type="unfinished">Dėmesio: jei užšifruosite savo piniginę ir pamesite slaptafrazę, jūs&lt;b&gt;PRARASITE VISUS SAVO BITUS&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -273,7 +273,7 @@ Pasirašymas galimas tik su 'legacy' tipo adresais.</translation>
         <translation type="unfinished">Suma</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a Bitnet IO address (e.g. %1)</source>
         <translation type="unfinished">Įveskite Qtum adresą (pvz., %1)</translation>
     </message>
     <message>

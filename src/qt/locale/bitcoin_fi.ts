@@ -164,8 +164,8 @@ Allekirjoitus on mahdollista vain 'legacy'-tyyppisillä osoitteilla.</translatio
         <translation type="unfinished">Vahvista lompakon salaaminen</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished">Varoitus: Jos salaat lompakkosi ja menetät tunnuslauseesi, &lt;b&gt;MENETÄT KAIKKI QTUMISI&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
+        <translation type="unfinished">Varoitus: Jos salaat lompakkosi ja menetät tunnuslauseesi, &lt;b&gt;MENETÄT KAIKKI BITISI&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -303,7 +303,7 @@ Allekirjoitus on mahdollista vain 'legacy'-tyyppisillä osoitteilla.</translatio
         <translation type="unfinished">Määrä</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a Bitnet IO address (e.g. %1)</source>
         <translation type="unfinished">Syötä Qtum-osoite (esim. %1)</translation>
     </message>
     <message>
@@ -2105,8 +2105,8 @@ Allekirjoitus on mahdollista vain 'legacy'-tyyppisillä osoitteilla.</translatio
         <translation type="unfinished">Ulkopuolinen allekirjoittaja (esim. laitelompakko)</translation>
     </message>
     <message>
-        <source>Full path to a Qtum Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
-        <translation type="unfinished">Koko polku Qtum Core -yhteensopivaan skriptiin (esim. C:\Downloads\hwi.exe tai /Users/you/Downloads/hwi.py). Varo: haittaohjelma voi varastaa kolikkosi!</translation>
+        <source>Full path to a Bitnet Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
+        <translation type="unfinished">Koko polku Bitnet Core -yhteensopivaan skriptiin (esim. C:\Downloads\hwi.exe tai /Users/you/Downloads/hwi.py). Varo: haittaohjelma voi varastaa kolikkosi!</translation>
    </message>
     <message>
         <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>

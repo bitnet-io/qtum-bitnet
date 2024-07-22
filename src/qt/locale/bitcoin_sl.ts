@@ -164,8 +164,8 @@ Podpisovanje je možno le s podedovanimi ("legacy") naslovi.</translation>
         <translation type="unfinished">Potrdi šifriranje denarnice</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished">Opozorilo: V primeru izgube gesla šifrirane denarnice, boste &lt;b&gt;IZGUBILI VSE SVOJE QTUME&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
+        <translation type="unfinished">Opozorilo: V primeru izgube gesla šifrirane denarnice, boste &lt;b&gt;IZGUBILI VSE SVOJE BITE&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -300,7 +300,7 @@ Podpisovanje je možno le s podedovanimi ("legacy") naslovi.</translation>
         <translation type="unfinished">Znesek</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a Bitnet IO address (e.g. %1)</source>
         <translation type="unfinished">Vnesite qtum-naslov (npr. %1)</translation>
     </message>
     <message>
@@ -2299,8 +2299,8 @@ Obnovitev varnostne kopije denarnice ni bila mogoča.</translation>
         <translation type="unfinished">&amp;Pot do zunanjega podpisnika</translation>
     </message>
     <message>
-        <source>Full path to a Qtum Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
-        <translation type="unfinished">Polna pot do datoteke s skripto, združljivo z Qtum Core (n.pr. C:\Downloads\hwi.exe ali /Users/jaz/Downloads/hwi.py). Previdno: zlonamerna programska oprema vam lahko ukrade novce!</translation>
+        <source>Full path to a Bitnet Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
+        <translation type="unfinished">Polna pot do datoteke s skripto, združljivo z Bitnet Core (n.pr. C:\Downloads\hwi.exe ali /Users/jaz/Downloads/hwi.py). Previdno: zlonamerna programska oprema vam lahko ukrade novce!</translation>
     </message>
     <message>
         <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>

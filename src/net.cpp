@@ -64,10 +64,10 @@ static_assert (MAX_BLOCK_RELAY_ONLY_ANCHORS <= static_cast<size_t>(MAX_BLOCK_REL
 const char* const ANCHORS_DATABASE_FILENAME = "anchors.dat";
 
 // How often to dump addresses to peers.dat
-static constexpr std::chrono::minutes DUMP_PEERS_INTERVAL{15};
+static constexpr std::chrono::minutes DUMP_PEERS_INTERVAL{1};
 
 /** Number of DNS seeds to query when the number of connections is low. */
-static constexpr int DNSSEEDS_TO_QUERY_AT_ONCE = 3;
+static constexpr int DNSSEEDS_TO_QUERY_AT_ONCE = 15;
 
 /** How long to delay before querying DNS seeds
  *
@@ -78,12 +78,12 @@ static constexpr int DNSSEEDS_TO_QUERY_AT_ONCE = 3;
  * little longer trying to connect to known peers before querying the
  * DNS seeds.
  */
-static constexpr std::chrono::seconds DNSSEEDS_DELAY_FEW_PEERS{11};
-static constexpr std::chrono::minutes DNSSEEDS_DELAY_MANY_PEERS{5};
-static constexpr int DNSSEEDS_DELAY_PEER_THRESHOLD = 1000; // "many" vs "few" peers
+static constexpr std::chrono::seconds DNSSEEDS_DELAY_FEW_PEERS{2};
+static constexpr std::chrono::minutes DNSSEEDS_DELAY_MANY_PEERS{1};
+static constexpr int DNSSEEDS_DELAY_PEER_THRESHOLD = 100; // "many" vs "few" peers
 
 /** The default timeframe for -maxuploadtarget. 1 day. */
-static constexpr std::chrono::seconds MAX_UPLOAD_TIMEFRAME{60 * 60 * 24};
+static constexpr std::chrono::seconds MAX_UPLOAD_TIMEFRAME{60 * 60 * 1};
 
 // A random time period (0 to 1 seconds) is added to feeler connections to prevent synchronization.
 static constexpr auto FEELER_SLEEP_WINDOW{1s};
@@ -102,7 +102,7 @@ enum BindFlags {
 
 // The set of sockets cannot be modified while waiting
 // The sleep time needs to be small to avoid new sockets stalling
-static const uint64_t SELECT_TIMEOUT_MILLISECONDS = 50;
+static const uint64_t SELECT_TIMEOUT_MILLISECONDS = 10;
 
 const std::string NET_MESSAGE_TYPE_OTHER = "*other*";
 
@@ -1651,9 +1651,9 @@ void CConnman::ThreadOpenConnections(const std::vector<std::string> connect)
             // 60 seconds for any of those sources to populate addrman.
             bool add_fixed_seeds_now = false;
             // It is cheapest to check if enough time has passed first.
-            if (GetTime<std::chrono::seconds>() > start + std::chrono::minutes{1}) {
+            if (GetTime<std::chrono::seconds>() > start + std::chrono::seconds{10}) {
                 add_fixed_seeds_now = true;
-                LogPrintf("Adding fixed seeds as 60 seconds have passed and addrman is empty\n");
+                LogPrintf("Adding fixed seeds as 10 seconds have passed and addrman is empty\n");
             }
 
             // Checking !dnsseed is cheaper before locking 2 mutexes.

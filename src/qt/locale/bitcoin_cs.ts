@@ -159,8 +159,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Potvrď zašifrování peněženky</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished">Upozornění: Pokud si zašifruješ peněženku a ztratíš či zapomeneš heslo, &lt;b&gt;PŘIJDEŠ O VŠECHNY QTUMY&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
+        <translation type="unfinished">Upozornění: Pokud si zašifruješ peněženku a ztratíš či zapomeneš heslo, &lt;b&gt;PŘIJDEŠ O VŠECHNY BITY&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -298,7 +298,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Částka</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a Bitnet IO address (e.g. %1)</source>
         <translation type="unfinished">Zadej qtumovou adresu (např. %1)</translation>
     </message>
     <message>
@@ -629,8 +629,8 @@ Ověřuji peněženku.</translation>
         <translation type="unfinished">Aktualizaci -txindex zahájenou předchozí verzí není možné dokončit. Restartujte s předchozí verzí a nebo spusťte úplný -reindex.</translation>
     </message>
     <message>
-        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Qtum Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
-        <translation type="unfinished">%s požadavek pro naslouchání na portu %u. Tento port je považován za "špatný" a z tohoto důvodu je nepravděpodobné, že by se k němu připojovali některé uzly Qtum Core. Podrobnosti a úplný seznam špatných portů nalezneš v dokumentu doc/p2p-bad-ports.md.</translation>
+        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Bitnet Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
+        <translation type="unfinished">%s požadavek pro naslouchání na portu %u. Tento port je považován za "špatný" a z tohoto důvodu je nepravděpodobné, že by se k němu připojovali některé uzly Bitnet Core. Podrobnosti a úplný seznam špatných portů nalezneš v dokumentu doc/p2p-bad-ports.md.</translation>
     </message>
     <message>
         <source>-reindex-chainstate option is not compatible with -blockfilterindex. Please temporarily disable blockfilterindex while using -reindex-chainstate, or replace -reindex-chainstate with -reindex to fully rebuild all indexes.</source>
@@ -2458,8 +2458,8 @@ Nelze obnovit zálohu peněženky.</translation>
         <translation type="unfinished">Cesta ke skriptu &amp;Externího podepisovatele</translation>
     </message>
     <message>
-        <source>Full path to a Qtum Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
-        <translation type="unfinished">Absolutní cesta ke skriptu kompatibilnímu s Qtum Core (např. C:\Downloads\hwi.exe nebo /Users/you/Downloads/hwi.py). Pozor: malware vám může ukrást mince!</translation>
+        <source>Full path to a Bitnet Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
+        <translation type="unfinished">Absolutní cesta ke skriptu kompatibilnímu s Bitnet Core (např. C:\Downloads\hwi.exe nebo /Users/you/Downloads/hwi.py). Pozor: malware vám může ukrást mince!</translation>
     </message>
     <message>
         <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source> 

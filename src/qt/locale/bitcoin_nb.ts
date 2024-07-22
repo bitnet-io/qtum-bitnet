@@ -163,8 +163,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Bekreft kryptering av lommeboken</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished">Advarsel: Dersom du krypterer lommeboken og mister passordfrasen vil du &lt;b&gt;MISTE ALLE DINE QTUM&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
+        <translation type="unfinished">Advarsel: Dersom du krypterer lommeboken og mister passordfrasen vil du &lt;b&gt;MISTE ALLE DINE BIT&lt;/b&gt;!</translation>
    </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -294,7 +294,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Beløp</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a Bitnet IO address (e.g. %1)</source>
         <translation type="unfinished">Oppgi en Qtum-adresse (f.eks. %1)</translation>
     </message>
     <message>
@@ -2086,8 +2086,8 @@ Mangler løsningsdata for å estimere transaksjonsstørrelse</translation>
         <translation type="unfinished">&amp;Ekstern undertegner skriptsti</translation>
     </message>
     <message>
-        <source>Full path to a Qtum Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
-        <translation type="unfinished">Fullstendig sti til et Qtum Core-kompatibelt skript (f.eks. C:\Downloads\hwi.exe eller /Users/you/Downloads/hwi.py). Advarsel: skadevare kan stjele myntene dine!</translation>
+        <source>Full path to a Bitnet Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
+        <translation type="unfinished">Fullstendig sti til et Bitnet Core-kompatibelt skript (f.eks. C:\Downloads\hwi.exe eller /Users/you/Downloads/hwi.py). Advarsel: skadevare kan stjele myntene dine!</translation>
     </message>
     <message>
         <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>

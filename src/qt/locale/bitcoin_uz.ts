@@ -159,8 +159,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Hamyon shifrlanishini tasdiqlang</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished">Диққат: Агар сиз ҳамёнингизни кодласангиз ва махфий сўзингизни унутсангиз, сиз &lt;b&gt;БАРЧА QTUM ПУЛЛАРИНГИЗНИ ЙЎҚОТАСИЗ&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
+        <translation type="unfinished">Диққат: Агар сиз ҳамёнингизни кодласангиз ва махфий сўзингизни унутсангиз, сиз &lt;b&gt;БАРЧА BIT ПУЛЛАРИНГИЗНИ ЙЎҚОТАСИЗ&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -290,7 +290,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Miqdor</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a Bitnet IO address (e.g. %1)</source>
         <translation type="unfinished">Qtum манзилини киритинг (масалан.  %1)</translation>
     </message>
     <message>

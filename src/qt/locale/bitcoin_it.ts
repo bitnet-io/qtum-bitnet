@@ -164,8 +164,8 @@ E' possibile firmare solo con indirizzi di tipo "legacy".</translation>
         <translation type="unfinished">Conferma la cifratura del portafoglio</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished">Attenzione: Se si cifra il portafoglio e si perde la passphrase &lt;b&gt;TUTTI I PROPRI QTUM ANDRANNO PERSI&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
+        <translation type="unfinished">Attenzione: Se si cifra il portafoglio e si perde la passphrase &lt;b&gt;TUTTI I PROPRI BIT ANDRANNO PERSI&lt;/b&gt;!</translation>
   </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -299,7 +299,7 @@ E' possibile firmare solo con indirizzi di tipo "legacy".</translation>
         <translation type="unfinished">Importo</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a Bitnet IO address (e.g. %1)</source>
         <translation type="unfinished">Inserisci un indirizzo Qtum (ad es. %1)</translation>
     </message>
     <message>
@@ -618,8 +618,8 @@ E' possibile firmare solo con indirizzi di tipo "legacy".</translation>
         <translation type="unfinished">L'upgrade -txindex avviato su una versione precedente non può essere completato. Riavviare con la versione precedente o eseguire un -reindex completo.</translation>
     </message>
     <message>
-        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Qtum Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
-        <translation type="unfinished">%s richiede di ascoltare sulla porta %u.  Questa porta è considerata "cattiva" e quindi è improbabile che qualsiasi peer Qtum Core si colleghi ad essa. Guardare doc/p2p-bad-ports.md per i dettagli ed un elenco completo.</translation>
+        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Bitnet Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
+        <translation type="unfinished">%s richiede di ascoltare sulla porta %u.  Questa porta è considerata "cattiva" e quindi è improbabile che qualsiasi peer Bitnet Core si colleghi ad essa. Guardare doc/p2p-bad-ports.md per i dettagli ed un elenco completo.</translation>
     </message>
     <message>
         <source>-reindex-chainstate option is not compatible with -blockfilterindex. Please temporarily disable blockfilterindex while using -reindex-chainstate, or replace -reindex-chainstate with -reindex to fully rebuild all indexes.</source>
@@ -2417,8 +2417,8 @@ Non in grado di ripristinare il backup del portafoglio.</translation>
         <translation type="unfinished">Percorso per lo script &amp;esterno di firma</translation>
     </message>
     <message>
-        <source>Full path to a Qtum Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
-        <translation type="unfinished">Percorso completo per uno script compatibile con Qtum Core (per esempio C:\Downloads\hwi.exe o /Users/you/Downloads/hwi.py). Attenzione: programmi maligni possono rubare i tuoi soldi!</translation>
+        <source>Full path to a Bitnet Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
+        <translation type="unfinished">Percorso completo per uno script compatibile con Bitnet Core (per esempio C:\Downloads\hwi.exe o /Users/you/Downloads/hwi.py). Attenzione: programmi maligni possono rubare i tuoi soldi!</translation>
     </message>
     <message>
         <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>

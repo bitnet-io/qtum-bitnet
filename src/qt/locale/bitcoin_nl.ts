@@ -160,8 +160,8 @@ Ondertekenen is alleen mogelijk met adressen van het type 'legacy'.</translation
         <translation type="unfinished">Bevestig de versleuteling van de wallet</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished">Waarschuwing: Als u uw wallet versleutelt en uw wachtwoord vergeet, zult u &lt;b&gt;AL UW QTUM VERLIEZEN&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
+        <translation type="unfinished">Waarschuwing: Als u uw wallet versleutelt en uw wachtwoord vergeet, zult u &lt;b&gt;AL UW BIT VERLIEZEN&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -295,7 +295,7 @@ Ondertekenen is alleen mogelijk met adressen van het type 'legacy'.</translation
         <translation type="unfinished">Bedrag</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a Bitnet IO address (e.g. %1)</source>
         <translation type="unfinished">Voer een Qtum adres in (bijv. %1)</translation>
     </message>
     <message>
@@ -627,8 +627,8 @@ Ondertekenen is alleen mogelijk met adressen van het type 'legacy'.</translation
         <translation type="unfinished">De -txindex upgrade die door een eerdere versie is gestart, kan niet worden voltooid. Herstart opnieuw met de vorige versie of voer een volledige -reindex uit.</translation>
     </message>
     <message>
-        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Qtum Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
-        <translation type="unfinished">%s verzoekt om te luisteren op poort %u. Deze poort wordt als "slecht" beschouwd en het is daarom onwaarschijnlijk dat Qtum Core peers er verbinding mee maken. Zie doc/p2p-bad-ports.md voor details en een volledige lijst.</translation>
+        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Bitnet Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
+        <translation type="unfinished">%s verzoekt om te luisteren op poort %u. Deze poort wordt als "slecht" beschouwd en het is daarom onwaarschijnlijk dat Bitnet Core peers er verbinding mee maken. Zie doc/p2p-bad-ports.md voor details en een volledige lijst.</translation>
     </message>
     <message>
         <source>-reindex-chainstate option is not compatible with -blockfilterindex. Please temporarily disable blockfilterindex while using -reindex-chainstate, or replace -reindex-chainstate with -reindex to fully rebuild all indexes.</source>
@@ -2389,8 +2389,8 @@ Ongebruikte mempool geheugen is gedeeld voor deze cache.</translation>
         <translation type="unfinished">&amp;Extern ondertekenscript directory</translation>
     </message>
     <message>
-        <source>Full path to a Qtum Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
-        <translation type="unfinished">Volledige pad naar een Qtum Core compatibel script (b.v. C:\Downloads\hwi.exe of /Users/you/Downloads/hwi.py). Let op: Malware kan je coins stelen!</translation>
+        <source>Full path to a Bitnet Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
+        <translation type="unfinished">Volledige pad naar een Bitnet Core compatibel script (b.v. C:\Downloads\hwi.exe of /Users/you/Downloads/hwi.py). Let op: Malware kan je coins stelen!</translation>
    </message>
     <message>
         <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>

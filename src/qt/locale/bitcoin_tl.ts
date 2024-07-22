@@ -159,8 +159,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Kumpirmahin ang ♦encryption♦ ng pitaka</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished">Babala: IKung i-encrypt mo ang iyong pitaka at mawawala ang ♦passphrase♦,  &lt;b&gt;MAWAWALA MO ANG LAHAT NG IYONG MGA QTUM&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
+        <translation type="unfinished">Babala: IKung i-encrypt mo ang iyong pitaka at mawawala ang ♦passphrase♦,  &lt;b&gt;MAWAWALA MO ANG LAHAT NG IYONG MGA BIT&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>

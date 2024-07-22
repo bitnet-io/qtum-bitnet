@@ -163,8 +163,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Kinnita rahakoti krüpteerimine.</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished">Hoiatus:Kui sa krüpteerid oma rahakoti ja kaotad salafraasi, siis sa&lt;b&gt;KAOTAD OMA QTUMID&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
+        <translation type="unfinished">Hoiatus:Kui sa krüpteerid oma rahakoti ja kaotad salafraasi, siis sa&lt;b&gt;KAOTAD OMA BITID&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>

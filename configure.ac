@@ -6,8 +6,8 @@ define(_CLIENT_VERSION_RC, 0)
 define(_CLIENT_VERSION_IS_RELEASE, true)
 define(_COPYRIGHT_YEAR, 2023)
 define(_COPYRIGHT_HOLDERS,[The %s Developers])
-define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[Qtum Core]])
-AC_INIT([Qtum Core],m4_join([.], _CLIENT_VERSION_MAJOR, _CLIENT_VERSION_MINOR, _CLIENT_VERSION_BUILD)m4_if(_CLIENT_VERSION_RC, [0], [], [rc]_CLIENT_VERSION_RC),[https://github.com/qtumproject/qtum/issues],[qtum],[https://qtum.org/])
+define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[Bitnet Core]])
+AC_INIT([Bitnet Core],m4_join([.], _CLIENT_VERSION_MAJOR, _CLIENT_VERSION_MINOR, _CLIENT_VERSION_BUILD)m4_if(_CLIENT_VERSION_RC, [0], [], [rc]_CLIENT_VERSION_RC),[https://github.com/qtumproject/qtum/issues],[qtum],[https://qtum.org/])
 AC_CONFIG_SRCDIR([src/validation.cpp])
 AC_CONFIG_HEADERS([src/config/bitcoin-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
@@ -425,7 +425,7 @@ if test "$use_sanitizers" != ""; then
     ]],[[]])])
 fi
 
-CPPFLAGS="$CPPFLAGS -DQTUM_BUILD"
+CPPFLAGS="$CPPFLAGS -DBIT_BUILD"
 
 ERROR_CXXFLAGS=
 if test "$enable_werror" = "yes"; then

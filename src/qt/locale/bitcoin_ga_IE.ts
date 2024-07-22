@@ -159,8 +159,8 @@ Ní féidir síniú ach le seoltaí 'oidhreachta'.</translation>
         <translation type="unfinished">Deimhnigh criptiú sparán</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished">Rabhadh: Má chriptíonn tú do sparán agus má chailleann tú do pasfhrása, &lt;b&gt;caillfidh tú GACH CEANN DE DO QTUM&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
+        <translation type="unfinished">Rabhadh: Má chriptíonn tú do sparán agus má chailleann tú do pasfhrása, &lt;b&gt;caillfidh tú GACH CEANN DE DO BIT&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -268,7 +268,7 @@ Ní féidir síniú ach le seoltaí 'oidhreachta'.</translation>
         <translation type="unfinished">Suim</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a Bitnet IO address (e.g. %1)</source>
         <translation type="unfinished">Iontráil seoladh Qtum (m.sh.%1)</translation>
     </message>
     <message>

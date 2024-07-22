@@ -1,5 +1,5 @@
-#ifndef QTUM_WALLET_RPC_MINING_H
-#define QTUM_WALLET_RPC_MINING_H
+#ifndef BIT_WALLET_RPC_MINING_H
+#define BIT_WALLET_RPC_MINING_H
 
 #include <span.h>
 
@@ -9,4 +9,4 @@ namespace wallet {
 Span<const CRPCCommand> GetMiningRPCCommands();
 } // namespace wallet
 
-#endif // QTUM_WALLET_RPC_MINING_H
+#endif // BIT_WALLET_RPC_MINING_H

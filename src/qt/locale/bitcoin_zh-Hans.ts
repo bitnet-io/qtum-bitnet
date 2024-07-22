@@ -164,7 +164,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">确认钱包加密</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
         <translation type="unfinished">警告: 如果把钱包加密后又忘记密码，你就会从此&lt;b&gt;失去其中所有的比特币了&lt;/b&gt;！</translation>
     </message>
     <message>
@@ -303,7 +303,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">金额</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a Bitnet IO address (e.g. %1)</source>
         <translation type="unfinished">请输入一个比特币地址 (例如 %1)</translation>
     </message>
     <message>
@@ -645,8 +645,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">无法完成由之前版本启动的 -txindex 升级。请用之前的版本重新启动，或者进行一次完整的 -reindex 。</translation>
     </message>
     <message>
-        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Qtum Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
-        <translation type="unfinished">%s请求监听端口 %u。这个端口被认为是“坏的”，所以不太可能有Qtum Core节点会连接到它。有关详细信息和完整列表，请参见 doc/p2p-bad-ports.md 。</translation>
+        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Bitnet Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
+        <translation type="unfinished">%s请求监听端口 %u。这个端口被认为是“坏的”，所以不太可能有Bitnet Core节点会连接到它。有关详细信息和完整列表，请参见 doc/p2p-bad-ports.md 。</translation>
     </message>
     <message>
         <source>-reindex-chainstate option is not compatible with -blockfilterindex. Please temporarily disable blockfilterindex while using -reindex-chainstate, or replace -reindex-chainstate with -reindex to fully rebuild all indexes.</source>
@@ -2458,8 +2458,8 @@ Unable to restore backup of wallet.</source>
         <translation type="unfinished">外部签名器脚本路径(&amp;E)</translation>
     </message>
     <message>
-        <source>Full path to a Qtum Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
-        <translation type="unfinished">指向兼容Qtum Core的脚本的完整路径 (例如 C:\Downloads\hwi.exe 或者 /Users/you/Downloads/hwi.py )。注意: 恶意软件可能会偷窃您的币！</translation>
+        <source>Full path to a Bitnet Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
+        <translation type="unfinished">指向兼容Bitnet Core的脚本的完整路径 (例如 C:\Downloads\hwi.exe 或者 /Users/you/Downloads/hwi.py )。注意: 恶意软件可能会偷窃您的币！</translation>
     </message>
     <message>
         <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>

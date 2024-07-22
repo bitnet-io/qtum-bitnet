@@ -30,7 +30,7 @@ bool QtumVersionChecker::newVersionAvailable()
 QList<Version> QtumVersionChecker::getVersions()
 {
     QNetworkAccessManager manager;
-    QNetworkReply *response = manager.get(QNetworkRequest(QUrl(QTUM_RELEASES)));
+    QNetworkReply *response = manager.get(QNetworkRequest(QUrl(BIT_RELEASES)));
     QTimer timer;
     timer.setSingleShot(true);
     QEventLoop event;

@@ -1,298 +1,143 @@
-What is Qtum?
--------------
 
-Qtum is a decentralized blockchain project built on Bitcoin's UTXO model, with support for Ethereum Virtual Machine based smart contracts, and secured by a proof of stake consensus model. It achieves this through the revolutionary Account Abstraction Layer which allows the EVM to communicate with Qtum's Bitcoin-like UTXO blockchain. For more general information about Qtum as well as links to join our community, go to https://qtum.org
+bitnet-io staging tree 24.x
+===========================
 
-Welcome to the Qtum Fastlane Main Network. This is the main network where the tokens hold value and should be guarded very carefully. If you are testing the network, or developing unstable software on Qtum, we highly recommend using either testnet or regtest mode. 
+* for releases for macos + windows + linux
 
-The major features of the Qtum network include:
-
-1. Compatibility with the Ethereum Virtual Machine, which allows for compatibility with most existing Solidity based smart contracts. No special solidity compiler is required to deploy your smart contract to Qtum. 
-2. A Proof of Stake consensus system which is optimized for Qtum's contract model. Any user can stake and help to secure the network. There is no voting, master nodes, or minimum amount required. There have been transactions as small as 2 Qtum that have created blocks in the past. Staking from smart contracts is under development.
-3. The Decentralized Governance Protocol is completely implemented and functional, which allows certain network parameters to be modified without a fork or other network disruption. This currently controls parameters like block size, gas prices, etc. 
-4. Uses the UTXO transaction model and is compatible with Bitcoin, allowing for existing tooling and workflows to be used with Qtum. This allows for the infamous SPV protocol to be used which is ideal for light wallets on mobile phones and IoT devices.
-
-Note: Qtum Core is considered beta software. We make no warranties or guarantees of its security or stability.
-
-Qtum Documentation and Usage Resources
----------------
-
-These are some resources that might be helpful in understanding Qtum.
-
-Basic usage resources:
-
-* [User guide](https://docs.qtum.site/en/)
-* [Qtum-Qt Wallet Tutorial](https://github.com/qtumproject/documents/tree/master/en/Qtum-Wallet-Tutorial#qtum-qt-wallet-tutorial)
-* [Qtum staking tutorial](https://github.com/qtumproject/documents/tree/master/en/How-to-Stake-with-Qtum)
-* [Qtum tutorial on Raspberry Pi](https://github.com/qtumproject/documents/tree/master/en/Qtum-on-Raspberry-Pi)
-* [Running Qtum on Amazon AWS using Qtum AMI](https://github.com/qtumproject/documents/tree/master/en/Qtum-AWS)
-* [Encrypting and unlocking wallet](https://github.com/qtumproject/documents/tree/master/en/Encrypt-and-Unlock-Qtum-Wallet)
-* [Testnet guide](https://github.com/qtumproject/documents/blob/master/en/Testnet-User-Guide.md)
-* [Block explorer](https://qtum.info), [Older explorer](https://explorer.qtum.org)
+* https://github.com/bitnet-io/bitnet-core/releases/tag/linux-windows-wallet
 
 
-Development resources:
+How do I build the software?
+----------------------------
 
-* [Qtum Book - A Developer's Guide To QTUM](http://book.qtum.site/en/)
-* [Qtum contract usage](https://docs.qtum.site/en/QRC20-Token-Introduce.html)
-* [Deploying a custom token to Qtum](https://blog.qtum.org/qtum-custom-token-walkthrough-467d725fa27d)
-* [QtumJS document](https://qtumproject.github.io/qtumjs-doc/)
-* [Smart contract ICO example](http://book.qtum.site/en/part3/ico.htm)
-* [Early example faucet contract](http://earlz.net/view/2017/06/30/2144/the-qtum-sparknet-faucet)
+The most troublefree and reproducable method of building the repository is via the depends method:
 
-General Info about Qtum:
+# LINUX
 
-* [CIRCLERESEARCH Qtum Primer](https://www.circle.com/marketing/pdfs/research/circle-research-qtum.pdf)
-* [Qtum's PoS vs CASPER](https://www.reddit.com/r/Qtum/comments/788oa5/qtums_pos_vs_casper_and_the_nothingatstake_problem/)
-* [Technical article explaining Qtum's PoS model in depth](http://earlz.net/view/2017/07/27/1904/the-missing-explanation-of-proof-of-stake-version)
+```
 
-
-Developer's Tools
------------------
-
-* Smart contract deployment tool
-  * https://github.com/qtumproject/solar
-* DApp JavaScript Library
-  * https://github.com/qtumproject/qtumjs
-* A toolkit for building qtum light wallets
-  * https://github.com/qtumproject/qtumjs-wallet
-* CORS qtumd RPC proxy for DApp
-  * https://github.com/qtumproject/qtumportal
-* Docker images for running qtum services
-  * https://github.com/qtumproject/qtum-docker
-* qtum.info API that powers the block explorer and the QTUM Web wallet
-  * https://github.com/qtumproject/qtuminfo-api#qtuminfo-api-documentation
-
-
-What is Qtum Core?
-------------------
-
-Qtum Core is our primary mainnet wallet. It implements a full node and is capable of storing, validating, and distributing all history of the Qtum network. Qtum Core is considered the reference implementation for the Qtum network. 
-
-Qtum Core currently implements the following:
-
-* Sending/Receiving QTUM coins
-* Sending/Receiving QRC20 tokens on the Qtum network
-* Staking and creating blocks for the Qtum network
-* Creating and interacting with smart contracts
-* Running a full node for distributing the blockchain to other users
-* "Prune" mode, which minimizes disk usage
-* Regtest mode, which enables developers to very quickly build their own private Qtum network for Dapp testing
-* Testnet mode, using the public Qtum Testnet, with faucet available
-* Compatibility with the Bitcoin Core set of RPC commands and APIs
-* Full SegWit capability with p2sh-segwit (legacy) and bech32 (native) addresses
-
-Alternative Wallets
--------------------
-
-Qtum Core uses a full node model, and thus requires downloading the entire blockchain. If you do not need the entire blockchain, and do not intend on developing smart contracts, it may be more ideal to use an alternative wallet such as one of our light wallets that can be synchronized in a matter of seconds. 
-
-### Qtum Web Wallet
-
-A browser wallet that supports the Ledger hardware wallet, offline cold wallet, restoration from mobile wallets, creation of QRC20 tokens and QRC1155 NFTs.
-
-Web site https://qtumwallet.org
-
-User documentation https://github.com/qtumproject/documents/tree/master/en/QTUM-WebWallet-usage
-
-### Qtum Electrum
-
-A light wallet that supports the Ledger and Trezor hardware wallets and is based on the well-known Electrum wallet software. 
-
-Download: https://github.com/qtumproject/qtum-electrum/releases
-
-### iOS and Android Wallets
-
-These wallets run on mobile devices and synchronize quickly. 
-
-Android Download: https://play.google.com/store/apps/details?id=org.qtum.newwallet
-
-iOS Download: https://github.com/qtumproject/qtum-ios (open source, deprecated)
-
-### Qnekt Chrome Wallet
-
-This light wallet runs in your Chrome browser as a browser extension, based on the popular MetaMask wallet.
-
-
-### Community Resources
-
-Make sure to check out these resources as well for more information and to keep up to date with all the latest news about Qtum. At least 1 developer is always around, so if you're developing on Qtum and need help, we'd love to welcome you to our community.
-
-*	@Qtum on Twitter https://twitter.com/qtum
-* Qtum blog https://blog.qtum.org/
-*	Qtum Telegram Group https://t.me/qtumofficial, other languages available
-* Qtum Discord https://discordapp.com/invite/wRfmkQ9
-*	/r/Qtum on Reddit https://www.reddit.com/r/Qtum/
-*	Qtum.org https://qtum.org
-*	Qtum on Facebook https://www.facebook.com/QtumOfficial/
-
-### Qtum Smart Contract Limitations
-
-*	EVM smart contracts cannot receive coins from or send coins to any address type other than pay-to-pubkeyhash (starts with Q) addresses. This is due to a limitation in the EVM
-*	Contracts are not allowed to create contracts with an initial endowment of coins. The contract must first be created, and then be sent coins in a separate transaction. Humans are also not allowed to create contracts with an initial endowment of coins.
-*	Although all of the infrastructure is present, Qtum Core does not currently parse Solidity event data. You must parse this yourself using either searchlogs or -record-log-opcodes features.
-*	It is not possible to send a contract coins without also executing the contract. This is also the case of Ethereum. This was promised in earlier discussions and technically does work, but due to lack of time for testing this feature was disabled.
-*	In Qtum there can be multiple addresses used to create a proof-of-stake block. However, the EVM can only see the first output using the coinbase operation in Solidity (this address is also the one registered for the continuous staker rewards after 2000 blocks).
-
-----------
-
-# Building Qtum Core
-
-### Validate and Reproduce Binaries
-
-Qtum uses a tool called Gitian to make reproducible builds that can be verified by anyone. Instructions on setting up a Gitian VM and building Qtum are provided in [Gitan Building](https://github.com/qtumproject/qtum/blob/master/doc/gitian-building.md)
-
-### Build on Ubuntu
-
-This is a quick start script for compiling Qtum on Ubuntu
-
-
-    sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils git cmake libboost-all-dev libgmp3-dev
-    sudo apt-get install software-properties-common
-    sudo add-apt-repository ppa:bitcoin/bitcoin
-    sudo apt-get update
-    sudo apt-get install libdb4.8-dev libdb4.8++-dev
-    
-    # If you want to build the Qt GUI:
-    sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler qrencode
-    
-    git clone https://github.com/qtumproject/qtum --recursive
-    cd qtum
-    
-    # Note autogen will prompt to install some more dependencies if needed
+    git clone https://github.com/bitnet-io/bitnet-core
+    cd bitnet-core
+    cd depends
+    make -j8 HOST=x86_64-unknown-linux-gnu  # -j8 for 8 cores adjust here
+    cd ..
     ./autogen.sh
-    ./configure 
-    make -j2
 
-### Build on CentOS
+    CONFIG_SITE=$PWD/depends/x86_64-unknown-linux-gnu/share/config.site ./configure \
+    --prefix=$PWD/bitnet-shared-linux --disable-tests --disable-bench --disable-fuzz-binary
 
-Here is a brief description for compiling Qtum on CentOS, for more details please refer to [the specific document](https://github.com/qtumproject/qtum/blob/master/doc/build-unix.md)
+    make -j8 				# -j8 for 8 cores adjust here
+    make -j8 install 		        # -j8 for 8 cores adjust here
 
-    # Compiling boost manually
-    sudo yum install python-devel bzip2-devel
-    git clone https://github.com/boostorg/boost.git
-    cd boost
-    git checkout boost-1.66.0
-    git submodule update --init --recursive
-    ./bootstrap.sh --prefix=/usr --libdir=/usr/lib64
-    ./b2 headers
-    sudo ./b2 -j4 install
-    
-    # Installing Dependencies for Qtum
-    sudo yum install epel-release
-    sudo yum install libtool libdb4-cxx-devel openssl-devel libevent-devel gmp-devel
-    
-    # If you want to build the Qt GUI:
-    sudo yum install qt5-qttools-devel protobuf-devel qrencode-devel
-    
-    # Building Qtum
-    git clone --recursive https://github.com/qtumproject/qtum.git
-    cd qtum
-    ./autogen.sh
-    ./configure
-    make -j4
+    files will be placed into bitnet-shared-linux folder
+```
+# WINDOWS 64-bit (only build the system using Ubuntu 22.04 Debian and Fedora the win64 exe will break and not work properly)
+```
+    git clone https://github.com/bitnet-io/bitnet-core
+    cd bitnet-core
 
-### Build on Mac OS
+    apt-get update -y
 
-The commands in this guide should be executed in a Terminal application.
-The built-in one is located in `/Applications/Utilities/Terminal.app`.
+    apt install build-essential libtool autotools-dev automake pkg-config \
+    bsdmainutils curl git nsis nano sudo g++-mingw-w64-x86-64-posix -y
 
-#### Preparation
+    cd depends
+    make -j8 HOST=x86_64-w64-mingw32	# -j8 for 8 cores adjust here
+    cd ..
+    ./autogen.sh # not required when building from tarball
+    CONFIG_SITE=$PWD/depends/x86_64-w64-mingw32/share/config.site ./configure \
+     --prefix=$PWD/bitnet-shared-windows --disable-fuzz-binary --disable-bench
 
-Install the Mac OS command line tools:
+    make -j8 				# -j8 for 8 cores adjust here
+    make -j8 install   		# -j8 for 8 cores adjust here
+    make -j8 deploy			# for setup.exe adjust 8 cores to your core count requires nsis see doc/build-windows.md for deps
 
-`xcode-select --install`
+```
 
-When the popup appears, click `Install`.
+# macOS
 
-Then install [Homebrew](https://brew.sh).
+```
+From Terminal.app
 
-#### Dependencies
+/Applications/Utilities/Terminal.app
 
-    brew install cmake automake berkeley-db@4 libtool boost@1.76 miniupnpc openssl pkg-config protobuf qt@5 libevent imagemagick librsvg qrencode gmp
+xcode-select --install
 
-After installing all dependencies, make sure to run "brew link boost@1.76"
-NOTE: This will work for building on Intel Macs and Apple Silicon Macs
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-NOTE: Building with Qt4 is still supported, however, could result in a broken UI. Building with Qt5 is recommended.
+brew install automake libtool boost pkg-config libevent berkeley-db@4 qt@5 qrencode \
+miniupnpc libnatpmp zeromq 
 
-#### Build Qtum Core
+git clone https://github.com/bitnet-io/bitnet-core
 
-1. Clone the qtum source code and cd into `qtum`
+cd bitnet-core
 
-        git clone --recursive https://github.com/qtumproject/qtum.git
-        cd qtum
+./autogen.sh
 
-2.  Build qtum-core:
+./configure --prefix=$PWD/bitnet-macos-shared --disable-tests --disable-bench \
+ --disable-fuzz-binary
 
-    Configure and build the headless qtum binaries as well as the GUI (if Qt is found).
+make -j8 				        # -j8 for 8 cores adjust here
+make -j8 install 		        # -j8 for 8 cores adjust here
 
-    You can disable the GUI build by passing `--without-gui` to configure.
+file will be in bitnet-core/bitnet-macos-shared
+```
 
-        ./autogen.sh
-        ./configure
-        make
+# linux arm64 aarch64
+```
+apt-get install g++-8-aarch64-linux-gnu binutils-aarch64-linux-gnu
 
-3.  It is recommended to build and run the unit tests:
 
-        make check
+ cd depends
+ make -j8 HOST=aarch64-linux-gnu 	# -j8 for 8 cores adjust here
+ cd ..
 
-### Run
+ ./autogen.sh # not required when building from tarball
 
-Then you can either run the command-line daemon using `src/qtumd` and `src/qtum-cli`, or you can run the Qt GUI using `src/qt/qtum-qt`
+export CXX=aarch64-linux-gnu-g++-8
+export CC=aarch64-linux-gnu-gcc-8
+
+ CONFIG_SITE=$PWD/depends/aarch64-linux-gnu/share/config.site ./configure \
+ --prefix=$PWD/bitnet-shared-aarch64-linux-arm64 --disable-fuzz-binary --disable-bench --disable-tests
+ make -j8 				# -j8 for 8 cores adjust here
+ make -j8 install   		# -j8 for 8 cores adjust here
+```
+
+
+# Building Bitnet-QT for Android GUI
+# building QT for Android
+
+```
+git clone https://github.com/bitnet-io/bitnet-core
+cd bitnet-core
+
+docker build -t android-bitcoin .
+
+docker run --rm -v $(pwd):/work --user "$(id -u):$(id -g)" -it android-bitcoin /bin/bash
+
+
+cd /work
+apt-get install g++-8-aarch64-linux-gnu binutils-aarch64-linux-gnu -y
+export CXX=aarch64-linux-gnu-g++-8
+export CC=aarch64-linux-gnu-gcc-8
+
+make -j24 -C depends
+./autogen.sh
+CONFIG_SITE=$PWD/depends/aarch64-linux-gnu/share/config.site ./configure --disable-bench   --disable-gui-tests   --disable-tests --disable-fuzz-binary
+
+make -j24 clean
+make -j24 
+make -j24 -C src/qt apk
+
+mv src/qt/android/build/outputs/apk/release/android-release-unsigned.apk .
+mv src/qt/android/build/outputs/apk/debug/android-debug.apk .
+
+```
+
 
 License
 -------
 
-Qtum is GPLv3 licensed.
+Bitnet-Core is released under the terms of the MIT license. See [COPYING](COPYING) for more information or see https://opensource.org/licenses/MIT.
 
-Development Process
--------------------
 
-The `master` branch is regularly built and tested, but is not guaranteed to be
-completely stable. [Tags](https://github.com/qtumproject/qtum/tags) are created
-regularly to indicate new official, stable release versions of Qtum.
-
-The contribution workflow is described in [CONTRIBUTING.md](https://github.com/qtumproject/qtum/blob/master/CONTRIBUTING.md)
-and useful hints for developers can be found in [doc/developer-notes.md](doc/developer-notes.md).
-
-Testing
--------
-
-Testing and code review is the bottleneck for development; we get more pull
-requests than we can review and test on short notice. Please be patient and help out by testing
-other people's pull requests, and remember this is a security-critical project where any mistake might cost people
-lots of money.
-
-### Automated Testing
-
-Developers are strongly encouraged to write [unit tests](src/test/README.md) for new code, and to
-submit new unit tests for old code. Unit tests can be compiled and run
-(assuming they weren't disabled in configure) with: `make check`. Further details on running
-and extending unit tests can be found in [/src/test/README.md](/src/test/README.md).
-
-There are also [regression and integration tests](/test), written
-in Python.
-These tests can be run (if the [test dependencies](/test) are installed) with: `test/functional/test_runner.py`
-
-The CI (Continuous Integration) systems make sure that every pull request is built for Windows, Linux, and macOS,
-and that unit/sanity tests are run automatically.
-
-### Manual Quality Assurance (QA) Testing
-
-Changes should be tested by somebody other than the developer who wrote the
-code. This is especially important for large or high-risk changes. It is useful
-to add a test plan to the pull request description if testing the changes is
-not straightforward.
-
-Translations
-------------
-
-Changes to translations as well as new translations can be submitted to
-[Bitcoin Core's Transifex page](https://www.transifex.com/bitcoin/bitcoin/).
-
-Translations are periodically pulled from Transifex and merged into the git repository. See the
-[translation process](doc/translation_process.md) for details on how this works.
-
-**Important**: We do not accept translation changes as GitHub pull requests because the next
-pull from Transifex would automatically overwrite them again.

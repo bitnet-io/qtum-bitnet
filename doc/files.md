@@ -1,4 +1,4 @@
-# Qtum Core file system
+# Bitnet Core file system
 
 **Contents**
 
@@ -20,7 +20,7 @@
 
 ## Data directory location
 
-The data directory is the default location where the Qtum Core files are stored.
+The data directory is the default location where the Bitnet Core files are stored.
 
 1. The default data directory paths for supported platforms are:
 
@@ -109,7 +109,7 @@ Subdirectory | File                 | Description
 
 ## Legacy subdirectories and files
 
-These subdirectories and files are no longer used by Qtum Core:
+These subdirectories and files are no longer used by Bitnet Core:
 
 Path           | Description | Repository notes
 ---------------|-------------|-----------------

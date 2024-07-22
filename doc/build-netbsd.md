@@ -36,7 +36,7 @@ See [dependencies.md](dependencies.md) for a complete overview.
 
 ### 2. Clone Qtum Repo
 
-Clone the Qtum Core repository to a directory. All build scripts and commands will run from this directory.
+Clone the Bitnet Core repository to a directory. All build scripts and commands will run from this directory.
 
 ```bash
 git clone https://github.com/qtumproject/qtum --recursive
@@ -66,7 +66,7 @@ pkgin install db4
 
 #### GUI Dependencies
 
-Qtum Core includes a GUI built with the cross-platform Qt Framework. To compile the GUI, we need to install `qt5`.
+Bitnet Core includes a GUI built with the cross-platform Qt Framework. To compile the GUI, we need to install `qt5`.
 
 ```bash
 pkgin install qt5
@@ -87,14 +87,14 @@ To run the test suite (recommended), you will need to have Python 3 installed:
 pkgin install python37
 ```
 
-### Building Qtum Core
+### Building Bitnet Core
 
 **Note**: Use `gmake` (the non-GNU `make` will exit with an error).
 
 
 ### 1. Configuration
 
-There are many ways to configure Qtum Core. Here is an example that
+There are many ways to configure Bitnet Core. Here is an example that
 explicitly disables the wallet and GUI:
 
 ```bash

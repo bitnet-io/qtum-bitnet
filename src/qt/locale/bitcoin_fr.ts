@@ -164,8 +164,8 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <translation type="unfinished">Confirmer le chiffrement du porte-monnaie</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished">Avertissement : Si vous chiffrez votre porte-monnaie et perdez votre phrase de passe, vous &lt;b&gt;PERDREZ TOUS VOS QTUMS&lt;/b&gt; !</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
+        <translation type="unfinished">Avertissement : Si vous chiffrez votre porte-monnaie et perdez votre phrase de passe, vous &lt;b&gt;PERDREZ TOUS VOS BITS&lt;/b&gt; !</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -303,7 +303,7 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <translation type="unfinished">Montant</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a Bitnet IO address (e.g. %1)</source>
         <translation type="unfinished">Saisir une adresse Qtum (p. ex. %1)</translation>
     </message>
     <message>
@@ -651,7 +651,7 @@ La signature n'est possible qu'avec les adresses de type "patrimoine".</translat
         <translation type="unfinished">La mise à niveau -txindex lancée par une version précédente ne peut pas être achevée. Redémarrez la version précédente ou exécutez un -reindex complet.</translation>
     </message>
     <message>
-        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Qtum Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
+        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Bitnet Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
         <translation type="unfinished">%s a demandé d’écouter sur le port %u. Ce port est considéré comme « mauvais » et il est par conséquent improbable que des pairs Qtum Core y soient connectés. Consulter doc/p2p-bad-ports.md pour plus de précisions et une liste complète.</translation>
     </message>
     <message>
@@ -2462,7 +2462,7 @@ Impossible de restaurer la sauvegarde du portefeuille.</translation>
         <translation type="unfinished">&amp;Chemin du script signataire externe</translation>
     </message>
     <message>
-        <source>Full path to a Qtum Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
+        <source>Full path to a Bitnet Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
         <translation type="unfinished">Chemin complet vers un script compatible avec Qtum Core (p. ex. C:\Téléchargements\hwi.exe ou /Utilisateurs/vous/Téléchargements/hwi.py). Attention : des programmes malveillants peuvent voler vos pièces !</translation>
    </message>
     <message>

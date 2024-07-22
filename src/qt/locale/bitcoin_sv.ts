@@ -164,8 +164,8 @@ Försök igen.</translation>
         <translation type="unfinished">Bekräfta kryptering av plånbok</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished">VARNING: Om du krypterar din plånbok och glömmer din lösenfras, &lt;b&gt;FÖRLORAR DU ALLA DINA QTUM&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
+        <translation type="unfinished">VARNING: Om du krypterar din plånbok och glömmer din lösenfras, &lt;b&gt;FÖRLORAR DU ALLA DINA BIT&lt;/b&gt;!</translation>
    </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -286,7 +286,7 @@ Försök igen.</translation>
         <translation type="unfinished">Belopp</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a Bitnet IO address (e.g. %1)</source>
         <translation type="unfinished">Ange en Qtum-adress (t.ex. %1)</translation>
     </message>
     <message>

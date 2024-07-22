@@ -158,8 +158,8 @@
         <translation type="unfinished">Әмиян шифрлауды растау</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished">Ескерту: әмияныңызды шифрлап, құпиясөйлеміңізден айырылып қалсаңыз, &lt;b&gt;БАРЛЫҚ QTUM-ІҢІЗДЕН ДЕ АЙЫРЫЛАСЫЗ&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
+        <translation type="unfinished">Ескерту: әмияныңызды шифрлап, құпиясөйлеміңізден айырылып қалсаңыз, &lt;b&gt;БАРЛЫҚ BIT-ІҢІЗДЕН ДЕ АЙЫРЫЛАСЫЗ&lt;/b&gt;!</translation>
    </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>

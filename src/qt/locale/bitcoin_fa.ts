@@ -167,7 +167,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">تایید رمزگذاری کیف پول</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
         <translation type="unfinished">هشدار: اگر کیف پول خود را رمزگذاری کنید و عبارت خود را گم کنید ، &lt;b&gt;تمام کویت های خود را از دست &lt;/b&gt;خواهید داد!
 </translation>
     </message>
@@ -308,7 +308,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">میزان وجه:</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source> 
+        <source>Enter a Bitnet IO address (e.g. %1)</source> 
         <translation type="unfinished">آدرس بیت کوین را وارد کنید (به طور مثال %1)</translation>
     </message>
     <message>
@@ -1958,7 +1958,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">مسیر اسکریپت امضاکنندهٔ جانبی</translation>
     </message>
     <message>
-        <source>Full path to a Qtum Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source> 
+        <source>Full path to a Bitnet Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source> 
         <translation type="unfinished">نشانی کامل اسکریپ تطابق پذیر هسته بیتکوین
  (مثال: C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). آگاه باش: بدافزار میتواند سکه های شما را بدزد!</translation>
     </message>

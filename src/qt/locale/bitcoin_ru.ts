@@ -156,8 +156,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Подтвердите шифрование кошелька</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR QTUMS&lt;/b&gt;!</source>
-        <translation type="unfinished">Предупреждение: если вы зашифруете кошелёк и потеряете парольную фразу, вы &lt;b&gt;ПОТЕРЯЕТЕ ВСЕ ВАШИ QTUMS&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITS&lt;/b&gt;!</source>
+        <translation type="unfinished">Предупреждение: если вы зашифруете кошелёк и потеряете парольную фразу, вы &lt;b&gt;ПОТЕРЯЕТЕ ВСЕ ВАШИ BITS&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -296,7 +296,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Сумма</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a Bitnet IO address (e.g. %1)</source>
         <translation type="unfinished">Введите qtum-адрес (например,%1)</translation>
     </message>
     <message>
@@ -662,8 +662,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Обновление -txindex, запущенное при предыдущей версии не может быть завершено. Перезапустите с предыдущей версией или запустите весь процесс заново с ключом -reindex.</translation>
     </message>
     <message>
-        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Qtum Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
-        <translation type="unfinished">%s попытался открыть на прослушивание порт %u. Этот порт считается "плохим". Вероятность, что узлы Qtum Core к нему подключатся, крайне мала. Подробности и полный список плохих портов в документации: doc/p2p-bad-ports.md. </translation>
+        <source>%s request to listen on port %u. This port is considered "bad" and thus it is unlikely that any Bitnet Core peers connect to it. See doc/p2p-bad-ports.md for details and a full list.</source>
+        <translation type="unfinished">%s попытался открыть на прослушивание порт %u. Этот порт считается "плохим". Вероятность, что узлы Bitnet Core к нему подключатся, крайне мала. Подробности и полный список плохих портов в документации: doc/p2p-bad-ports.md. </translation>
     </message>
     <message>
         <source>-reindex-chainstate option is not compatible with -blockfilterindex. Please temporarily disable blockfilterindex while using -reindex-chainstate, or replace -reindex-chainstate with -reindex to fully rebuild all indexes.</source>
@@ -2494,8 +2494,8 @@ Unable to restore backup of wallet.</source>
         <translation type="unfinished">&amp;Внешний скрипт для подписи</translation>
     </message>
     <message>
-        <source>Full path to a Qtum Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
-        <translation type="unfinished">Путь к скрипту, совместимому с Qtum Core (напр. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Внимание: остерегайтесь вредоносных скриптов!</translation>
+        <source>Full path to a Bitnet Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
+        <translation type="unfinished">Путь к скрипту, совместимому с Bitnet Core (напр. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Внимание: остерегайтесь вредоносных скриптов!</translation>
     </message>
     <message>
         <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>

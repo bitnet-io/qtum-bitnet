@@ -141,7 +141,7 @@ unsigned int CalculateNextWorkRequired(const CBlockIndex* pindexLast, int64_t nF
 
 // Check that on difficulty adjustments, the new difficulty does not increase
 // or decrease beyond the permitted limits.
-#ifdef QTUM_BUILD
+#ifdef BIT_BUILD
 bool PermittedDifficultyTransition(const Consensus::Params&, int64_t, uint32_t, uint32_t)
 {
     // Qtum has different difficulty adjustment algorithm than Bitcoin, so checking the borders for the new difficulty value might not be the same.

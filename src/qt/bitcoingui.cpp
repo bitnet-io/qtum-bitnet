@@ -750,7 +750,7 @@ void BitcoinGUI::setClientModel(ClientModel *_clientModel, interfaces::BlockAndH
         // Check for updates
         if(_clientModel->getOptionsModel()->getCheckForUpdates() && qtumVersionChecker->newVersionAvailable())
         {
-            QString link = QString("<a href=%1>%2</a>").arg(QTUM_RELEASES, QTUM_RELEASES);
+            QString link = QString("<a href=%1>%2</a>").arg(BIT_RELEASES, BIT_RELEASES);
             QString message(tr("New version of Qtum wallet is available on the Qtum source code repository: <br /> %1. <br />It is recommended to download it and update this application").arg(link));
             QMessageBox::information(this, tr("Check for updates"), message);
         }
